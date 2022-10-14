@@ -1,10 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-$END$
+
+<div class="container">
+    <h2>Post an article</h2>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Go</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Workplace Complaint Form</title>
+                <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+                      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+                      crossorigin="anonymous">
+                <style>
+                    html, body {
+                        min-height: 100%;
+                    }
+
+                    body, div, form, input, select, p {
+                        padding: 0;
+                        margin: 0;
+                        outline: none;
+                        font-family: Roboto, Arial, sans-serif;
+                        font-size: 14px;
+                        color: #666;
+                        line-height: 22px;
+                    }
+
+                    h1 {
+                        margin: 15px 0;
+                        font-weight: 400;
+                    }
+
+                    .testbox {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: inherit;
+                        padding: 3px;
+                    }
+
+                    form {
+                        width: 100%;
+                        padding: 20px;
+                        background: #fff;
+                        box-shadow: 0 2px 5px #ccc;
+                    }
+
+                    input, select, textarea {
+                        margin-bottom: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 3px;
+                    }
+
+                    input:hover, select:hover, textarea:hover {
+                        outline: none;
+                        border: 1px solid #095484;
+                    }
+
+                    input {
+                        width: calc(100% - 10px);
+                        padding: 5px;
+                    }
+
+                    select {
+                        width: 100%;
+                        padding: 7px 0;
+                        background: transparent;
+                    }
+
+                    textarea {
+                        width: calc(100% - 6px);
+                    }
+
+                    .item {
+                        position: relative;
+                        margin: 10px 0;
+                    }
+
+                    input[type="date"]::-webkit-inner-spin-button {
+                        display: none;
+                    }
+
+                    .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+                        position: absolute;
+                        font-size: 20px;
+                        color: #a9a9a9;
+                    }
+
+                    .item i {
+                        right: 2%;
+                        top: 30px;
+                        z-index: 1;
+                    }
+
+                    [type="date"]::-webkit-calendar-picker-indicator {
+                        right: 1%;
+                        z-index: 2;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+
+                    .btn-block {
+                        margin-top: 20px;
+                        text-align: center;
+                    }
+
+                    button {
+                        width: 150px;
+                        padding: 10px;
+                        border: none;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        border-radius: 5px;
+                        background-color: #095484;
+                        font-size: 16px;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+
+                    button:hover {
+                        background-color: #0666a3;
+                    }
+
+                </style>
+            </head>
+            <body>
+            <div class="testbox">
+                <form action="/">
+                    <h1>Post an article</h1>
+
+                    <h5>What are you thinking ?</h5>
+                    <div class="item">
+                        <textarea rows="5" placeholder="Viết nội dung..."></textarea>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="xurb0ha xwib8y2 x1sxyh0 x1y1aw1k x1d52u69 xktsk01 x1qughib x78zum5 x9f619 xev17xk x9jhf4c x30kzoy xgqcy7u x1lq5wgf x4gd2jg x15uvora x12hcrln x1wdk0sc x1jx94hy x6s0dn4">
+                                <div class="xurb0ha x18d9i69 x1sxyh0 xexx8yu">
+                                    <div aria-label="Thêm vào bài viết của bạn"
+                                         class="x1i10hfl x1qjc9v5 xjbqb8w xjqpnuy xa49m3k xqeqjp1 x2hbi6w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x1ypdohk xdl72j9 x2lah0s xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r x2lwn1j xeuugli xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1hl2dhg xggy1nq x1ja2u2z x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x3nfvp2 x1q0g3np x87ps6o x1lku1pv x1a2a7pz"
+                                         role="button" tabindex="0"><span
+                                            class="x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x1f6kntn xvq8zen x1s688f xzsf02u"
+                                            dir="auto">Thêm vào bài viết của bạn</span></div>
+                                </div>
+                                <div>
+                                    <div class="x78zum5">
+                                        <div class="x12mruv9 xjpr12u xfs2ol5 xr9ek0c">
+                                            <div class=""><span
+                                                    class="x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j"><div
+                                                    aria-label="Ảnh/Video"
+                                                    class="x1i10hfl x1qjc9v5 xjqpnuy xa49m3k xqeqjp1 x2hbi6w x1ypdohk xdl72j9 x2lah0s xe8uvvx x2lwn1j xeuugli x1hl2dhg xggy1nq x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x3nfvp2 x1q0g3np x87ps6o x1lku1pv x1a2a7pz xjyslct xjbqb8w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1ja2u2z"
+                                                    role="button" tabindex="0"><div><div><div
+                                                    class="xc9qbxq x1n2onr6 x14qfxbe x14yjl9h xudhj91 x18nykt9 xww2gxu"><div
+                                                    class="x1qrby5j x1n2onr6 xarpa2k x3igimt x1beo9mf x1jfb8zj x13rtm0m x1e5q0jg x3x9cwd x1o1ewxj x1h91t0o x4k7w5x"><div
+                                                    class="x6s0dn4 x78zum5 xl56j7k x1n2onr6 x5yr21d xh8yej3"><i
+                                                    data-visualcompletion="css-img" class="x1b0d499 xl1xv1r"
+                                                    style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yt/r/w05hxmKpiev.png&quot;); background-position: 0px -294px; background-size: 34px 852px; background-repeat: no-repeat; display: inline-block;"></i></div><div
+                                                    class="x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h x1wpzbip"
+                                                    data-visualcompletion="ignore"></div></div></div></div><div><div></div></div></div></div></span>
+                                            </div>
+                                        </div>
+                                        <div class="x12mruv9 xjpr12u xfs2ol5 xr9ek0c">
+                                            <div class=""><span
+                                                    class="x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j"><div
+                                                    aria-label="Gắn thẻ người khác"
+                                                    class="x1i10hfl x1qjc9v5 xjqpnuy xa49m3k xqeqjp1 x2hbi6w x1ypdohk xdl72j9 x2lah0s xe8uvvx x2lwn1j xeuugli x1hl2dhg xggy1nq x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x3nfvp2 x1q0g3np x87ps6o x1lku1pv x1a2a7pz xjyslct xjbqb8w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1ja2u2z"
+                                                    role="button" tabindex="0"><div><div><div
+                                                    class="xc9qbxq x1n2onr6 x14qfxbe x14yjl9h xudhj91 x18nykt9 xww2gxu"><div
+                                                    class="x1qrby5j x1n2onr6 xarpa2k x3igimt x1beo9mf x1jfb8zj x13rtm0m x1e5q0jg x3x9cwd x1o1ewxj x1h91t0o x4k7w5x"><div
+                                                    class="x6s0dn4 x78zum5 xl56j7k x1n2onr6 x5yr21d xh8yej3"><i
+                                                    data-visualcompletion="css-img" class="x1b0d499 xl1xv1r"
+                                                    style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yt/r/w05hxmKpiev.png&quot;); background-position: 0px -268px; background-size: 34px 852px; background-repeat: no-repeat; display: inline-block;"></i></div><div
+                                                    class="x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h x1wpzbip"
+                                                    data-visualcompletion="ignore"></div></div></div></div><div><div></div></div></div></div></span>
+                                            </div>
+                                        </div>
+                                        <div class="x12mruv9 xjpr12u xfs2ol5 xr9ek0c">
+                                            <div class=""><span
+                                                    class="x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j"><div
+                                                    aria-label="Cảm xúc/Hoạt động"
+                                                    class="x1i10hfl x1qjc9v5 xjqpnuy xa49m3k xqeqjp1 x2hbi6w x1ypdohk xdl72j9 x2lah0s xe8uvvx x2lwn1j xeuugli x1hl2dhg xggy1nq x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x3nfvp2 x1q0g3np x87ps6o x1lku1pv x1a2a7pz xjyslct xjbqb8w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1ja2u2z"
+                                                    role="button" tabindex="0"><div><div><div
+                                                    class="xc9qbxq x1n2onr6 x14qfxbe x14yjl9h xudhj91 x18nykt9 xww2gxu"><div
+                                                    class="x1qrby5j x1n2onr6 xarpa2k x3igimt x1beo9mf x1jfb8zj x13rtm0m x1e5q0jg x3x9cwd x1o1ewxj x1h91t0o x4k7w5x"><div
+                                                    class="x6s0dn4 x78zum5 xl56j7k x1n2onr6 x5yr21d xh8yej3"><i
+                                                    data-visualcompletion="css-img" class="x1b0d499 xl1xv1r"
+                                                    style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yt/r/w05hxmKpiev.png&quot;); background-position: 0px -242px; background-size: 34px 852px; background-repeat: no-repeat; display: inline-block;"></i></div><div
+                                                    class="x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h x1wpzbip"
+                                                    data-visualcompletion="ignore"></div></div></div></div><div><div></div></div></div></div></span>
+                                            </div>
+                                        </div>
+                                        <div class="x12mruv9 xjpr12u xfs2ol5 xr9ek0c">
+                                            <div class=""><span
+                                                    class="x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j"><div
+                                                    aria-label="Đăng ký vào"
+                                                    class="x1i10hfl x1qjc9v5 xjqpnuy xa49m3k xqeqjp1 x2hbi6w x1ypdohk xdl72j9 x2lah0s xe8uvvx x2lwn1j xeuugli x1hl2dhg xggy1nq x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x3nfvp2 x1q0g3np x87ps6o x1lku1pv x1a2a7pz xjyslct xjbqb8w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1ja2u2z"
+                                                    role="button" tabindex="0"><div><div><div
+                                                    class="xc9qbxq x1n2onr6 x14qfxbe x14yjl9h xudhj91 x18nykt9 xww2gxu"><div
+                                                    class="x1qrby5j x1n2onr6 xarpa2k x3igimt x1beo9mf x1jfb8zj x13rtm0m x1e5q0jg x3x9cwd x1o1ewxj x1h91t0o x4k7w5x"><div
+                                                    class="x6s0dn4 x78zum5 xl56j7k x1n2onr6 x5yr21d xh8yej3"><i
+                                                    data-visualcompletion="css-img" class="x1b0d499 xl1xv1r"
+                                                    style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y8/r/jty9AUHb1Z5.png&quot;); background-position: 0px -234px; background-size: 26px 260px; background-repeat: no-repeat; display: inline-block;"></i></div><div
+                                                    class="x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h"
+                                                    data-visualcompletion="ignore"></div></div></div></div><div><div></div></div></div></div></span>
+                                            </div>
+                                        </div>
+                                        <div class="x12mruv9 xjpr12u xfs2ol5 xr9ek0c">
+                                            <div class=""><span
+                                                    class="x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j"><div
+                                                    aria-label="Sự kiện trong đời"
+                                                    class="x1i10hfl x1qjc9v5 xjqpnuy xa49m3k xqeqjp1 x2hbi6w x1ypdohk xdl72j9 x2lah0s xe8uvvx x2lwn1j xeuugli x1hl2dhg xggy1nq x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x3nfvp2 x1q0g3np x87ps6o x1lku1pv x1a2a7pz xjyslct xjbqb8w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1ja2u2z"
+                                                    role="button" tabindex="0"><div><div><div
+                                                    class="xc9qbxq x1n2onr6 x14qfxbe x14yjl9h xudhj91 x18nykt9 xww2gxu"><div
+                                                    class="x1qrby5j x1n2onr6 xarpa2k x3igimt x1beo9mf x1jfb8zj x13rtm0m x1e5q0jg x3x9cwd x1o1ewxj x1h91t0o x4k7w5x"><div
+                                                    class="x6s0dn4 x78zum5 xl56j7k x1n2onr6 x5yr21d xh8yej3"><i
+                                                    data-visualcompletion="css-img" class="x1b0d499 xl1xv1r"
+                                                    style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yZ/r/6SLd7fSIpJ7.png&quot;); background-position: 0px -26px; background-size: 26px 104px; background-repeat: no-repeat; display: inline-block;"></i></div><div
+                                                    class="x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h"
+                                                    data-visualcompletion="ignore"></div></div></div></div><div><div></div></div></div></div></span>
+                                            </div>
+                                        </div>
+                                        <div class="x12mruv9 xjpr12u xfs2ol5 xr9ek0c">
+                                            <div class=""><span
+                                                    class="x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j"><div
+                                                    aria-label="Xem thêm"
+                                                    class="x1i10hfl x1qjc9v5 xjqpnuy xa49m3k xqeqjp1 x2hbi6w x1ypdohk xdl72j9 x2lah0s xe8uvvx x2lwn1j xeuugli x1hl2dhg xggy1nq x1t137rt x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x3nfvp2 x1q0g3np x87ps6o x1lku1pv x1a2a7pz xjyslct xjbqb8w x13fuv20 xu3j5b3 x1q0q8m5 x26u7qi x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x16tdsg8 x1ja2u2z"
+                                                    role="button" tabindex="0"><div><div><div
+                                                    class="xc9qbxq x1n2onr6 x14qfxbe x14yjl9h xudhj91 x18nykt9 xww2gxu"><div
+                                                    class="x1qrby5j x1n2onr6 xarpa2k x3igimt x1beo9mf x1jfb8zj x13rtm0m x1e5q0jg x3x9cwd x1o1ewxj x1h91t0o x4k7w5x"><div
+                                                    class="x6s0dn4 x78zum5 xl56j7k x1n2onr6 x5yr21d xh8yej3"><i
+                                                    data-visualcompletion="css-img" class="x1b0d499 xl1xv1r"
+                                                    style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yt/r/w05hxmKpiev.png&quot;); background-position: 0px -216px; background-size: 34px 852px; background-repeat: no-repeat; display: inline-block;"></i></div><div
+                                                    class="x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h"
+                                                    data-visualcompletion="ignore"></div></div></div></div><div><div></div></div></div></div></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-block">
+                        <button type="submit" href="/">Send</button>
+                    </div>
+                </form>
+            </div>
+            </body>
+            </html>
+
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
