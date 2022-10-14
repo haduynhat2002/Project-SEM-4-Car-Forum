@@ -19,14 +19,16 @@ public class RoleController {
     @Autowired
     RoleService roleService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Role>> findAll(){
-        return ResponseEntity.ok(roleService.findAll());
-    }
+
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Role> save(@RequestBody Role district){
         return ResponseEntity.ok(roleService.save(district));
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<List<Role>> findAll(){
+        return ResponseEntity.ok(roleService.findAll());
     }
 
 }
