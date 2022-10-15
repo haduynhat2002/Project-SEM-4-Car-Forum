@@ -24,4 +24,7 @@ body {
     color: white !important;
     background-color: #3b5998;
   }
-  
+  .text{
+    margin: 20px 0 0 0;
+    text-align: center;
+  }
