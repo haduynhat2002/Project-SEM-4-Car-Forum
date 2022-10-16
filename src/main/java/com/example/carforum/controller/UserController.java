@@ -14,10 +14,12 @@ import java.util.List;
 
 @CrossOrigin("*")
 @Controller
-@RequestMapping("api/v1/Users")
+@RequestMapping("api/v1/users")
 public class UserController {
     @Autowired
     UserService userService;
+
+
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<User>> findAll(){
