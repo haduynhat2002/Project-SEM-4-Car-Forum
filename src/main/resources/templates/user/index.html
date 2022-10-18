@@ -4,65 +4,7 @@
 <head th:replace="user/fragments/head :: head"></head>
 
 <body>
-<!-- Preloader Start -->
-
-<!-- Preloader End -->
-
-
-<!-- ***** Header Area Start ***** -->
-<header class="header-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="navbar navbar-expand-lg">
-                    <!-- Logo -->
-                    <a class="navbar-brand" href="index.html"><img src="../../static/user/img/core-img/logo.png"
-                                                                   alt="Logo"></a>
-                    <!-- Navbar Toggler -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav"
-                            aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span
-                            class="navbar-toggler-icon"></span></button>
-                    <!-- Navbar -->
-                    <div class="collapse navbar-collapse" id="worldNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Category.html">Diễn đàn</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Viết bài</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Đánh giá xe</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Liên hệ</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="Login.html" id="navbarDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Đăng nhập</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="Register.html">Đăng ký</a>
-                                    <a class="dropdown-item" href="Login.html">Đăng Nhập</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <!-- Search Form  -->
-                        <div id="search-wrapper">
-                            <form action="#">
-                                <input type="text" id="search" placeholder="Search something...">
-                                <div id="close-icon"></div>
-                                <input class="d-none" type="submit" value="">
-                            </form>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
+<header th:replace="user/fragments/header :: header"></header>
 <!-- ***** Header Area End ***** -->
 
 <!-- ********** Hero Area Start ********** -->
@@ -1230,48 +1172,48 @@
                         <ul class="nav nav-tabs" id="myTab2" role="tablist">
                             <li class="title">Đánh giá xe</li>
 
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link active" id="tab10" data-toggle="tab" href="#world-tab-10" role="tab"-->
-<!--                                   aria-controls="world-tab-10" aria-selected="true">All</a>-->
-<!--                            </li>-->
+                            <!--                            <li class="nav-item">-->
+                            <!--                                <a class="nav-link active" id="tab10" data-toggle="tab" href="#world-tab-10" role="tab"-->
+                            <!--                                   aria-controls="world-tab-10" aria-selected="true">All</a>-->
+                            <!--                            </li>-->
 
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link" id="tab11" data-toggle="tab" href="#world-tab-11" role="tab"-->
-<!--                                   aria-controls="world-tab-11" aria-selected="false">Style hunter</a>-->
-<!--                            </li>-->
+                            <!--                            <li class="nav-item">-->
+                            <!--                                <a class="nav-link" id="tab11" data-toggle="tab" href="#world-tab-11" role="tab"-->
+                            <!--                                   aria-controls="world-tab-11" aria-selected="false">Style hunter</a>-->
+                            <!--                            </li>-->
 
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link" id="tab12" data-toggle="tab" href="#world-tab-12" role="tab"-->
-<!--                                   aria-controls="world-tab-12" aria-selected="false">Vogue</a>-->
-<!--                            </li>-->
+                            <!--                            <li class="nav-item">-->
+                            <!--                                <a class="nav-link" id="tab12" data-toggle="tab" href="#world-tab-12" role="tab"-->
+                            <!--                                   aria-controls="world-tab-12" aria-selected="false">Vogue</a>-->
+                            <!--                            </li>-->
 
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link" id="tab13" data-toggle="tab" href="#world-tab-13" role="tab"-->
-<!--                                   aria-controls="world-tab-13" aria-selected="false">Health &amp; Fitness</a>-->
-<!--                            </li>-->
+                            <!--                            <li class="nav-item">-->
+                            <!--                                <a class="nav-link" id="tab13" data-toggle="tab" href="#world-tab-13" role="tab"-->
+                            <!--                                   aria-controls="world-tab-13" aria-selected="false">Health &amp; Fitness</a>-->
+                            <!--                            </li>-->
 
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link" id="tab14" data-toggle="tab" href="#world-tab-14" role="tab"-->
-<!--                                   aria-controls="world-tab-14" aria-selected="false">Travel</a>-->
-<!--                            </li>-->
+                            <!--                            <li class="nav-item">-->
+                            <!--                                <a class="nav-link" id="tab14" data-toggle="tab" href="#world-tab-14" role="tab"-->
+                            <!--                                   aria-controls="world-tab-14" aria-selected="false">Travel</a>-->
+                            <!--                            </li>-->
 
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link" id="tab15" data-toggle="tab" href="#world-tab-15" role="tab"-->
-<!--                                   aria-controls="world-tab-15" aria-selected="false">Gadgets</a>-->
-<!--                            </li>-->
+                            <!--                            <li class="nav-item">-->
+                            <!--                                <a class="nav-link" id="tab15" data-toggle="tab" href="#world-tab-15" role="tab"-->
+                            <!--                                   aria-controls="world-tab-15" aria-selected="false">Gadgets</a>-->
+                            <!--                            </li>-->
 
-<!--                            <li class="nav-item dropdown">-->
-<!--                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"-->
-<!--                                   aria-haspopup="true" aria-expanded="false">More</a>-->
-<!--                                <div class="dropdown-menu">-->
-<!--                                    <a class="nav-link" id="tab16" data-toggle="tab" href="#world-tab-16" role="tab"-->
-<!--                                       aria-controls="world-tab-16" aria-selected="false">Sports</a>-->
-<!--                                    <a class="nav-link" id="tab17" data-toggle="tab" href="#world-tab-17" role="tab"-->
-<!--                                       aria-controls="world-tab-17" aria-selected="false">Politices</a>-->
-<!--                                    <a class="nav-link" id="tab18" data-toggle="tab" href="#world-tab-18" role="tab"-->
-<!--                                       aria-controls="world-tab-18" aria-selected="false">Features</a>-->
-<!--                                </div>-->
-<!--                            </li>-->
+                            <!--                            <li class="nav-item dropdown">-->
+                            <!--                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"-->
+                            <!--                                   aria-haspopup="true" aria-expanded="false">More</a>-->
+                            <!--                                <div class="dropdown-menu">-->
+                            <!--                                    <a class="nav-link" id="tab16" data-toggle="tab" href="#world-tab-16" role="tab"-->
+                            <!--                                       aria-controls="world-tab-16" aria-selected="false">Sports</a>-->
+                            <!--                                    <a class="nav-link" id="tab17" data-toggle="tab" href="#world-tab-17" role="tab"-->
+                            <!--                                       aria-controls="world-tab-17" aria-selected="false">Politices</a>-->
+                            <!--                                    <a class="nav-link" id="tab18" data-toggle="tab" href="#world-tab-18" role="tab"-->
+                            <!--                                       aria-controls="world-tab-18" aria-selected="false">Features</a>-->
+                            <!--                                </div>-->
+                            <!--                            </li>-->
                         </ul>
 
                         <div class="tab-content" id="myTabContent2">
@@ -2840,7 +2782,8 @@
             </div>
         </div>
         <div>
-            <ul class="" id="myTab3" role="tablist" style="padding: 10px 0;font-size: 18px;color: #000000;margin-bottom: 0;margin-right: auto;border-bottom: 2px solid #f1f1f1;font-weight: 700;">
+            <ul class="" id="myTab3" role="tablist"
+                style="padding: 10px 0;font-size: 18px;color: #000000;margin-bottom: 0;margin-right: auto;border-bottom: 2px solid #f1f1f1;font-weight: 700;">
                 <li class="title">Đại lý ô tô</li>
             </ul>
         </div>
@@ -2927,17 +2870,16 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
                         <div>
-                            <ul class=" mb-20" id="myTab4" role="tablist" style="padding: 10px 0;font-size: 18px;color: #000000;margin-bottom: 25px;margin-right: auto;border-bottom: 2px solid #f1f1f1;font-weight: 700;">
+                            <ul class=" mb-20" id="myTab4" role="tablist"
+                                style="padding: 10px 0;font-size: 18px;color: #000000;margin-bottom: 25px;margin-right: auto;border-bottom: 2px solid #f1f1f1;font-weight: 700;">
                                 <li class="title">Diễn đàn ô tô</li>
                             </ul>
                         </div>
                         <div class="container">
-                            <button type="button"  style="color:white" class="content new-thread-background" data-toggle="modal" data-target="#myModal">+ VIẾT BÀI
-                                CHIA SẺ, ĐẶT CÂU HỎI</button>
-
-
-
-
+                            <button type="button" style="color:white" class="content new-thread-background"
+                                    data-toggle="modal" data-target="#myModal">+ VIẾT BÀI
+                                CHIA SẺ, ĐẶT CÂU HỎI
+                            </button>
 
 
                             <!-- Modal -->
@@ -2953,14 +2895,13 @@
                                             <p>Some text in the modal.</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                            </button>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-
-
 
 
                         </div>
@@ -3111,7 +3052,8 @@
                     </div>
                     <div class="col-lg-4 col-md-4">
 
-                        <div class="post-sidebar-area wow fadeInUpBig" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUpBig;">
+                        <div class="post-sidebar-area wow fadeInUpBig" data-wow-delay="0.2s"
+                             style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUpBig;">
                             <!-- Widget Area -->
 
                             <!-- Widget Area -->
@@ -3127,7 +3069,8 @@
                                         <!-- Post Content -->
                                         <div class="post-content">
                                             <a href="#" class="headline">
-                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                                    Most</h5>
                                             </a>
                                         </div>
                                     </div>
@@ -3140,7 +3083,8 @@
                                         <!-- Post Content -->
                                         <div class="post-content">
                                             <a href="#" class="headline">
-                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                                    Most</h5>
                                             </a>
                                         </div>
                                     </div>
@@ -3153,7 +3097,8 @@
                                         <!-- Post Content -->
                                         <div class="post-content">
                                             <a href="#" class="headline">
-                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                                    Most</h5>
                                             </a>
                                         </div>
                                     </div>
@@ -3166,7 +3111,8 @@
                                         <!-- Post Content -->
                                         <div class="post-content">
                                             <a href="#" class="headline">
-                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                                    Most</h5>
                                             </a>
                                         </div>
                                     </div>
@@ -3179,7 +3125,8 @@
                                         <!-- Post Content -->
                                         <div class="post-content">
                                             <a href="#" class="headline">
-                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                                    Most</h5>
                                             </a>
                                         </div>
                                     </div>
@@ -3258,25 +3205,7 @@
     </div>
 </footer>
 
-<!-- ***** Footer Area End ***** -->
-
-<!-- jQuery (Necessary for All JavaScript Plugins) -->
-<script src="../../static/user/js/jquery/jquery-2.2.4.min.js"></script>
-<!-- Popper js -->
-<script src="../../static/user/js/popper.min.js"></script>
-<!-- Bootstrap js -->
-<script src="../../static/user/js/bootstrap.min.js"></script>
-<!-- Plugins js -->
-<script src="../../static/user/js/plugins.js"></script>
-<!-- Active js -->
-<script src="../../static/user/js/active.js"></script>
-<script>
-    $(document).ready(function(){
-        $("#myBtn").click(function(){
-            $("#myModal").modal();
-        });
-    });
-</script>
+<script th:replace="user/fragments/scripts :: script"></script>
 </body>
 
 </html>

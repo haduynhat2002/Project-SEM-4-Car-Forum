@@ -8,4 +8,8 @@ public class HomeController {
     public String index() {
         return "user/index";
     }
+//@RequestMapping("/admin/home")
+//public String index() {
+//    return "admin/index";
+//}
 }
