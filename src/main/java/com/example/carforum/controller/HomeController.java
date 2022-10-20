@@ -8,6 +8,14 @@ public class HomeController {
     public String index() {
         return "user/index";
     }
+    @RequestMapping("/category")
+    public String category() {
+        return "user/Category";
+    }
+    @RequestMapping("/contact")
+    public String contact() {
+        return "user/contact";
+    }
 //@RequestMapping("/admin/home")
 //public String index() {
 //    return "admin/index";

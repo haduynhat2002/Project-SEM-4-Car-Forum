@@ -9,6 +9,11 @@
             $(this).remove();
         });
     });
+    $(document).ready(function(){
+        $("#myBtn").click(function(){
+            $("#myModal").modal();
+        })
+    });
 
     // :: Fullscreen Active Code
     $window.on('resizeEnd', function () {
