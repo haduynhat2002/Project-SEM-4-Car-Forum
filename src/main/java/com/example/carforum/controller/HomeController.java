@@ -25,5 +25,14 @@ public class HomeController {
     public String charts() {
         return "admin/pages/UI/general";
     }
+
+    @RequestMapping("/category")
+    public String category() {
+        return "user/Category";
+    }
+    @RequestMapping("/contact")
+    public String contact() {
+        return "user/contact";
+    }
 }
 
