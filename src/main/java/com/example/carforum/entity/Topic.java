@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -13,9 +15,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "topics")
-public class Topics {
+public class Topic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String username;
+    private String name;
+    @OneToMany(mappedBy = "topic")
+    private List<Post> roads= new ArrayList<>();
 }
