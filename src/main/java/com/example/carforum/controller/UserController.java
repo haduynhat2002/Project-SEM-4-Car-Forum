@@ -19,8 +19,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-
-
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<User>> findAll(){
         return ResponseEntity.ok(userService.findAll());
