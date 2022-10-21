@@ -11,7 +11,7 @@ public class HomeController {
     public String index() {
         return "admin/index";
     }
-    @RequestMapping("/admin/home2")
+        @RequestMapping("/admin/home2")
     public String index2() {
         return "admin/index2";
     }
@@ -26,6 +26,11 @@ public class HomeController {
     @RequestMapping("/login")
     public String login() {
         return "user/Login";
+    }
+
+    @RequestMapping("/category")
+    public String category() {
+        return "user/Category";
     }
 }
 

@@ -1,7 +1,8 @@
 package com.example.carforum.controller;
 
-import com.example.carforum.entity.User;
-import com.example.carforum.service.UserService;
+
+import com.example.carforum.entity.Post;
+import com.example.carforum.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,18 +14,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 @CrossOrigin("*")
 @Controller
-@RequestMapping("api/v1/Roads")
-public class UserController {
+@RequestMapping("api/v1/post")
+public class PostController {
     @Autowired
-    UserService userService;
+    PostService postService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<User>> findAll(){
-        return ResponseEntity.ok(userService.findAll());
+    public ResponseEntity<List<Post>> findAll(){
+        return ResponseEntity.ok(postService.findAll());
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<User> save(@RequestBody User user){
-        return ResponseEntity.ok(userService.save(user));
+    public ResponseEntity<Post> save(@RequestBody Post post){
+        return ResponseEntity.ok(postService.save(post));
     }
 }
