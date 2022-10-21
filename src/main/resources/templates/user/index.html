@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head th:replace="user/fragments/head :: head"></head>
-
+<head th:replace="/user/fragments/head :: head"></head>
 <body>
-<header th:replace="user/fragments/header :: header"></header>
-<!-- ***** Header Area End ***** -->
+<header th:replace="/user/fragments/header :: header"></header>
 
-<!-- ********** Hero Area Start ********** -->
 <div class="hero-area">
 
-    <!-- Hero Slides Area -->
     <div class="hero-slides owl-carousel">
-        <!-- Single Slide -->
         <div class="single-hero-slide bg-img background-overlay"
-             style="background-image: url(../../static/user/img/blog-img/imageCar.jpeg);"></div>
-        <!-- Single Slide -->
+             th:style="'background-image:url(' + @{/user/img/blog-img/imageCar.jpeg} + ');  background-size: cover;'">
+        </div>
         <div class="single-hero-slide bg-img background-overlay"
-             style="background-image: url(../../static/user/img/blog-img/image.jpeg);"></div>
-    </div>
+             th:style="'background-image:url(' + @{/user/img/blog-img/image.jpeg} + '); background-size: cover;'">
 
-    <!-- Hero Post Slide -->
-    <div class="hero-post-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="hero-post-slide">
-                        <!-- Single Slide -->
-                        <div class="single-slide d-flex align-items-center">
-                            <div class="post-number">
-                                <p>1</p>
-                            </div>
-                            <div class="post-title">
-                                <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most
-                                    Complex</a>
-                            </div>
-                        </div>
-                        <!-- Single Slide -->
-                        <div class="single-slide d-flex align-items-center">
-                            <div class="post-number">
-                                <p>2</p>
-                            </div>
-                            <div class="post-title">
-                                <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most
-                                    Complex</a>
-                            </div>
-                        </div>
-                        <!-- Single Slide -->
-                        <div class="single-slide d-flex align-items-center">
-                            <div class="post-number">
-                                <p>3</p>
-                            </div>
-                            <div class="post-title">
-                                <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most
-                                    Complex</a>
-                            </div>
-                        </div>
-                        <!-- Single Slide -->
-                        <div class="single-slide d-flex align-items-center">
-                            <div class="post-number">
-                                <p>4</p>
-                            </div>
-                            <div class="post-title">
-                                <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most
-                                    Complex</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+
 </div>
+<!-- Hero Post Slide -->
+<!--<div class="hero-post-area">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-12">-->
+<!--                <div class="hero-post-slide">-->
+<!--                    &lt;!&ndash; Single Slide &ndash;&gt;-->
+<!--                    <div class="single-slide d-flex align-items-center">-->
+<!--                        <div class="post-number">-->
+<!--                            <p>1</p>-->
+<!--                        </div>-->
+<!--                        <div class="post-title">-->
+<!--                            <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most-->
+<!--                                Complex</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Single Slide &ndash;&gt;-->
+<!--                    <div class="single-slide d-flex align-items-center">-->
+<!--                        <div class="post-number">-->
+<!--                            <p>2</p>-->
+<!--                        </div>-->
+<!--                        <div class="post-title">-->
+<!--                            <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most-->
+<!--                                Complex</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Single Slide &ndash;&gt;-->
+<!--                    <div class="single-slide d-flex align-items-center">-->
+<!--                        <div class="post-number">-->
+<!--                            <p>3</p>-->
+<!--                        </div>-->
+<!--                        <div class="post-title">-->
+<!--                            <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most-->
+<!--                                Complex</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Single Slide &ndash;&gt;-->
+<!--                    <div class="single-slide d-flex align-items-center">-->
+<!--                        <div class="post-number">-->
+<!--                            <p>4</p>-->
+<!--                        </div>-->
+<!--                        <div class="post-title">-->
+<!--                            <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most-->
+<!--                                Complex</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
 <!-- ********** Hero Area End ********** -->
 
 <div class="main-content-wrapper section-padding-100">
@@ -100,7 +98,7 @@
                                             <div class="single-blog-post">
                                                 <!-- Post Thumbnail -->
                                                 <div class="post-thumbnail">
-                                                    <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                    <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                     <!-- Catagory -->
                                                     <div class="post-cta"><a href="#">travel</a></div>
                                                 </div>
@@ -125,7 +123,7 @@
                                             <div class="single-blog-post">
                                                 <!-- Post Thumbnail -->
                                                 <div class="post-thumbnail">
-                                                    <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                    <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                     <!-- Catagory -->
                                                     <div class="post-cta"><a href="#">travel</a></div>
                                                 </div>
@@ -150,7 +148,7 @@
                                             <div class="single-blog-post">
                                                 <!-- Post Thumbnail -->
                                                 <div class="post-thumbnail">
-                                                    <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                    <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                     <!-- Catagory -->
                                                     <div class="post-cta"><a href="#">travel</a></div>
                                                 </div>
@@ -179,7 +177,7 @@
                                              data-wow-delay="0.2s">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -200,7 +198,7 @@
                                              data-wow-delay="0.3s">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -221,7 +219,7 @@
                                              data-wow-delay="0.4s">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -242,7 +240,7 @@
                                              data-wow-delay="0.5s">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -268,7 +266,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -295,7 +293,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -315,7 +313,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -335,7 +333,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -355,7 +353,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -381,7 +379,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -408,7 +406,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -428,7 +426,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -448,7 +446,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -468,7 +466,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -494,7 +492,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -521,7 +519,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -541,7 +539,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -561,7 +559,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -581,7 +579,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -607,7 +605,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -634,7 +632,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -654,7 +652,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -674,7 +672,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -694,7 +692,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -720,7 +718,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -747,7 +745,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -767,7 +765,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -787,7 +785,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -807,7 +805,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -833,7 +831,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -860,7 +858,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -880,7 +878,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -900,7 +898,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -920,7 +918,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -946,7 +944,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -973,7 +971,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -993,7 +991,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1013,7 +1011,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1033,7 +1031,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1059,7 +1057,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b1.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b1.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1086,7 +1084,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1106,7 +1104,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1126,7 +1124,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1146,7 +1144,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1227,7 +1225,7 @@
                                         <div class="single-blog-post wow fadeInUpBig" data-wow-delay="0.2s">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1254,7 +1252,7 @@
                                         <div class="single-blog-post wow fadeInUpBig" data-wow-delay="0.3s">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1287,7 +1285,7 @@
                                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                                             <!-- Post Thumbnail -->
                                                             <div class="post-thumbnail">
-                                                                <img src="../../static/user/img/blog-img/b14.jpg"
+                                                                <img th:src="@{/user/img/blog-img/b14.jpg}"
                                                                      alt="">
                                                             </div>
                                                             <!-- Post Content -->
@@ -1310,7 +1308,7 @@
                                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                                             <!-- Post Thumbnail -->
                                                             <div class="post-thumbnail">
-                                                                <img src="../../static/user/img/blog-img/b15.jpg"
+                                                                <img th:src="@{/user/img/blog-img/b15.jpg}"
                                                                      alt="">
                                                             </div>
                                                             <!-- Post Content -->
@@ -1333,7 +1331,7 @@
                                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                                             <!-- Post Thumbnail -->
                                                             <div class="post-thumbnail">
-                                                                <img src="../../static/user/img/blog-img/b16.jpg"
+                                                                <img th:src="@{/user/img/blog-img/b16.jpg}"
                                                                      alt="">
                                                             </div>
                                                             <!-- Post Content -->
@@ -1356,7 +1354,7 @@
                                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                                             <!-- Post Thumbnail -->
                                                             <div class="post-thumbnail">
-                                                                <img src="../../static/user/img/blog-img/b17.jpg"
+                                                                <img th:src="@{/user/img/blog-img/b17.jpg}"
                                                                      alt="">
                                                             </div>
                                                             <!-- Post Content -->
@@ -1384,7 +1382,7 @@
                                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                                             <!-- Post Thumbnail -->
                                                             <div class="post-thumbnail">
-                                                                <img src="../../static/user/img/blog-img/b17.jpg"
+                                                                <img th:src="@{/user/img/blog-img/b17.jpg}"
                                                                      alt="">
                                                             </div>
                                                             <!-- Post Content -->
@@ -1407,7 +1405,7 @@
                                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                                             <!-- Post Thumbnail -->
                                                             <div class="post-thumbnail">
-                                                                <img src="../../static/user/img/blog-img/b15.jpg"
+                                                                <img th:src="@{/user/img/blog-img/b15.jpg}"
                                                                      alt="">
                                                             </div>
                                                             <!-- Post Content -->
@@ -1430,7 +1428,7 @@
                                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                                             <!-- Post Thumbnail -->
                                                             <div class="post-thumbnail">
-                                                                <img src="../../static/user/img/blog-img/b14.jpg"
+                                                                <img th:src="@{/user/img/blog-img/b14.jpg}"
                                                                      alt="">
                                                             </div>
                                                             <!-- Post Content -->
@@ -1453,7 +1451,7 @@
                                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                                             <!-- Post Thumbnail -->
                                                             <div class="post-thumbnail">
-                                                                <img src="../../static/user/img/blog-img/b16.jpg"
+                                                                <img th:src="@{/user/img/blog-img/b16.jpg}"
                                                                      alt="">
                                                             </div>
                                                             <!-- Post Content -->
@@ -1487,7 +1485,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1514,7 +1512,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1541,7 +1539,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1563,7 +1561,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b15.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b15.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1585,7 +1583,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b16.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b16.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1607,7 +1605,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b17.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b17.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1634,7 +1632,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1661,7 +1659,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1688,7 +1686,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1715,7 +1713,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1747,7 +1745,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1769,7 +1767,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b15.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b15.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1791,7 +1789,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b16.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b16.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1813,7 +1811,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b17.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b17.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1835,7 +1833,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1857,7 +1855,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b15.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b15.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1879,7 +1877,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b16.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b16.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1901,7 +1899,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b17.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b17.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -1928,7 +1926,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1955,7 +1953,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -1982,7 +1980,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2004,7 +2002,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b15.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b15.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2026,7 +2024,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b16.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b16.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2048,7 +2046,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b17.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b17.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2075,7 +2073,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -2102,7 +2100,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -2129,7 +2127,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2151,7 +2149,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b15.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b15.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2173,7 +2171,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b16.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b16.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2195,7 +2193,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b17.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b17.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2222,7 +2220,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -2249,7 +2247,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -2276,7 +2274,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2298,7 +2296,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b15.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b15.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2320,7 +2318,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b16.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b16.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2342,7 +2340,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b17.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b17.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2369,7 +2367,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -2396,7 +2394,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -2423,7 +2421,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2445,7 +2443,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b15.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b15.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2467,7 +2465,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b16.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b16.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2489,7 +2487,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b17.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b17.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2516,7 +2514,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b2.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b2.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -2543,7 +2541,7 @@
                                         <div class="single-blog-post">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b3.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b3.jpg}" alt="">
                                                 <!-- Catagory -->
                                                 <div class="post-cta"><a href="#">travel</a></div>
                                             </div>
@@ -2570,7 +2568,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2592,7 +2590,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b15.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b15.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2614,7 +2612,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b16.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b16.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2636,7 +2634,7 @@
                                         <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
                                             <!-- Post Thumbnail -->
                                             <div class="post-thumbnail">
-                                                <img src="../../static/user/img/blog-img/b17.jpg" alt="">
+                                                <img th:src="@{/user/img/blog-img/b17.jpg}" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -2681,7 +2679,7 @@
                             <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                    <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                 </div>
                                 <!-- Post Content -->
                                 <div class="post-content">
@@ -2694,7 +2692,7 @@
                             <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                    <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                 </div>
                                 <!-- Post Content -->
                                 <div class="post-content">
@@ -2707,7 +2705,7 @@
                             <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                    <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                 </div>
                                 <!-- Post Content -->
                                 <div class="post-content">
@@ -2720,7 +2718,7 @@
                             <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                    <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                 </div>
                                 <!-- Post Content -->
                                 <div class="post-content">
@@ -2733,7 +2731,7 @@
                             <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                    <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                 </div>
                                 <!-- Post Content -->
                                 <div class="post-content">
@@ -2766,7 +2764,7 @@
                             <div class="single-blog-post todays-pick">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="../../static/user/img/blog-img/b22.jpg" alt="">
+                                    <img th:src="@{/user/img/blog-img/b22.jpg}" alt="">
                                 </div>
                                 <!-- Post Content -->
                                 <div class="post-content px-0 pb-0">
@@ -2796,7 +2794,7 @@
                 <div class="single-blog-post post-style-3 mt-30 wow fadeInUpBig" data-wow-delay="0.2s">
                     <!-- Post Thumbnail -->
                     <div class="post-thumbnail">
-                        <img src="../../static/user/img/blog-img/b4.jpg" alt="">
+                        <img th:src="@{/user/img/blog-img/b4.jpg}" alt="">
                         <!-- Post Content -->
                         <div class="post-content d-flex align-items-center justify-content-between">
                             <!-- Catagory -->
@@ -2820,7 +2818,7 @@
                 <div class="single-blog-post post-style-3 mt-30 wow fadeInUpBig" data-wow-delay="0.4s">
                     <!-- Post Thumbnail -->
                     <div class="post-thumbnail">
-                        <img src="../../static/user/img/blog-img/b5.jpg" alt="">
+                        <img th:src="@{/user/img/blog-img/b5.jpg}" alt="">
                         <!-- Post Content -->
                         <div class="post-content d-flex align-items-center justify-content-between">
                             <!-- Catagory -->
@@ -2844,7 +2842,7 @@
                 <div class="single-blog-post post-style-3 mt-30 wow fadeInUpBig" data-wow-delay="0.6s">
                     <!-- Post Thumbnail -->
                     <div class="post-thumbnail">
-                        <img src="../../static/user/img/blog-img/b6.jpg" alt="">
+                        <img th:src="@{/user/img/blog-img/b6.jpg}" alt="">
                         <!-- Post Content -->
                         <div class="post-content d-flex align-items-center justify-content-between">
                             <!-- Catagory -->
@@ -2910,12 +2908,12 @@
                             <div class="wrap-ut pull-left">
                                 <div class="userinfo pull-left">
                                     <div class="avatar">
-                                        <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                        <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                         <div class="status green">&nbsp;</div>
                                     </div>
 
                                     <div class="icons">
-                                        <img src="images/icon1.jpg" alt=""><img src="images/icon4.jpg" alt="">
+                                        <img src="images/icon1.jpg}" alt=""><img src="images/icon4.jpg}" alt="">
                                     </div>
                                 </div>
                                 <div class="posttext pull-left">
@@ -2946,13 +2944,13 @@
                             <div class="wrap-ut pull-left">
                                 <div class="userinfo pull-left">
                                     <div class="avatar">
-                                        <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                        <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                         <div class="status red">&nbsp;</div>
                                     </div>
 
                                     <div class="icons">
-                                        <img src="images/icon3.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
-                                            src="images/icon5.jpg" alt=""><img src="images/icon6.jpg" alt="">
+                                        <img src="images/icon3.jpg}" alt=""><img src="images/icon4.jpg}" alt=""><img
+                                            src="images/icon5.jpg}" alt=""><img src="images/icon6.jpg}" alt="">
                                     </div>
                                 </div>
                                 <div class="posttext pull-left">
@@ -2982,12 +2980,12 @@
                             <div class="wrap-ut pull-left">
                                 <div class="userinfo pull-left">
                                     <div class="avatar">
-                                        <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                        <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                         <div class="status red">&nbsp;</div>
                                     </div>
 
                                     <div class="icons">
-                                        <img src="images/icon2.jpg" alt=""><img src="images/icon4.jpg" alt="">
+                                        <img src="images/icon2.jpg}" alt=""><img src="images/icon4.jpg}" alt="">
                                     </div>
                                 </div>
                                 <div class="posttext pull-left">
@@ -3018,13 +3016,14 @@
                             <div class="wrap-ut pull-left">
                                 <div class="userinfo pull-left">
                                     <div class="avatar">
-                                        <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                        <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                         <div class="status yellow">&nbsp;</div>
                                     </div>
 
                                     <div class="icons">
-                                        <img src="images/icon1.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
-                                            src="images/icon6.jpg" alt="">
+                                        <img th:src="@{/images/icon1.jpg}" alt="">
+                                        <img src="images/icon4.jpg}" alt="">
+                                        <img src="images/icon6.jpg}" alt="">
                                     </div>
                                 </div>
                                 <div class="posttext pull-left">
@@ -3064,7 +3063,7 @@
                                     <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                         <!-- Post Thumbnail -->
                                         <div class="post-thumbnail">
-                                            <img src="../../static/user/img/blog-img/b11.jpg" alt="">
+                                            <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
                                         </div>
                                         <!-- Post Content -->
                                         <div class="post-content">
@@ -3078,7 +3077,7 @@
                                     <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                         <!-- Post Thumbnail -->
                                         <div class="post-thumbnail">
-                                            <img src="../../static/user/img/blog-img/b13.jpg" alt="">
+                                            <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
                                         </div>
                                         <!-- Post Content -->
                                         <div class="post-content">
@@ -3092,7 +3091,7 @@
                                     <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                         <!-- Post Thumbnail -->
                                         <div class="post-thumbnail">
-                                            <img src="../../static/user/img/blog-img/b14.jpg" alt="">
+                                            <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
                                         </div>
                                         <!-- Post Content -->
                                         <div class="post-content">
@@ -3106,7 +3105,7 @@
                                     <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                         <!-- Post Thumbnail -->
                                         <div class="post-thumbnail">
-                                            <img src="../../static/user/img/blog-img/b10.jpg" alt="">
+                                            <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
                                         </div>
                                         <!-- Post Content -->
                                         <div class="post-content">
@@ -3120,7 +3119,7 @@
                                     <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                                         <!-- Post Thumbnail -->
                                         <div class="post-thumbnail">
-                                            <img src="../../static/user/img/blog-img/b12.jpg" alt="">
+                                            <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
                                         </div>
                                         <!-- Post Content -->
                                         <div class="post-content">
@@ -3164,48 +3163,23 @@
 </div>
 
 <!-- ***** Footer Area Start ***** -->
-<footer class="footer-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="footer-single-widget">
-                    <a href="#"><img src="../../static/user/img/core-img/logo.png" alt=""></a>
-                    <div class="copywrite-text mt-30">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <p>Proudly distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="footer-single-widget">
-                    <ul class="footer-menu d-flex justify-content-between">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Lifestyle</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Gadgets</a></li>
-                        <li><a href="#">Video</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="footer-single-widget">
-                    <h5>Subscribe</h5>
-                    <form action="#" method="post">
-                        <input type="email" name="email" id="email" placeholder="Enter your mail">
-                        <button type="button"><i class="fa fa-arrow-right"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<footer th:replace="/user/fragments/footer :: footer"></footer>
 
-<script th:replace="user/fragments/scripts :: script"></script>
+<!--<script th:replace="/user/fragments/scripts :: scripts"></script>-->
+<script th:src="@{/user/js/jquery/jquery-2.2.4.min.js}"></script>
+<script th:src="@{/user/js/popper.min.js}"></script>
+<script th:src="@{/user/js/bootstrap.min.js}"></script>
+<script th:src="@{/user/js/plugins.js}"></script>
+<script th:src="@{/user/js/active.js}"></script>
+<script th:src="@{/user/js/map-active.js}"></script>
+<script>
+    $(document).ready(function () {
+        $("#myBtn").click(function () {
+            $("#myModal").modal();
+        });
+    });
+</script>
+
 </body>
 
 </html>

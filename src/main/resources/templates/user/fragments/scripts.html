@@ -1,16 +1,39 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="script">
-    <script th:replace="@{/user/js/jquery/jquery-2.2.4.min.js}"></script>
-    <script th:replace="@{/user/js/popper.min.js}"></script>
-    <script th:replace="@{/user/js/bootstrap.min.js}"></script>
-    <script th:replace="@{/user/js/plugins.js}"></script>
-    <script th:replace="@{/user/js/active.js}"></script>
-    <script>
+    <script th:fragment="scripts" th:src="@{/user/js/active.js}"></script>
+    <script th:fragment="scripts" th:src="@{/user/js/popper.min.js}"></script>
+    <script th:fragment="scripts" th:src="@{/user/js/bootstrap.min.js}"></script>
+    <script th:fragment="scripts" th:src="@{/user/js/plugins.js}"></script>
+    <script th:fragment="scripts" th:src="@{/user/js/map-active.js}"></script>
+    <script th:fragment="scripts" th:src="@{/user/js/jquery/jquery-2.2.4.min.js}"></script>
+
+
+    <script th:fragment="scripts">
         $(document).ready(function(){
             $("#myBtn").click(function(){
                 $("#myModal").modal();
             });
         });
     </script>
-</div>
+<!--    <script th:fragment="scripts"-->
+<!--            th:src="@{https://public-assets.envato-static.com/assets/market/pages/full_screen_preview/index-39fc94f50438714d8467e6c5e21895674c1ed3fb42ecf0bbda67669a448ef91e.js}"-->
+<!--            nonce="jvZtfahvSXuD82jvSEl+UQ=="></script>-->
+
+<!--    <script th:fragment="scripts" nonce="jvZtfahvSXuD82jvSEl+UQ==">-->
+<!--        var calcHeight = function () {-->
+<!--            var headerDimensions = $('.preview__header').height();-->
+<!--            $('.full-screen-preview__frame').height($(window).height() - headerDimensions);-->
+<!--        }-->
+
+<!--        $(document).ready(function () {-->
+<!--            calcHeight();-->
+<!--        });-->
+
+<!--        $(window).resize(function () {-->
+<!--            calcHeight();-->
+<!--        }).load(function () {-->
+<!--            calcHeight();-->
+<!--        });-->
+
+<!--        //]]>-->
+<!--    </script>-->

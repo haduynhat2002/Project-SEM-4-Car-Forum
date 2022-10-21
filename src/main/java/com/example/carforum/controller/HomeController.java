@@ -5,10 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-    //    @RequestMapping("/home")
-//    public String index() {
-//        return "user/index";
-//    }
+    @RequestMapping("/home")
+    public String Home() { return "user/index"; }
     @RequestMapping("/admin/home")
     public String index() {
         return "admin/index";
@@ -21,9 +19,13 @@ public class HomeController {
     public String index3() {
         return "admin/index3";
     }
-    @RequestMapping("/admin/general")
-    public String charts() {
-        return "admin/pages/UI/general";
+    @RequestMapping("/contact")
+    public String contact() {
+        return "user/contact";
+    }
+    @RequestMapping("/login")
+    public String login() {
+        return "user/Login";
     }
 }
 
