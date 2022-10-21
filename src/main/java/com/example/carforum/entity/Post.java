@@ -8,25 +8,29 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "posts")
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
+    private String title;
+    private String content;
+    private LocalDateTime date;
+    private String image;
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name="role_id", nullable = false)
-    private Role role;
+    @JoinColumn(name="Topic_id", nullable = false)
+    private Topic topic;
     @Column(updatable = false, insertable = false)
-    private int role_id;
-    private String founding;
+    private int topic_id;
     private String description;
     @Enumerated(EnumType.ORDINAL)
     private UserStatus status;

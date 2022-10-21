@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../static/admin/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../static/admin/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="../../static/user/css/longpost.css">
+
+</head>
+<body>
+<div>
+    <a class="exit" href="index.html"><img
+            src="https://oto-hui.com/styles/oto-hui-2021/logout.png"></a>
+</div>
+<div>
+    <input class="input1" type="text" name="title" value=""
+           placeholder="Nhập tiêu đề vào đây..." maxlength="150">
+</div>
+
+<p>Gõ nội dung vào đây. Kéo & thả hình để chèn vào bài. Chọn các đoạn chữ để hiện công cụ định dạng...</p>
+
+<div class="input2">
+<textarea id="summernote">
+                Place <em>some</em> <u>text</u> <strong>here</strong>
+              </textarea>
+</div>
+
+<hr class="formRowSep">
+
+<div class="category">
+    <dd>
+        <select name="forbox" class="category" id="_xfUid-7-1665960414">
+            <option value="" selected="selected">Chọn danh mục</option>
+            <option value="204">&nbsp;&nbsp; Thông tin chung</option>
+            <option value="204">&nbsp;&nbsp; Thông tin ngành công nghiệp ô tô</option>
+            <option value="204">&nbsp;&nbsp; Hoạt động chuyên môn</option>
+            <option value="204">&nbsp;&nbsp; Kết nối kinh doanh</option>
+        </select>
+    </dd>
+</div>
+
+<hr class="formRowSep">
+
+<p>Tag cho bài để người khác biết bài viết về gì (ngăn cách bằng dấu phẩy)</p>
+
+<div class="input3">
+    <input class="tag" type="text">
+</div>
+
+<div class="container">
+    <input type="submit" value="Đăng bài" class="button" style="color:#fff">
+</div>
+<script src="../../static/admin/plugins/jquery/jquery.min.js"></script>
+<script src="../../static/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../static/admin/plugins/summernote/summernote-bs4.min.js"></script>
+<script>
+    $(function () {
+        // Summernote
+        $('#summernote').summernote()
+
+        // CodeMirror
+        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+        });
+    })
+</script>
+</body>
+</html>

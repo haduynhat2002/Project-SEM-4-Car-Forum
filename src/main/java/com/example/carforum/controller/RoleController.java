@@ -11,24 +11,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-
 @CrossOrigin("*")
 @Controller
-@RequestMapping("api/v1/roles")
+@RequestMapping("api/v1/districts")
 public class RoleController {
     @Autowired
     RoleService roleService;
-
-
-
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Role> save(@RequestBody Role district){
-        return ResponseEntity.ok(roleService.save(district));
-    }
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Role>> findAll(){
         return ResponseEntity.ok(roleService.findAll());
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<Role> save(@RequestBody Role role){
+        return ResponseEntity.ok(roleService.save(role));
+    }
 }

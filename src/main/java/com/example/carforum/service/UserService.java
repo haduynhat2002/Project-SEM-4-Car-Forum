@@ -9,15 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class UserService {
-
     @Autowired
     UserRepository userRepository;
 
     @Autowired
     RoleRepository roleRepository;
-
     public User save(User user) {
         Role role = roleRepository.findById(user.getRole_id()).orElse(null);
         if (role == null) {
@@ -30,8 +29,8 @@ public class UserService {
         return user;
 
     }
-
     public List<User> findAll() {
         return userRepository.findAll();
     }
 }
+
