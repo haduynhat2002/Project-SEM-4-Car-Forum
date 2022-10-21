@@ -1,26 +1,3 @@
-/* [ -- Master Stylesheet -- ]
-
-------------------------------------------------------
-:: Template Name: World - Blog &amp; Magazine Template
-:: Author: Colorlib
-:: Author URL: https://colorlib.com
-:: Version: 1.0.0
-:: Created: March 21, 2018
-:: Last Updated: March 21, 2018
--------------------------------------------------- */
-/* Variables */
-/* mixin */
-/* :: Import Fonts */
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Work+Sans:300,400,500,600,700");
-/* :: Import All CSS */
-
-@import url(../../../static/user/css/animate.css);
-@import url(../../../static/user/css/owl.carousel.css);
-@import url(../../../static/user/css/magnific-popup.css);
-@import url(../../../static/user/css/font-awesome.min.css);
-@import url(../../../static/user/css/themify-icons.css);
-
-
 /* :: Base CSS */
 * {
     margin: 0;
@@ -55,7 +32,7 @@ a {
     font-size: 14px;
     font-weight: 400;
     font-family: "Ubuntu", sans-serif;
-    color: #8d8d8d; }
+    color: #929191; }
 a:hover, a:focus {
     font-family: "Ubuntu", sans-serif;
     -webkit-transition-duration: 500ms;
@@ -66,6 +43,21 @@ a:hover, a:focus {
     font-weight: 400;
     color: #0000ff; }
 
+header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+    color: #868585;
+}
+
+.header-area .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover,
+.header-area .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:focus {
+    font-family: "Ubuntu", sans-serif;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+}
 #preloader {
     display: -webkit-box;
     display: -ms-flexbox;
