@@ -1,30 +1,34 @@
 package com.example.carforum.controller;
 
+
 import com.example.carforum.entity.Topic;
 import com.example.carforum.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-@CrossOrigin("*")
+
 @Controller
-@RequestMapping("api/v1/topic")
 public class TopicController {
     @Autowired
-    TopicService topicService;
-
-    @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Topic>> findAll(){
-        return ResponseEntity.ok(topicService.findAll());
+    private TopicService topicService;
+    @GetMapping("/topics")
+    public String listCategory(Model model){
+        List<Topic> listTopic = topicService.findAll();
+        model.addAttribute("listTopic", listTopic);
+        return "topics";
     }
-
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Topic> save(@RequestBody Topic district){
-        return ResponseEntity.ok(topicService.save(district));
+    @GetMapping("/topic/new")
+    public String showCategoryNewForm(Model model){
+        model.addAttribute("topic", new Topic());
+        return "topicForm";
+    }
+    @PostMapping("/topic/save")
+    public String showCategoryNewForm(Topic topic){
+        topicService.save(topic);
+        return "redirect:/topics";
     }
 }
