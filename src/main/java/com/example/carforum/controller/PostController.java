@@ -30,6 +30,13 @@ public class PostController {
     @PostMapping("/post/save")
     public String showCategoryNewForm(Post post){
        postService.save(post);
-        return "redirect:/topics";
+        return "redirect:/";
+    }
+
+    @GetMapping("/")
+    public String listPost(Model model){
+        List<Post> listPost = postService.findAll();
+        model.addAttribute("listPost", listPost);
+        return "user/index";
     }
 }

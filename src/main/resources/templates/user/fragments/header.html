@@ -6,7 +6,7 @@
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg">
                     <!-- Logo -->
-                    <a class="navbar-brand" th:href="@{/home}"><img th:src="@{/user/img/core-img/logo.png}"
+                    <a class="navbar-brand" th:href="@{/}"><img th:src="@{/user/img/core-img/logo.png}"
                                                                    alt="Logo"></a>
                     <!-- Navbar Toggler -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav"
@@ -16,13 +16,13 @@
                     <div class="collapse navbar-collapse" id="worldNav">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" th:href="@{/home}">Trang chủ <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" th:href="@{/}">Trang chủ <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Category.html">Diễn đàn</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Viết bài</a>
+                                <a class="nav-link" th:href="@{/post/new}">Viết bài</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Đánh giá xe</a>
@@ -30,13 +30,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" th:href="@{/contact}">Liên hệ</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="Login.html" id="navbarDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Đăng nhập</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="Register.html">Đăng ký</a>
-                                    <a class="dropdown-item" href="Login.html">Đăng Nhập</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/login}">Đăng nhập</a>
                             </li>
                         </ul>
                         <!-- Search Form  -->

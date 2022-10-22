@@ -1,50 +1,125 @@
-<!doctype html>
+
+<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <link rel="stylesheet" th:href="@{/admin/dist/css/adminlte.min.css}">
-    <link rel="stylesheet" th:href="@{/admin/plugins/summernote/summernote-bs4.min.css}">
-    <link rel="stylesheet" th:href="@{/user/css/longpost.css}">
+<head th:replace="/user/fragments/head :: head">
 
 </head>
 <body>
-<div class="container">
-    <form action="#" th:action="@{/post/save}" method="post" th:object="${post}">
+<header th:replace="/user/fragments/header :: header"></header>
 
+<div class="hero-area">
 
-        <div class="form-group">
-            <label for="exampleInputEmail1">Tiêu đề</label>
-            <input th:field="*{title}" type="text" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết...." >
+    <div class="hero-slides owl-carousel">
+        <div class="single-hero-slide bg-img background-overlay"
+             th:style="'background-image:url(' + @{/user/img/blog-img/imageCar.jpeg} + ');  background-size: cover;'">
         </div>
-        <div class="form-group">
-            <label>Hình ảnh</label>
-            <input th:field="*{image}" type="text" class="form-control"placeholder="" >
-        </div>
+        <div class="single-hero-slide bg-img background-overlay"
+             th:style="'background-image:url(' + @{/user/img/blog-img/image.jpeg} + '); background-size: cover;'">
 
-        <div class="form-group">
-            <label>Nội dung</label>
-            <input  th:field="*{content}" type="text" class="form-control"placeholder="" >
-        </div>
+            <!--    <div class="hero-post-area">-->
+            <!--        <div class="container">-->
+            <!--            <div class="row">-->
+            <!--                <div class="col-12">-->
+            <!--                    <div class="hero-post-slide">-->
+            <!--                        &lt;!&ndash; Single Slide &ndash;&gt;-->
+            <!--                        <div class="single-slide d-flex align-items-center">-->
+            <!--                            <div class="post-number">-->
+            <!--                                <p>1</p>-->
+            <!--                            </div>-->
+            <!--                            <div class="post-title">-->
+            <!--                                <a href="">How Did van Gogh’s Turbulent Mind Depict One of the Most-->
+            <!--                                    Complex</a>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                        &lt;!&ndash; Single Slide &ndash;&gt;-->
+            <!--                        <div class="single-slide d-flex align-items-center">-->
+            <!--                            <div class="post-number">-->
+            <!--                                <p>2</p>-->
+            <!--                            </div>-->
+            <!--                            <div class="post-title">-->
+            <!--                                <a href="">How Did van Gogh’s Turbulent Mind Depict One of the Most-->
+            <!--                                    Complex</a>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                        &lt;!&ndash; Single Slide &ndash;&gt;-->
+            <!--                        <div class="single-slide d-flex align-items-center">-->
+            <!--                            <div class="post-number">-->
+            <!--                                <p>3</p>-->
+            <!--                            </div>-->
+            <!--                            <div class="post-title">-->
+            <!--                                <a href="">How Did van Gogh’s Turbulent Mind Depict One of the Most-->
+            <!--                                    Complex</a>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                        &lt;!&ndash; Single Slide &ndash;&gt;-->
+            <!--                        <div class="single-slide d-flex align-items-center">-->
+            <!--                            <div class="post-number">-->
+            <!--                                <p>4</p>-->
+            <!--                            </div>-->
+            <!--                            <div class="post-title">-->
+            <!--                                <a href="">How Did van Gogh’s Turbulent Mind Depict One of the Most-->
+            <!--                                    Complex</a>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
-        <label for="exampleInputEmail1">Danh mục</label>
-        <select th:field="*{topic}" required class="form-control">
-            <th:block th:each="cat : ${listTopic}">
-                <option th:text="${cat.name}" th:value="${cat.id}"></option>
-            </th:block>
-        </select>
-        <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block">Đăng bài</button>
-    </form>
+        </div>
+    </div>
+
 </div>
 
+<div class="main-content-wrapper section-padding-100">
+    <div class="container">
+        <h1 class="text-center">Tạo bài viết</h1>
+        <form action="#" th:action="@{/post/save}" method="post" th:object="${post}">
+
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tiêu đề</label>
+                <input th:field="*{title}" type="text" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết...." >
+            </div>
+            <div class="form-group">
+                <label>Hình ảnh</label>
+                <input th:field="*{image}" type="text" class="form-control"placeholder="" >
+            </div>
+            <label>Nội dung</label>
+            <textarea id="summernote">
+                Place <em>some</em> <u>text</u> <strong>here</strong>
+              </textarea>
+
+            <div class="form-group">
+
+                <input  th:field="*{content}" type="text" class="form-control"placeholder="Nhập nội dung bài viết..." >
+            </div>
+            <div class="form-group">
+            <label>Danh mục</label>
+            <select th:field="*{topic}" required class="form-control">
+                <th:block th:each="cat : ${listTopic}">
+                    <option th:text="${cat.name}" th:value="${cat.id}"></option>
+                </th:block>
+            </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block">Đăng bài</button>
+        </form>
+    </div>
+</div>
+<footer th:replace="/user/fragments/footer :: footer"></footer>
+
+<!--<script th:replace="/user/fragments/scripts :: scripts"></script>-->
+<script th:src="@{/user/js/jquery/jquery-2.2.4.min.js}"></script>
+<script th:src="@{/user/js/popper.min.js}"></script>
+<script th:src="@{/user/js/bootstrap.min.js}"></script>
+<script th:src="@{/user/js/plugins.js}"></script>
+<script th:src="@{/user/js/active.js}"></script>
+<script th:src="@{/user/js/map-active.js}"></script>
 <script th:src="@{/admin/plugins/jquery/jquery.min.js}"></script>
 <script th:src="@{/admin/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
-<script th:src="@{admin/plugins/summernote/summernote-bs4.min.js}"></script>
+<script th:src="@{/admin/plugins/summernote/summernote-bs4.min.js}"></script>
+
 <script>
     $(function () {
         // Summernote
@@ -57,5 +132,13 @@
         });
     })
 </script>
+<script>
+    $(document).ready(function () {
+        $("#myBtn").click(function () {
+            $("#myModal").modal();
+        });
+    });
+</script>
 </body>
+
 </html>
