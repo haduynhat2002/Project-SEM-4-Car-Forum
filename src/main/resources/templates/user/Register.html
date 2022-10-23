@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="../../static/user/css/boottrap.css">
-  <link rel="stylesheet" href="../../static/user/css/register.css">
+    <link rel="stylesheet" th:href="@{/user/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/user/css/boottrap.css}">
+    <link rel="stylesheet" th:href="@{/user/css/register.css}">
 </head>
 <body>
 <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
@@ -54,7 +54,7 @@
                 <i class="fab fa-google me-2"></i> Đăng nhập bằng Google
               </button>
               <div class="text">
-                Bạn đã có tài khoản? <a href="Login.html">Đăng nhập</a>
+                Bạn đã có tài khoản? <a th:href="@{/login}">Đăng nhập</a>
               </div>
             </div>
           </form>

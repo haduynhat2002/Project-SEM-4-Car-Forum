@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<!--<head th:replace="/user/fragments/head :: head"></head>-->
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../static/user/css/Profile.css">
-    <link rel="stylesheet" href="../../static/user/css/layout.css">
+    <link rel="stylesheet" th:href="@{/user/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/user/css/boottrap.css}">
+    <link rel="stylesheet" th:href="@{/user/css/Profile.css}">
+    <link rel="stylesheet" th:href="@{/user/css/layout.css}">
 </head>
 <body data-template="vnxf_tt_profile" class="">
 <div class="p-pageWrapper" id="top">
