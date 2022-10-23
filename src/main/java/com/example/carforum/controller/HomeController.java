@@ -27,10 +27,25 @@ public class HomeController {
     public String login() {
         return "user/Login";
     }
-
     @RequestMapping("/category")
     public String category() {
         return "user/Category";
+    }
+    @RequestMapping("/register")
+    public String register() {
+        return "user/Register";
+    }
+    @RequestMapping("/profile")
+    public String profile() {
+        return "user/Profile";
+    }
+    @RequestMapping("/priceCar")
+    public String CarReview() {
+        return "user/Car-review";
+    }
+    @RequestMapping("/priceDetail")
+    public String PriceDetail() {
+        return "user/Price-Detail";
     }
 }
 

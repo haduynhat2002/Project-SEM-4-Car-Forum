@@ -43,8 +43,8 @@ a:hover, a:focus {
     font-weight: 400;
     color: #0000ff; }
 
-header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
-    color: #868585;
+.nav-link {
+    color: #868585 !important;
 }
 
 .header-area .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover,
@@ -1280,4 +1280,32 @@ textarea:focus ~ .highlight {
 }
 .content .new-thread-background a{
     color: white;
+}
+.car-review ,
+.price-detail{
+    margin-top: 80px;
+}
+.car-review p,
+.price-detail p{
+    color: black;
+}
+.text-review{
+    color: #4c4c4c;
+    font-size: 20px;
+    height: 30%;
+    width: 95%;
+    text-align: center;
+    position: absolute;
+    margin-left: 5px;
+    /*left: 35%;*/
+    top:45%
+}
+.text-review:hover{
+    color: white;
+    background: rgb(41 41 41 / 50%);
+}
+.price-detail img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
