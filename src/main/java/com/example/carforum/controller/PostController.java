@@ -1,31 +1,42 @@
 package com.example.carforum.controller;
 
-
 import com.example.carforum.entity.Post;
+import com.example.carforum.entity.Topic;
 import com.example.carforum.service.PostService;
+import com.example.carforum.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-@CrossOrigin("*")
+
 @Controller
-@RequestMapping("api/v1/post")
 public class PostController {
     @Autowired
-    PostService postService;
+    private PostService postService;
+    @Autowired
+    private TopicService topicService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Post>> findAll(){
-        return ResponseEntity.ok(postService.findAll());
+    @GetMapping("/post/new")
+    public String showCategoryNewForm(Model model){
+        List<Topic> listTopic = topicService.findAll();
+        model.addAttribute("listTopic", listTopic);
+        model.addAttribute("post", new Post());
+
+        return "user/LongPost";
+    }
+    @PostMapping("/post/save")
+    public String showCategoryNewForm(Post post){
+       postService.save(post);
+        return "redirect:/";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Post> save(@RequestBody Post post){
-        return ResponseEntity.ok(postService.save(post));
+    @GetMapping("/")
+    public String listPost(Model model){
+        List<Post> listPost = postService.findAll();
+        model.addAttribute("listPost", listPost);
+        return "user/index";
     }
 }
