@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="203" height="33" viewBox="0 0 203 33">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 30px;
+        fill: #fefefe;
+        text-anchor: middle;
+        font-family: "Myriad Pro";
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+  <text id="CAR_FORUM" data-name="CAR FORUM" class="cls-1" x="89.75" y="25.75"><tspan x="89.75">CAR FORUM</tspan></text>
+</svg>
