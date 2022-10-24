@@ -27,8 +27,6 @@ public class CarReview {
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false)
     private CategoryCar categoryCar;
-    @Column(updatable = false, insertable = false)
-    private int category_id;
     private int viewcount;
     @Enumerated(EnumType.ORDINAL)
     private CarReivewStatus status;}

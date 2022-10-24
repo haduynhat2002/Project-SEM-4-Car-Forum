@@ -18,14 +18,12 @@ public class PriceCar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name="category_id", nullable = false)
-    private CategoryCar categoryCar;
-    @Column(updatable = false, insertable = false)
     private String name;
     private String listed_price;
     private String rolling_price;
     @Enumerated(EnumType.ORDINAL)
     private PriceCarStatus status;
+    @ManyToOne
+    @JoinColumn(name="category_id", nullable = false)
+    private CategoryCar categoryCar;
 }

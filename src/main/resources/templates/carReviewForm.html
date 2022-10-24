@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/carreview/save}" method="post" th:object="${carReview}">
+    <label>title </label>
+    <input type="text" th:field="*{title}"/><br>
+    <label>content </label>
+    <input type="text" th:field="*{content}"/><br>
+    <label>categoryCar </label>
+    <select th:field="*{categoryCar}" required>
+        <th:block th:each="cat : ${listCategoryCar}">
+            <option th:text="${cat.name}" th:value="${cat.id}"></option>
+        </th:block>
+    </select>
+    <label>type </label>
+    <input type="text" th:field="*{type}"/><br>
+    <label>image </label>
+    <input type="text" th:field="*{image}"/><br>
+    <label>viewcount </label>
+    <input type="text" th:field="*{viewcount}"/><br>
+    <input type="submit" value="submit">
+
+</form>
+</body>
+</html>
