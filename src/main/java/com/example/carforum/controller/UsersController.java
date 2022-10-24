@@ -20,13 +20,13 @@ public class UsersController {
     @GetMapping("/register")
     public String getRegisterPage(Model model){
         model.addAttribute("registerRequest", new UsersModel());
-        return "/templates/register_page.html";
+        return "user/register";
     }
 
     @GetMapping("/login")
     public String getLoginPage(Model model){
         model.addAttribute("loginRequest", new UsersModel());
-        return "login_page.html";
+        return "/user/login";
     }
 
     @PostMapping("/register")
@@ -42,7 +42,7 @@ public class UsersController {
         UsersModel authenticated = usersService.authenticate(usersModel.getLogin(), usersModel.getPassword());
         if (authenticated != null){
             model.addAttribute("userLogin", authenticated.getLogin());
-            return "personal_page";
+            return "redirect:/";
         }else {
             return "error_page";
         }

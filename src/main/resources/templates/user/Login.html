@@ -15,15 +15,15 @@
                 <div class="card border-0 shadow rounded-3 my-5">
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-5 fw-light fs-5">Đăng nhập</h5>
-                        <form>
+                        <form method="post" action="/login" th:object="${loginRequest}">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput"
-                                       placeholder="name@example.com">
-                                <label for="floatingInput">Tên tài khoản/Email</label>
+                                <input type="text" name="login" class="form-control" id="floatingInput"
+                                       placeholder="Tài khoản">
+                                <label for="floatingInput">Tài khoản</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword"
-                                       placeholder="Password">
+                                <input type="password" name="password" class="form-control" id="floatingPassword"
+                                       placeholder="Mật khẩu">
                                 <label for="floatingPassword">Mật khẩu</label>
                             </div>
 

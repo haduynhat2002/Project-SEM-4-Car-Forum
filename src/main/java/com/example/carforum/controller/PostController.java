@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -29,7 +30,8 @@ public class PostController {
     }
     @PostMapping("/post/save")
     public String showCategoryNewForm(Post post){
-       postService.save(post);
+        post.setDateTime(LocalDateTime.now());
+        postService.save(post);
         return "redirect:/";
     }
 
@@ -38,5 +40,12 @@ public class PostController {
         List<Post> listPost = postService.findAll();
         model.addAttribute("listPost", listPost);
         return "user/index";
+    }
+
+    @GetMapping("/category")
+    public String postDetail(Model model){
+        List<Post> listPost = postService.findAll();
+        model.addAttribute("listPostDetail", listPost);
+        return "user/Category";
     }
 }
