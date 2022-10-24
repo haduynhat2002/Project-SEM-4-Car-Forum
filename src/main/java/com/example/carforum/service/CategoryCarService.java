@@ -17,6 +17,10 @@ public class CategoryCarService {
 
     public List<CategoryCar> finAll(){return categoryCarRepository.findAll();}
 
+    public List<CategoryCar> findAll() {
+        return categoryCarRepository.findAll();
+    }
+
     public CategoryCar save(CategoryCar categoryCar) {return categoryCarRepository.save(categoryCar);}
 
     public Optional<CategoryCar> findById(int id) {
