@@ -2,455 +2,142 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/user/fragments/head :: head"></head>
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport"-->
-<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
-<!--    <title>Document</title>-->
-<!--    <link rel="stylesheet" href="adc.css">-->
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">-->
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
 <!--</head>-->
 <body>
 <header th:replace="/user/fragments/header :: header"></header>
 <div class="price-detail">
     <div class="container">
-        <div>
-            <table class="table table-bordered" style="height: 2875px;" width="661">
-                <tbody>
-                <tr>
-                    <td><strong>Các dòng xe</strong></td>
-                    <td><strong>Niêm yết</strong></td>
-                    <td><strong>Lăn bánh</strong></td>
-                </tr>
-                <tr>
-                    <td>Wigo 5MT</td>
-                    <td>352 triệu</td>
-                    <td>390 – 416 triệu</td>
-                </tr>
-                <tr>
-                    <td>Wigo 4AT</td>
-                    <td>385 triệu</td>
-                    <td>431 – 458 triệu</td>
-                </tr>
-                <tr>
-                    <td>Yaris 1.5G</td>
-                    <td>684 triệu</td>
-                    <td>755 – 788 triệu</td>
-                </tr>
-                <tr>
-                    <td>Vios E MT (3 túi khí)</td>
-                    <td>479 triệu</td>
-                    <td>541 – 570 triệu</td>
-                </tr>
-                <tr>
-                    <td>Vios E MT (7 túi khí)</td>
-                    <td>506 triệu</td>
-                    <td>559 – 589 triệu</td>
-                </tr>
-                <tr>
-                    <td>Vios E CVT (3 túi khí)</td>
-                    <td>542 triệu</td>
-                    <td>599 – 629 triệu</td>
-                </tr>
-                <tr>
-                    <td>Vios E CVT (7 túi khí)</td>
-                    <td>561 triệu</td>
-                    <td>654 – 685 triệu</td>
-                </tr>
-                <tr>
-                    <td>Vios G CVT</td>
-                    <td>592 triệu</td>
-                    <td>651 – 681 triệu</td>
-                </tr>
-                <tr>
-                    <td>Vios GR-S</td>
-                    <td>630 triệu</td>
-                    <td>696 – 727 triệu</td>
-                </tr>
-                <tr>
-                    <td>Corolla Altis 1.8E</td>
-                    <td>719 triệu</td>
-                    <td>794 – 827 triệu</td>
-                </tr>
-                <tr>
-                    <td>Corolla Altis 1.8G</td>
-                    <td>765 triệu</td>
-                    <td>844 – 849 triệu</td>
-                </tr>
-                <tr>
-                    <td>Corolla Altis 1.8HEV</td>
-                    <td>860 triệu</td>
-                    <td>949 – 985 triệu</td>
-                </tr>
-                <tr>
-                    <td>Camry 2.0G</td>
-                    <td>1,07 tỷ</td>
-                    <td>1,18 – 1,22 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Camry 2.0Q</td>
-                    <td>1,185 tỷ</td>
-                    <td>1,306 – 1,349 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Camry 2.5Q</td>
-                    <td>1,37 tỷ</td>
-                    <td>1,51 – 1,556 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Camry 2.5HV</td>
-                    <td>1,46 tỷ</td>
-                    <td>1,609 – 1,657 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Raize</td>
-                    <td>547 triệu</td>
-                    <td>605 – 634 triệu</td>
-                </tr>
-                <tr>
-                    <td>Corolla Cross 1.8G</td>
-                    <td>746 triệu</td>
-                    <td>823 – 857 triệu</td>
-                </tr>
-                <tr>
-                    <td>Corolla Cross 1.8V</td>
-                    <td>846 triệu</td>
-                    <td>933 – 969 triệu</td>
-                </tr>
-                <tr>
-                    <td>Corolla Cross 1.8HV</td>
-                    <td>936 triệu</td>
-                    <td>1,032 – 1,07 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Avanza Premio MT</td>
-                    <td>558 triệu</td>
-                    <td>617 – 647 triệu</td>
-                </tr>
-                <tr>
-                    <td>Avanza Premio CVT</td>
-                    <td>598 triệu</td>
-                    <td>661 – 692 triệu</td>
-                </tr>
-                <tr>
-                    <td>Rush 1.4AT</td>
-                    <td>634 triệu</td>
-                    <td>710 – 741 triệu</td>
-                </tr>
-                <tr>
-                    <td>Veloz Cross CVT</td>
-                    <td>658 triệu</td>
-                    <td>727 – 759 triệu</td>
-                </tr>
-                <tr>
-                    <td>Veloz Cross CVT Top</td>
-                    <td>698 triệu</td>
-                    <td>771 – 804 triệu</td>
-                </tr>
-                <tr>
-                    <td>Innova 2.0E MT</td>
-                    <td>755 triệu</td>
-                    <td>834 – 868 triệu</td>
-                </tr>
-                <tr>
-                    <td>Innova 2.0G AT</td>
-                    <td>870 triệu</td>
-                    <td>960 – 997 triệu</td>
-                </tr>
-                <tr>
-                    <td>Innova Venturer</td>
-                    <td>885 triệu</td>
-                    <td>977 triệu – 1,013 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Innova 2.0V AT</td>
-                    <td>995 triệu</td>
-                    <td>1,098 – 1,137 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Fortuner 2.4MT 4×2</td>
-                    <td>1,015 tỷ</td>
-                    <td>1,120 – 1,159 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Fortuner 2.4AT 4×2</td>
-                    <td>1,107 tỷ</td>
-                    <td>1,221 – 1,262 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Fortuner 2.4AT 4×2 Legender</td>
-                    <td>1,248 tỷ</td>
-                    <td>1,376 – 1,42 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Fortuner 2.8AT 4×4</td>
-                    <td>1,423 tỷ</td>
-                    <td>1,569 – 1,616 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Fortuner 2.8AT 4×4 Legender</td>
-                    <td>1,459 tỷ</td>
-                    <td>1,608 – 1,656 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Fortuner 2.7AT 4×2</td>
-                    <td>1,187 tỷ</td>
-                    <td>1,309 – 1,352 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Fortuner 2.7AT 4×4</td>
-                    <td>1,277 tỷ</td>
-                    <td>1,408 – 1,453 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Hilux 2.4E 4×2 MT</td>
-                    <td>628 triệu</td>
-                    <td>669 – 677 triệu</td>
-                </tr>
-                <tr>
-                    <td>Hilux 2.4E 4×2 AT</td>
-                    <td>674 triệu</td>
-                    <td>718 – 726 triệu</td>
-                </tr>
-                <tr>
-                    <td>Hilux 2.4E 4×4 MT</td>
-                    <td>799 triệu</td>
-                    <td>850 – 860 triệu</td>
-                </tr>
-                <tr>
-                    <td>Hilux 2.8G 4×4 AT</td>
-                    <td>913 triệu</td>
-                    <td>971 – 982 triệu</td>
-                </tr>
-                <tr>
-                    <td>Land Cruiser Prado</td>
-                    <td>2,588 tỷ</td>
-                    <td>2,85 – 2,921 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Land Cruiser</td>
-                    <td>4,196 tỷ</td>
-                    <td>4,619 – 4,722 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Alphard Luxury</td>
-                    <td>4,280 tỷ</td>
-                    <td>4,652 – 4,755 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Granvia</td>
-                    <td>3,072 tỷ</td>
-                    <td>3,391 – 3,472 tỷ</td>
-                </tr>
-                <tr>
-                    <td>Hiace</td>
-                    <td>1,176 tỷ</td>
-                    <td>1,204 tỷ</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <h2>Khuyến mãi &amp; giảm giá hãng Toyota mới nhất<span class="ez-toc-section-end"></span></h2>
-        <h2><span class="ez-toc-section" id="Gia_xe_Toyota_Wigo"></span>Giá xe Toyota Wigo<span
-                class="ez-toc-section-end"></span></h2>
-        <hr>
-        <p>Toyota Wigo là mẫu xe nằm trong phân khúc hatchback 4 chỗ hạng A, cạnh tranh trực tiếp với <a
-                href="https://danchoioto.vn/gia-xe-hyundai-i10">Hyundai i10</a>, <a
-                href="https://danchoioto.vn/gia-xe-kia-morning">Kia Morning</a>, <a
-                href="https://danchoioto.vn/gia-xe-vinfast-fadil">VinFast Fadil</a>, <a
-                href="https://danchoioto.vn/gia-xe-honda-brio/">Honda Brio</a>… Toyota Wigo được nhập khẩu nguyên chiếc
-            từ
-            Indonesia.</p>
-        <p>Chiếc xe 4 chỗ Toyota giá rẻ này trang bị động cơ xăng 1.2L cho công suất cực đại 87 mã lực tại 6.000
-            vòng/phút, mô
-            men xoắn cực đại 108Nm tại 4.200 vòng/phút. Xe có 2 phiên bản số sàn 5 cấp và số tự động 4 cấp.</p>
-        <p>So với các đối thủ, Toyota Wigo có thế mạnh lớn về xuất xứ và thương hiệu khi là xe nhập khẩu đến từ hãng ô
-            tô
-            Toyota. Xe được đánh giá “lành tính”, bền bỉ, ít hư hỏng vặt. Khối động cơ 1.2L vận hành khá mượt mà, đi
-            trong phố
-            có độ vọt tốt, phản ứng lanh lẹ. Xe có trang bị an toàn khá đầy đủ so với mặt bằng chung phân khúc. Hệ thống
-            phanh
-            ABS, hệ thống phanh EBD, camera lùi, cảm biến sau… đều là trang bị tiêu chuẩn.</p>
-        <p>
-            <img class="size-full wp-image-53725 aligncenter ewww_webp_loaded"
-                 src="https://danchoioto.vn/wp-content/uploads/2020/10/gia-xe-toyota-wigo-tu-352-384-trieu-dong.jpg.webp"
-                 alt="Giá xe Toyota Wigo từ 352 - 384 triệu đồng" width="850" height="580"
-                 sizes="(max-width: 850px) 100vw, 850px">
-        <noscript>
-            <img class="size-full wp-image-53725 aligncenter"
-                 src="https://danchoioto.vn/wp-content/uploads/2020/10/gia-xe-toyota-wigo-tu-352-384-trieu-dong.jpg"
-                 alt="Giá xe Toyota Wigo từ 352 - 384 triệu đồng" width="850" height="580"/>
-        </noscript>
-        </p>
-        <p>Những điểm mạnh trong thiết kế của Wigo như kích thước nhỏ gọn, khoảng sáng gầm xe cao đến 160 mm, bán kính
-            vòng quay
-            tối thiểu chỉ 4,7 m… giúp xe di chuyển rất linh hoạt trong phố. Với gầm cao, Wigo có thể leo lề dễ dàng, đi
-            vào
-            những con đường ghồ ghề, ngập nước nhẹ cũng không thành vấn đề. Xe cũng dễ dàng xoay trở, luồng lách trong
-            những con
-            đường hẹp, đông đúc nhờ bán kính vòng quay đầu xe nhỏ.</p>
-        <p>Về kiểu dáng ngoại hình, trong lần nâng cấp mới nhất, Toyota Wigo được đánh giá có nhiều điểm nhấn ấn tượng.
-            Xe mang
-            phong cách trẻ trung, có phần hầm hố thể thao hơn trước. Về không gian nội thất, Wigo sở hữu không gian nội
-            thất
-            rộng rãi hàng đầu phân khúc, vượt trội hơn các đối thủ như Kia Morning, VinFast Fadil…</p>
-        <p>Như các dòng xe của Toyota khác, nhược điểm Toyota Wigo chủ yếu là về trang bị. So với các mẫu xe tầm giá 300
-            triệu
-            đồng, Wigo khá thua kém về trang bị như: cả 2 phiên bản đều chỉ dùng ghế bọc nỉ, tựa đầu ghế trước không
-            được thiết
-            kế rời mà liền khối với lưng ghế, vô lăng không bọc da, không có điều hoà tự động…</p>
+       <div class="row">
+           <div class="col-lg-8">
+               <h3>Bảng giá xe Mitsubishi niêm yết & lăn bánh tháng 10/2022</h3>
+               <div>
+                   <div class="card-body">
+                       <table class="table table-bordered table-striped">
+                           <thead>
+                           <tr>
+                               <th>Id</th>
+                               <th>Image</th>
+                               <th>Name</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <tr th:each="listPrice : ${listPriceCar}">
+                               <td>[[${listPrice.name}]]</td>
+                               <td>[[${listPrice.listed_price}]]</td>
+                               <td>[[${listPrice.rolling_price}]]</td>
+                           </tr>
+                       </table>
+                   </div>
+               </div>
+              <div th:each="carReviewList : ${carReviewList}" >
+                  <h2><span class="ez-toc-section-end">[[${carReviewList.title}]]</span></h2>
+                  <hr>
+                  <p>[[${carReviewList.content}]]</p>
 
-        <h2><span class="ez-toc-section" id="Gia_xe_Toyota_Yaris"></span>Giá xe Toyota Yaris<span
-                class="ez-toc-section-end"></span></h2>
-        <hr>
-        <p>Toyota Yaris là mẫu xe nằm trong phân khúc hatchback 5 chỗ hạng B, cạnh tranh trực tiếp với <a
-                href="https://danchoioto.vn/gia-xe-mazda-2">Mazda 2</a>, <a href="https://danchoioto.vn/suzuki-swift">Suzuki
-            Swift</a>, <a href="https://danchoioto.vn/gia-xe-honda-jazz/">Honda Jazz</a>. Hiện nay, Yaris chỉ cạnh tranh
-            chủ yếu
-            với Mazda 2 hatchback, bởi Jazz đã bị “khai tử” ở thị trường Việt Nam trong khi Swift không mấy nổi bật.</p>
-        <p>Toyota Yaris được phân phối ở thị trường Việt Nam dưới dạng nhập khẩu nguyên chiếc từ Thái Lan với duy nhất
-            chỉ 1
-            phiên bản. Về cả thiết kế, trang bị lẫn động cơ, Toyota Yaris có nhiều điểm tương đồng với mẫu sedan hạng B
-            Toyota
-            Vios. Yaris được xem là phiên bản hatchback 5 cửa của Vios.</p>
-        <p>Xe được trang bị động cơ xăng 1.5L, cho công suất cực đại 107 mã lực tại 6.000 vòng/phút, mô men xoắn cực đại
-            140Nm
-            tại 4.200 vòng/phút, kết hợp hộp số tự động vô cấp CVT. Động cơ này cho sức mạnh tốt, khả năng tăng tốc ổn,
-            các tình
-            huống vượt thông thường đều thực hiện dễ dàng. Hệ thống treo êm ái theo hướng xe gia đình đô thị đặc trưng.
-            Vô lăng
-            trợ lực điện nhẹ nhàng, xoay trở trong phố linh hoạt, đặc biệt phù hợp với tay lái nữ.</p>
-        <p><img class="size-full wp-image-53726 aligncenter ewww_webp_loaded"
-                src="https://danchoioto.vn/wp-content/uploads/2020/10/gia-xe-toyota-yaris-tu-650-trieu-dong.jpg.webp"
-                alt="Giá xe Toyota Yaris từ 650 triệu đồng" width="850" height="580"
-                sizes="(max-width: 850px) 100vw, 850px"
-        >
-        <noscript><img loading="lazy" class="size-full wp-image-53726 aligncenter"
-                       src="https://danchoioto.vn/wp-content/uploads/2020/10/gia-xe-toyota-yaris-tu-650-trieu-dong.jpg"
-                       alt="Giá xe Toyota Yaris từ 650 triệu đồng" width="850" height="580"/></noscript>
-        </p>
-        <p>Hệ thống an toàn trên Toyota Yaris gần như đầy đủ các tính năng cần thiết như hệ thống phanh ABS/EBD/BA, hệ
-            thống cân
-            bằng điện tử, hệ thống kiểm soát lực kéo, hệ thống khởi hành ngang dốc, camera lùi, cảm biến sau/góc
-            trước/góc sau,
-            7 túi khí… Đây được đánh giá là một điểm mạnh của Yaris.</p>
-        <p>Không gian nội thất Toyota Yaris cực kỳ rộng rãi, hàng ghế sau thoải mái ở cả khoảng trần lẫn chỗ duỗi chân
-            phía
-            trước. Khoang hành lý cũng rộng rãi hơn nhiều đối thủ. Về trang bị, trong lần nâng cấp mới nhất, Toyota
-            Yaris được
-            bổ sung hệ thống đèn trước full LED có tính năng tự động, kết nối Apple CarPlay/Android Auto, Cruiser
-            Control tích
-            hợp trên vô lăng…</p>
-        <p>Nếu bàn về nhược điểm thì một số ý kiến đánh giá Toyota Yaris có giá bán khá cao và cho cảm giác lái khá
-            “nhàm chán”.
-            Về giá bán, vì Yaris là xe nhập khẩu Thái Lan, lại là mẫu hatchback 5 cửa (giá xe hatchback thường cao hơn
-            bản sedan
-            cùng loại) do đó giá cao là điều không lạ.</p>
-        <p>Còn về cảm giác lái, xét cho cùng đây cũng không hẳn là nhược điểm. Bởi Yaris sinh ra đã là một mẫu xe cho
-            gia đình
-            đô thị. Do đó sự ổn định, an toàn, dễ lái và tính kinh tế luôn là những tiêu chí được chú trọng thay vì trải
-            nghiệm
-            bốc, thể thao.</p>
-        <h2><span class="ez-toc-section" id="Gia_xe_Toyota_Vios"></span>Giá xe Toyota Vios<span
-                class="ez-toc-section-end"></span></h2>
-        <hr>
-        <p>Toyota Vios là mẫu xe nằm trong phân khúc sedan 5 chỗ hạng B, cạnh tranh trực tiếp với các xe <a
-                href="https://danchoioto.vn/gia-xe-honda-city">Honda City</a>, <a
-                href="https://danchoioto.vn/gia-xe-accent">Hyundai
-            Accent</a>, <a href="https://danchoioto.vn/gia-xe-kia-soluto">Kia Soluto</a>, <a
-                href="https://danchoioto.vn/nissan-almera/">Nissan Almera</a>, <a
-                href="https://danchoioto.vn/gia-xe-mitsubishi-attrage">Mitsubishi Attrage</a>… Vios được phân phối dưới
-            dạng lắp
-            ráp trong nước với 5 phiên bản (có số sàn và số tự động CVT).</p>
-        <p>Đây là một trong những chiếc xe thành công nhất của Toyota. Suốt thời gian dài, Toyota Vios luôn giữ ngôi
-            “ông hoàng
-            doanh số” dẫn đầu top 10 xe ô tô bán chạy nhất tại Việt Nam. Điều làm nên thành công của Vios chủ yếu từ 3
-            yếu tố:
-            thương hiệu, tiện dụng và kinh tế.</p>
-        <p>Xuất thân từ thương hiệu mạnh, đã tạo dựng được niềm tin lớn trong lòng người dùng Việt như Toyota là một lợi
-            thế cho
-            Vios. Thiết kế xe lại rất tiện dụng, phù hợp với nhu cầu nhiều nhóm khách hàng từ gia đình, doanh nghiệp đến
-            kinh
-            doanh vận tải – chạy dịch vụ…</p>
-        <p>Đặc biệt nhất là tính kinh tế cao. Vios định hình trong phân khúc hạng B với giá bán ở mức hợp lý. Xe bền bỉ
-            có
-            tiếng, rất ít hư hỏng vặt, tiết kiệm xăng, chi phí bảo dưỡng lại “mềm”… nên tổng chi phí vận hành rất “bình
-            dân”.
-            Mặt khác Vios còn là một trong những chiếc xe giữ giá tốt nhất, ít lỗ khi bán lại và cơ hội bán cũ cao.</p>
-        <p><img loading="lazy" class="size-full wp-image-63238 aligncenter ewww_webp_loaded"
-                src="https://danchoioto.vn/wp-content/uploads/2021/03/mat-calang-toyota-vios-2021-doi-moi-giao-dien-cung-cap-va-the-thao-hon.jpg.webp"
-                alt="Mặt calang Toyota Vios 2021 đổi mới giao diện cứng cáp và thể thao hơn" width="850" height="580"
-                sizes="(max-width: 850px) 100vw, 850px">
-        <noscript><img loading="lazy" class="size-full wp-image-63238 aligncenter"
-                       src="https://danchoioto.vn/wp-content/uploads/2021/03/mat-calang-toyota-vios-2021-doi-moi-giao-dien-cung-cap-va-the-thao-hon.jpg"
-                       alt="Mặt calang Toyota Vios 2021 đổi mới giao diện cứng cáp và thể thao hơn" width="850"
-                       height="580"/></noscript>
-        </p>
-        <p>Xe oto 5 chỗ Vios được trang bị động cơ xăng 1.5L cho công suất cực đại 107 mã lực tại 6.000 vòng/phút, mô
-            men xoắn
-            cực đại 140Nm tại 4.200 vòng/phút, kết hợp hộp số sàn 5 cấp hoặc tự động vô cấp CVT. Xe có độ vọt, tăng tốc
-            khá
-            nhanh, có thể hoàn thành tốt các tình huống vượt xe thông thường. Di chuyển trong phố lanh lẹ, linh hoạt,
-            mượt
-            mà.</p>
-        <p>Hệ thống an toàn trên Toyota Vios gần như dẫn đầu phân khúc với hệ thống phanh ABS/EBD/BA, hệ thống cân bằng
-            điện tử,
-            hệ thống kiểm soát lực kéo, hệ thống khởi hành ngang dốc, camera lùi, cảm biến sau/góc trước/góc sau, 7 hoặc
-            3 túi
-            khí…</p>
-        <p>Không gian cabin rộng rãi tiếp tục là một ưu điểm lớn của Toyota Vios so với các đối thủ. Hàng ghế sau của
-            Vios rất
-            thoáng, đủ chỗ cho cả 3 người lớn. Dung tích khoang hành lý cũng lớn, chở được nhiều đồ.</p>
-        <p>Về hệ thống trang bị, trước đây Toyota Vios thường bị phàn nàn khá nhiều. Nhưng những lần nâng cấp gần đây đã
-            giúp
-            Vios bổ sung trang bị đầy đủ hơn. Ở thời điểm hiện tại trang bị của Vios được đánh giá đáp ứng tốt nhu cầu
-            của đa
-            phần người dùng trong phân khúc này.</p>
-        <p>Về nhược điểm, Toyota Vios có khả năng cách âm chưa được đánh giá cao. Vô lăng cho cảm giác lái còn hơi thô.
-            Với động
-            cơ 1.5L lại là xe đô thị nên trải nghiệm lái của Vios sẽ theo hướng ổn định, lành tính, không có chất “bốc”
-            hay thể
-        <h2><span class="ez-toc-section" id="Gia_xe_Toyota_Corolla_Altis"></span>Giá xe Toyota Corolla Altis<span
-                class="ez-toc-section-end"></span></h2>
-        <hr>
-        <p>Toyota Corolla Altis là mẫu xe nằm trong phân khúc sedan 5 chỗ hạng C, cạnh tranh trực tiếp với các xe <a
-                href="https://danchoioto.vn/gia-xe-honda-civic">Honda Civic</a>, <a
-                href="https://danchoioto.vn/gia-xe-mazda-3">Mazda
-            3</a>, <a href="https://danchoioto.vn/gia-xe-elantra">Hyundai Elantra</a>, <a
-                href="https://danchoioto.vn/kia-k3/">Kia
-            K3</a>… Xe được nhập khẩu từ Thái Lan về Việt Nam với 3 phiên bản 1.8G, 1.8V và 1.8HEV.</p>
-        <p>Bước sang thế hệ thứ 12, Toyota Corolla Altis có nhiều nâng cấp mạnh mẽ. Trong đó đáng chú ý xe thêm phiên
-            bản hybrid
-            nổi bật với khả năng vận hành êm ái đi cùng mức tiêu thụ nhiên liệu cực kỳ ấn tượng.</p>
-        <p><img loading="lazy" class="size-full wp-image-53714 aligncenter ewww_webp_loaded"
-                src="https://danchoioto.vn/wp-content/uploads/2020/10/gia-xe-toyota-corolla-altis-tu-733-763-trieu-dong.jpg.webp"
-                alt="Giá xe Toyota Corolla Altis từ 733 - 763 triệu đồng" width="850" height="580"
-                sizes="(max-width: 850px) 100vw, 850px">
-        <noscript><img loading="lazy" class="size-full wp-image-53714 aligncenter"
-                       src="https://danchoioto.vn/wp-content/uploads/2020/10/gia-xe-toyota-corolla-altis-tu-733-763-trieu-dong.jpg"
-                       alt="Giá xe Toyota Corolla Altis từ 733 - 763 triệu đồng" width="850" height="580"/></noscript>
-        </p>
-        <p>Toyota Corolla Altis có 2 tuỳ chọn động cơ. Phiên bản máy xăng 1.8L cho công suất cực đại 138 mã lực, mô men
-            xoắn cực
-            đại 172Nm. Phiên bản hyrbid kết hợp động cơ xăng 1.8L với mô tơ điện cho tổng công suất 150 mã lực, mô men
-            xoắn
-            305Nm. Cả hai đều sử dụng hộp số tự động vô cấp CVT.</p>
-        <p>Hai phiên bản 1.8L không có gì để phàn nàn, mang đặc trưng quen thuộc, chủ yếu hơi hướng nhẹ nhàng, thoải
-            mái, điềm
-            đạm, sẽ khó tìm được màu sắc thể thao. Còn phiên bản hybrid 1.8HEV thì tăng tốc mạnh mẽ hơn. Do động cơ điện
-            hoạt
-            động phần lớn nên xe êm ái và cực kỳ tiết kiệm nhiên liệu.</p>
-        <p>Không gian xe rộng rãi là một ưu điểm của Toyota Corolla Altis so với các đối thủ. Hàng ghế sau của Altis có
-            độ thoải
-            mái, rộng và thoáng bậc nhất phân khúc. Khả năng các âm của xe cũng rất tốt.</p>
-        <p>Hệ thống an toàn Toyota Corolla Altis được đánh giá cao khi có mặt gói công nghệ cao cấp Toyota Safety Sense
-            2.0 đi
-            cùng nhiều tính năng tiên tiến khác. Sang thế hệ mới, các trang bị nội ngoại thất cũng được bổ sung hiện đại
-            hơn.</p>
+                      <img
+                           th:src="${carReviewList.image}">
+
+              </div>
+           </div>
+           <div class="col-lg-4 col-md-4">
+
+               <div class="post-sidebar-area wow fadeInUpBig" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUpBig;">
+                   <!-- Widget Area -->
+
+                   <!-- Widget Area -->
+                   <div class="sidebar-widget-area">
+                       <h5 class="title">Câu hỏi thường gặp</h5>
+                       <div class="widget-content">
+                           <!-- Single Blog Post -->
+                           <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                               <!-- Post Thumbnail -->
+                               <div class="post-thumbnail">
+                                   <img src="/user/img/blog-img/b11.jpg" alt="">
+                               </div>
+                               <!-- Post Content -->
+                               <div class="post-content">
+                                   <a href="#" class="headline">
+                                       <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                           Most</h5>
+                                   </a>
+                               </div>
+                           </div>
+                           <!-- Single Blog Post -->
+                           <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                               <!-- Post Thumbnail -->
+                               <div class="post-thumbnail">
+                                   <img src="/user/img/blog-img/b13.jpg" alt="">
+                               </div>
+                               <!-- Post Content -->
+                               <div class="post-content">
+                                   <a href="#" class="headline">
+                                       <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                           Most</h5>
+                                   </a>
+                               </div>
+                           </div>
+                           <!-- Single Blog Post -->
+                           <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                               <!-- Post Thumbnail -->
+                               <div class="post-thumbnail">
+                                   <img src="/user/img/blog-img/b14.jpg" alt="">
+                               </div>
+                               <!-- Post Content -->
+                               <div class="post-content">
+                                   <a href="#" class="headline">
+                                       <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                           Most</h5>
+                                   </a>
+                               </div>
+                           </div>
+                           <!-- Single Blog Post -->
+                           <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                               <!-- Post Thumbnail -->
+                               <div class="post-thumbnail">
+                                   <img src="/user/img/blog-img/b10.jpg" alt="">
+                               </div>
+                               <!-- Post Content -->
+                               <div class="post-content">
+                                   <a href="#" class="headline">
+                                       <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                           Most</h5>
+                                   </a>
+                               </div>
+                           </div>
+                           <!-- Single Blog Post -->
+                           <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                               <!-- Post Thumbnail -->
+                               <div class="post-thumbnail">
+                                   <img src="/user/img/blog-img/b12.jpg" alt="">
+                               </div>
+                               <!-- Post Content -->
+                               <div class="post-content">
+                                   <a href="#" class="headline">
+                                       <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the
+                                           Most</h5>
+                                   </a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- Widget Area -->
+                   <div class="sidebar-widget-area">
+                       <h5 class="title">Stay Connected</h5>
+                       <div class="widget-content">
+                           <div class="social-area d-flex justify-content-between">
+                               <a href="#"><i class="fa fa-facebook"></i></a>
+                               <a href="#"><i class="fa fa-twitter"></i></a>
+                               <a href="#"><i class="fa fa-pinterest"></i></a>
+                               <a href="#"><i class="fa fa-vimeo"></i></a>
+                               <a href="#"><i class="fa fa-instagram"></i></a>
+                               <a href="#"><i class="fa fa-google"></i></a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+           </div>
+       </div>
     </div>
 </div>
 <footer th:replace="user/fragments/footer :: footer"></footer>

@@ -20,6 +20,7 @@ public class CategoryCar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String image;
 //    @JsonIgnore
 //    @ManyToOne
 //    @JoinColumn(name="user_id", nullable = false)

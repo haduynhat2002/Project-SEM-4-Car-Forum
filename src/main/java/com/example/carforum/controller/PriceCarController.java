@@ -1,9 +1,8 @@
 package com.example.carforum.controller;
 
 
-import com.example.carforum.entity.CarReview;
-import com.example.carforum.entity.CategoryCar;
-import com.example.carforum.entity.PriceCar;
+import com.example.carforum.entity.*;
+import com.example.carforum.service.CarReviewService;
 import com.example.carforum.service.CategoryCarService;
 import com.example.carforum.service.PriceCarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +18,21 @@ import java.util.Optional;
 public class PriceCarController {
     @Autowired
     PriceCarService priceCarService;
+    @Autowired
+    CarReviewService carReviewService;
 
     @Autowired
     private CategoryCarService categoryCarService;
 
-    @GetMapping("/pricecar/new")
+    @GetMapping("/pricecardetai")
+    public String showPriceCar(Model model){
+        List<PriceCar> priceCarList = priceCarService.finAll();
+        List<CarReview> carReviewList = carReviewService.findAll();
+        model.addAttribute("listPriceCar", priceCarList);
+        model.addAttribute("carReviewList", carReviewList);
+        return "user/Price-Detail";
+    }
+    @GetMapping("/admin/priceCar/create")
     public String showCategoryNewForm(Model model){
         List<CategoryCar> listCategoryCar = categoryCarService.findAll();
         model.addAttribute("listCategoryCar",listCategoryCar );

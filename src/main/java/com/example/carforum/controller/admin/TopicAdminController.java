@@ -1,4 +1,4 @@
-package com.example.carforum.controller;
+package com.example.carforum.controller.admin;
 
 
 import com.example.carforum.entity.Topic;
@@ -12,23 +12,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-public class TopicController {
+public class TopicAdminController {
     @Autowired
     private TopicService topicService;
-    @GetMapping("/topics")
+    @GetMapping("admin/topics")
     public String listCategory(Model model){
         List<Topic> listTopic = topicService.findAll();
         model.addAttribute("listTopic", listTopic);
-        return "topics";
+        return "admin/topic/ListTopic";
     }
-    @GetMapping("/topic/new")
+    @GetMapping("/admin/topic/create")
     public String showCategoryNewForm(Model model){
         model.addAttribute("topic", new Topic());
-        return "topicForm";
+        return "admin/topic/CreateTopic";
     }
     @PostMapping("/topic/save")
     public String showCategoryNewForm(Topic topic){
         topicService.save(topic);
-        return "redirect:/topics";
+        return "redirect:/admin/topics";
     }
 }
