@@ -2656,85 +2656,39 @@
         <div>
             <ul class="" id="myTab3" role="tablist"
                 style="padding: 10px 0;font-size: 18px;color: #000000;margin-bottom: 0;margin-right: auto;border-bottom: 2px solid #f1f1f1;font-weight: 700;">
-                <li class="title">Đại lý ô tô</li>
+                <li class="title">Giá xe ô tô</li>
             </ul>
         </div>
 
         <div class="row justify-content-center">
+<!--            <div class="world-catagory-slider owl-carousel wow fadeInUpBig  owl-stage-outer"-->
+<!--                 data-wow-delay="0.1s">-->
+            <!-- ========== Single Blog Post ========== -->
+            <div class="col-12 col-md-6 col-lg-4" th:each="categoryCar : ${listCategoryCar}" >
 
-            <!-- ========== Single Blog Post ========== -->
-            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-blog-post post-style-3 mt-30 wow fadeInUpBig " data-wow-delay="0.2s">
+                    <!-- Post Thumbnail -->
+                    <div class="post-thumbnail">
+                        <img th:src="${categoryCar.image}" alt="">
+                        <!-- Post Content -->
+                        <div class="post-content d-flex align-items-center justify-content-between">
+                            <!-- Catagory -->
+                            <div class="post-tag"></div>
+                            <!-- Headline -->
+                            <a th:href="@{/pricecardetai}" class="headline">
+                                <h5>[[${categoryCar.name}]]</h5>
+                            </a>
+                            <!-- Post Meta -->
+                            <div class="post-meta">
+                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29,
+                                    2017 at 9:48 am</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="single-blog-post post-style-3 mt-30 wow fadeInUpBig" data-wow-delay="0.2s">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <img th:src="@{/user/img/blog-img/b4.jpg}" alt="">
-                        <!-- Post Content -->
-                        <div class="post-content d-flex align-items-center justify-content-between">
-                            <!-- Catagory -->
-                            <div class="post-tag"><a href="#">travel</a></div>
-                            <!-- Headline -->
-                            <a href="#" class="headline">
-                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                                    Physics?</h5>
-                            </a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29,
-                                    2017 at 9:48 am</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- ========== Single Blog Post ========== -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="single-blog-post post-style-3 mt-30 wow fadeInUpBig" data-wow-delay="0.4s">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <img th:src="@{/user/img/blog-img/b5.jpg}" alt="">
-                        <!-- Post Content -->
-                        <div class="post-content d-flex align-items-center justify-content-between">
-                            <!-- Catagory -->
-                            <div class="post-tag"><a href="#">travel</a></div>
-                            <!-- Headline -->
-                            <a href="#" class="headline">
-                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                                    Physics?</h5>
-                            </a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29,
-                                    2017 at 9:48 am</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ========== Single Blog Post ========== -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="single-blog-post post-style-3 mt-30 wow fadeInUpBig" data-wow-delay="0.6s">
-                    <!-- Post Thumbnail -->
-                    <div class="post-thumbnail">
-                        <img th:src="@{/user/img/blog-img/b6.jpg}" alt="">
-                        <!-- Post Content -->
-                        <div class="post-content d-flex align-items-center justify-content-between">
-                            <!-- Catagory -->
-                            <div class="post-tag"><a href="#">travel</a></div>
-                            <!-- Headline -->
-                            <a href="#" class="headline">
-                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                                    Physics?</h5>
-                            </a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29,
-                                    2017 at 9:48 am</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--            </div>-->
         </div>
 
         <div class="content wow fadeInUpBig" data-wow-delay="0.2s">

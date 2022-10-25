@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/fragments/head :: head">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+    <!--../../static/dist/img/AdminLTELogo.png-->
+    <!-- Preloader -->
+    <!--    <div class="preloader flex-column justify-content-center align-items-center">-->
+    <!--        <img class="animation__shake" th:src="@{/admin/dist/img/AdminLTELogo.png"-->
+    <!--             alt="AdminLTELogo" height="60" width="60">-->
+    <!--    </div>-->
+
+    <nav th:replace="/admin/fragments/header :: header"></nav>
+    <div th:replace="/admin/fragments/navbar :: navbar"></div>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Chủ đề</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v1</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Thêm mới chủ đề</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <div class="">
+                        <form action="#" th:action="@{/admin/post/save}" method="post" th:object="${post}">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Danh mục</label>
+                                    <select name="topic" required class="form-control">
+                                        <th:block th:each="cat : ${listTopic}">
+                                            <option th:text="${cat.name}" th:value="${cat.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tiêu đề</label>
+                                    <input name="title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết...." >
+                                </div>
+                                <div class="form-group">
+                                    <label>Hình ảnh</label>
+                                    <input name="image" type="text" class="form-control"placeholder="" >
+                                </div>
+                                <label>Nội dung</label>
+                                <!--                        <textarea id="summernote">-->
+                                <!--                Place <em>some</em> <u>text</u> <strong>here</strong>-->
+                                <!--              </textarea>-->
+
+                                <div class="form-group">
+
+                                    <input name="content" type="text" class="form-control"placeholder="Nhập nội dung bài viết..." >
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer th:replace="/admin/fragments/footer :: footer"></footer>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+</div>
+<script th:replace="/admin/fragments/scripts :: scripts"></script>
+
+</body>
+</html>

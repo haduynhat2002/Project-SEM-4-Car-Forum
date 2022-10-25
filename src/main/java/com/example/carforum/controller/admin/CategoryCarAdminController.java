@@ -1,4 +1,4 @@
-package com.example.carforum.controller;
+package com.example.carforum.controller.admin;
 
 
 import com.example.carforum.entity.CategoryCar;
@@ -6,16 +6,31 @@ import com.example.carforum.service.CategoryCarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-public class CategoryCarController {
+public class CategoryCarAdminController {
     @Autowired
     private CategoryCarService categoryCarService;
-
+    @GetMapping("/admin/categoryCar")
+    public String listCategory(Model model){
+        List<CategoryCar> listCategoryCar = categoryCarService.findAll();
+        model.addAttribute("listCategoryCar",listCategoryCar );
+        return "admin/categoryCar/list";
+    }
+    @GetMapping("admin/categoryCar/create")
+    public String showCategoryCar(Model model){
+        model.addAttribute("categoryCar", new CategoryCar());
+        return "admin/categoryCar/create";
+    }
+    @PostMapping("admin/categorycar/save")
+    public String showCategoryNewForm(CategoryCar categoryCar){
+//        categoryCar.setStatus('1');
+        categoryCarService.save(categoryCar);
+        return "redirect:/admin/categoryCar";
+    }
 
 //    @RequestMapping(method = RequestMethod.GET, path = "{id}")
 //    public ResponseEntity<?> findById(@PathVariable int id) {

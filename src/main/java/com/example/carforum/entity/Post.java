@@ -26,5 +26,9 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "topic_id")
     private Topic topic;
+//    @JsonIgnore
+//    @ManyToOne
+//    @JoinColumn(name="user_id", nullable = false)
+//    private User user_id;
 
 }
