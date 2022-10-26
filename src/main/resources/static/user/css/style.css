@@ -535,7 +535,11 @@ img {
     font-size: 18px;
     margin-bottom: 10px; }
 .single-blog-post .post-content p {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .single-blog-post .post-content .post-meta p {
     margin-bottom: 0;
     font-size: 12px; }
@@ -1308,4 +1312,11 @@ textarea:focus ~ .highlight {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+header .navbar .img-header{
+    width: 45%;
+    padding-bottom: 5px;
+}
+footer .img-footer {
+    width: 45%;
 }
