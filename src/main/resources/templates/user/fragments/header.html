@@ -1,5 +1,5 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <header class="header-area sticky" th:fragment="header">
     <div class="container">
         <div class="row">
@@ -30,14 +30,22 @@
                             <li class="nav-item">
                                 <a class="nav-link" th:href="@{/contact}">Liên hệ</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" th:href="@{/login}" id="navbarDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Đăng nhập</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" th:href="@{/register}">Đăng ký</a>
-                                    <a class="dropdown-item" th:href="@{login}">Đăng Nhập</a>
-                                </div>
-                            </li>
+                            <div sec:authorize="!isAuthenticated()">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" th:href="@{/login}" id="navbarDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Đăng nhập</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" th:href="@{/register}">Đăng ký</a>
+                                        <a class="dropdown-item" th:href="@{login}">Đăng Nhập</a>
+                                    </div>
+                                </li>
+                            </div>
+
+                            <div sec:authorize="isAuthenticated()">
+                                <li class="nav-item">
+                                    <a class="nav-link" th:href="@{/logout}">Đăng xuất</a>
+                                </li>
+                            </div>
                         </ul>
                         <!-- Search Form  -->
                         <div id="search-wrapper">

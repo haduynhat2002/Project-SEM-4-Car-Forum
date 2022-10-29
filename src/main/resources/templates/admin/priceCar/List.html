@@ -21,7 +21,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Bài viết</h1>
+                        <h1 class="m-0">Chủ đề</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -42,7 +42,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Thêm bài viết</h3>
+                                <h3 class="card-title">Danh sách chủ đề</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -50,26 +50,19 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Hình ảnh</th>
-                                        <th>Danh mục</th>
-                                        <th>Tiêu đề</th>
-                                        <th>Ngày tạo</th>
+                                        <th>Name</th>
+                                        <th>Giá niêm yết</th>
+                                        <th>Giá năn bánh</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="post : ${listPost}">
-                                        <td>[[${post.id}]]</td>
-                                        <td> <img th:src="${post.image}" alt="" style="width: 135px; height: 78px">
-                                        </td>
-                                        <td>[[${post.topic.name}]]</td>
-                                        <td>[[${post.title}]]</td>
-                                        <td>[[${post.dateTime}]]</td>
-                                        <td>
-                                            <a th:href="@{'/post/edit/' + ${post.id}}">Edit</a>
-                                            &nbsp;
-                                            <a th:href="@{'/post/delete/' + ${post.id}}">Delete</a>
-                                        </td>
+                                    <tr th:each="viewPriceCar : ${listPriceCar}">
+                                        <td>[[${viewPriceCar.id}]]</td>
+                                        <td>[[${viewPriceCar.name}]]</td>
+                                        <td>[[${viewPriceCar.listed_price}]]</td>
+                                        <td>[[${viewPriceCar.rolling_price}]]</td>
+                                        <td></td>
                                     </tr>
                                     </tfoot>
                                 </table>
