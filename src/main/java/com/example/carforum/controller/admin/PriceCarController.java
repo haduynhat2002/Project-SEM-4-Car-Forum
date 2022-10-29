@@ -43,7 +43,7 @@ public class PriceCarController {
     @PostMapping("/pricecar/save")
     public String showCategoryNewForm(PriceCar priceCar){
         priceCarService.save(priceCar);
-        return "redirect:/sucess";
+        return "redirect:/admin/priceCar/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "{id}")
