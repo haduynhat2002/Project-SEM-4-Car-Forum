@@ -1,4 +1,4 @@
-package com.example.carforum.controller;
+package com.example.carforum.controller.admin;
 
 
 import com.example.carforum.entity.*;
@@ -24,13 +24,13 @@ public class PriceCarController {
     @Autowired
     private CategoryCarService categoryCarService;
 
-    @GetMapping("/pricecardetai")
+    @GetMapping("/admin/priceCar/list")
     public String showPriceCar(Model model){
         List<PriceCar> priceCarList = priceCarService.finAll();
         List<CarReview> carReviewList = carReviewService.findAll();
         model.addAttribute("listPriceCar", priceCarList);
         model.addAttribute("carReviewList", carReviewList);
-        return "user/Price-Detail";
+        return "admin/priceCar/List";
     }
     @GetMapping("/admin/priceCar/create")
     public String showCategoryNewForm(Model model){
@@ -38,7 +38,7 @@ public class PriceCarController {
         model.addAttribute("listCategoryCar",listCategoryCar );
         model.addAttribute("priceCar", new PriceCar());
 
-        return "priceCarForm";
+        return "admin/priceCar/Create";
     }
     @PostMapping("/pricecar/save")
     public String showCategoryNewForm(PriceCar priceCar){
