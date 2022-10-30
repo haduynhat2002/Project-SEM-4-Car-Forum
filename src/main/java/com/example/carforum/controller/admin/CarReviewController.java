@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,14 +22,6 @@ public class CarReviewController {
     CarReviewService carReviewService;
     @Autowired
     private CategoryCarService categoryCarService;
-//    @RequestMapping(method = RequestMethod.GET, path = "{id}")
-//    public ResponseEntity<?> findById(@PathVariable int id) {
-//        Optional<CarReview> carReview = carReviewService.findById(id);
-//        if (!carReview.isPresent()){
-//            ResponseEntity.badRequest().build();// khoong co du lieu tra ve
-//        }
-//        return ResponseEntity.ok(carReview.get());//cos du lieu tra ve
-//    }
 
     @GetMapping("admin/carreview/create")
     public String showCategoryNewForm(Model model){
@@ -40,33 +34,42 @@ public class CarReviewController {
     @PostMapping("admin/carreview/save")
     public String showCategoryNewForm(CarReview carReview){
         carReviewService.save(carReview);
+<<<<<<< HEAD:src/main/java/com/example/carforum/controller/CarReviewController.java
+        return "redirect:/index";
+    }
+    @GetMapping("/index")
+    public String showCarReviewList(Model model) {
+        model.addAttribute("carReview", carReviewService.findAll());
+        return "sucess";
+    }
+    @GetMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") int id, Model model) {
+        CarReview carReview = carReviewService.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid car review Id:" + id));
+
+        model.addAttribute("carReview", carReview);
+        return "updateCarreview";
+    }
+    @PostMapping("/update/{id}")
+    public String updateCarReview(@PathVariable("id") int id, @Valid CarReview carReview,
+                                  BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            carReview.setId(id);
+            return "updateCarreview";
+        }
+
+        carReviewService.save(carReview);
+        return "redirect:/index";
+=======
         return "redirect:/admin/carreview/create";
+>>>>>>> master:src/main/java/com/example/carforum/controller/admin/CarReviewController.java
     }
 
-//    @RequestMapping(method = RequestMethod.PUT, path = "{id}")
-//    public ResponseEntity<CarReview> update(@PathVariable int id, @RequestBody CarReview updateCarReview){
-//        Optional<CarReview> carReview = carReviewService.findById(id);
-//        if (!carReview.isPresent()){
-//            ResponseEntity.badRequest().build();// khoong co du lieu tra ve
-//        }
-//        CarReview exitsCarReview = carReview.get();
-//        exitsCarReview.setTitle(updateCarReview.getTitle());
-//        exitsCarReview.setContent(updateCarReview.getContent());
-//        exitsCarReview.setType(updateCarReview.getType());
-//        exitsCarReview.setImage(updateCarReview.getImage());
-//        exitsCarReview.setCategoryCar(updateCarReview.getCategoryCar());
-//        exitsCarReview.setViewcount(updateCarReview.getViewcount());
-//        exitsCarReview.setStatus(updateCarReview.getStatus());
-//        return ResponseEntity.ok(carReviewService.save(exitsCarReview));//cos du lieu tra ve
-//    }
-//
-//    @RequestMapping(method = RequestMethod.DELETE, path = "{id}")
-//    public ResponseEntity<?> delete(@PathVariable int id) {
-//        Optional<CarReview> carReview = carReviewService.findById(id);
-//        if (!carReview.isPresent()) {
-//            ResponseEntity.badRequest().build();// khoong co du lieu tra ve
-//        }
-//        carReviewService.deleteById(id);
-//        return ResponseEntity.ok().build();//cos du lieu tra ve
-//    }
+    @GetMapping("/delete/{id}")
+    public String deleteCarReview(@PathVariable("id") int id, Model model) {
+        CarReview carReview = carReviewService.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid car review Id:" + id));
+        carReviewService.deleteById(id);
+        return "redirect:/index";
+    }
 }

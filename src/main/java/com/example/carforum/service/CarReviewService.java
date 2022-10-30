@@ -24,4 +24,5 @@ public class CarReviewService {
     public void deleteById(int id) {
         carReviewRepository.deleteById(id);
     }
+
 }
