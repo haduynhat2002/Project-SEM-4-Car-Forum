@@ -6,11 +6,12 @@ import com.example.carforum.service.CarReviewService;
 import com.example.carforum.service.CategoryCarService;
 import com.example.carforum.service.PriceCarService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,40 +44,37 @@ public class PriceCarController {
     @PostMapping("/pricecar/save")
     public String showCategoryNewForm(PriceCar priceCar){
         priceCarService.save(priceCar);
-        return "redirect:/sucess";
+        return "redirect:/indexpricecar";
     }
-
-    @RequestMapping(method = RequestMethod.GET, path = "{id}")
-    public ResponseEntity<?> findById(@PathVariable int id) {
-        Optional<PriceCar> priceCar = priceCarService.findById(id);
-        if (!priceCar.isPresent()){
-            ResponseEntity.badRequest().build();// khoong co du lieu tra ve
+    @GetMapping("/indexpricecar")
+    public String ShowPriceCarList(Model model){
+        model.addAttribute("priceCar",priceCarService.finAll());
+        return "sucessPrice";
+    }
+    @GetMapping("/editprice/{id}")
+    public String showUpdatePriceCar(@PathVariable("id") int id , Model model){
+        PriceCar priceCar = priceCarService.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid price car Id:" + id));
+        model.addAttribute("priceCar", priceCar);
+        return "updatePriceCar";
+    }
+    @PostMapping("/updateprice/{id}")
+    public String updatePriceCar(@PathVariable("id") int id, @Valid PriceCar priceCar,
+                                  BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            priceCar.setId(id);
+            return "updatePriceCar";
         }
-        return ResponseEntity.ok(priceCar.get());//cos du lieu tra ve
+
+        priceCarService.save(priceCar);
+        return "redirect:/indexpricecar";
     }
 
-//    @RequestMapping(method = RequestMethod.PUT, path = "{id}")
-//    public ResponseEntity<PriceCar> update(@PathVariable int id, @RequestBody PriceCar updatePriceCar){
-//        Optional<PriceCar> priceCar = priceCarService.findById(id);
-//        if (!priceCar.isPresent()){
-//            ResponseEntity.badRequest().build();
-//        }
-//        PriceCar exitsPriceCar = priceCar.get();
-//        exitsPriceCar.setName(updatePriceCar.getName());
-//        exitsPriceCar.setCategoryCar(updatePriceCar.getCategoryCar());
-//        exitsPriceCar.setListed_price(updatePriceCar.getListed_price());
-//        exitsPriceCar.setRolling_price(updatePriceCar.getRolling_price());
-//        exitsPriceCar.setStatus(updatePriceCar.getStatus());
-//        return ResponseEntity.ok(priceCarService.save(exitsPriceCar));//cos du lieu tra ve
-//    }
-//
-//    @RequestMapping(method = RequestMethod.DELETE, path = "{id}")
-//    public ResponseEntity<?> delete(@PathVariable int id) {
-//        Optional<PriceCar> priceCar = priceCarService.findById(id);//tim product theo id
-//        if (!priceCar.isPresent()) {
-//            ResponseEntity.badRequest().build();// khoong co du lieu tra ve
-//        }
-//        priceCarService.deleteById(id);
-//        return ResponseEntity.ok().build();//cos du lieu tra ve
-//    }
-}
+    @GetMapping("/deleteprice/{id}")
+    public String deletePriceCar(@PathVariable("id") int id, Model model) {
+        PriceCar priceCar = priceCarService.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid price car Id:" + id));
+        priceCarService.deleteById(id);
+        return "redirect:/indexpricecar";
+    }
+    }
