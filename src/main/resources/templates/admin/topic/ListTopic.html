@@ -58,7 +58,12 @@
                                     <tr th:each="topic : ${listTopic}">
                                         <td>[[${topic.id}]]</td>
                                         <td>[[${topic.name}]]</td>
-                                        <td></td>
+
+                                        <td>
+                                            <a th:href="@{'/topic/edit/' + ${topic.id}}">Edit</a>
+                                            &nbsp;
+                                            <a th:href="@{'/topic/delete/' + ${topic.id}}">Delete</a>
+                                        </td>
                                     </tr>
                                     </tfoot>
                                 </table>

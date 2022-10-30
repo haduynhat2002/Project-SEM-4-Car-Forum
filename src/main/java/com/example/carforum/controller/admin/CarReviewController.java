@@ -1,4 +1,4 @@
-package com.example.carforum.controller;
+package com.example.carforum.controller.admin;
 
 
 import com.example.carforum.entity.CarReview;
@@ -23,17 +23,18 @@ public class CarReviewController {
     @Autowired
     private CategoryCarService categoryCarService;
 
-    @GetMapping("/carreview/new")
+    @GetMapping("admin/carreview/create")
     public String showCategoryNewForm(Model model){
         List<CategoryCar> listCategoryCar = categoryCarService.findAll();
         model.addAttribute("listCategoryCar",listCategoryCar );
         model.addAttribute("carReview", new CarReview());
 
-        return "carReviewForm";
+        return "/admin/carReview/Create";
     }
-    @PostMapping("/carreview/save")
+    @PostMapping("admin/carreview/save")
     public String showCategoryNewForm(CarReview carReview){
         carReviewService.save(carReview);
+<<<<<<< HEAD:src/main/java/com/example/carforum/controller/CarReviewController.java
         return "redirect:/index";
     }
     @GetMapping("/index")
@@ -59,6 +60,9 @@ public class CarReviewController {
 
         carReviewService.save(carReview);
         return "redirect:/index";
+=======
+        return "redirect:/admin/carreview/create";
+>>>>>>> master:src/main/java/com/example/carforum/controller/admin/CarReviewController.java
     }
 
     @GetMapping("/delete/{id}")

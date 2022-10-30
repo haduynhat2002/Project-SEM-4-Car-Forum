@@ -62,3 +62,32 @@
     margin: 20px 0 0 0;
     text-align: center;
 }
+.login input:focus ~ label,
+.login textarea:focus ~ label,
+.login input:valid ~ label,
+.login textarea:valid ~ label {
+    /*top: -15px;*/
+    font-size: 12px;
+     color: #000000;
+}
+.register input:focus ~ label,
+.register textarea:focus ~ label,
+.register input:valid ~ label,
+.register textarea:valid ~ label {
+    /*top: -15px;*/
+    font-size: 12px;
+    color: #000000;
+}
+.login .form-floating > label,
+.register .form-floating > label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: #000000;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}

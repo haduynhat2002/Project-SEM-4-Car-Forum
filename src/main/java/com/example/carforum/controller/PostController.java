@@ -55,4 +55,5 @@ public class PostController {
         model.addAttribute("listPostDetail", listPost);
         return "user/Category";
     }
+
 }

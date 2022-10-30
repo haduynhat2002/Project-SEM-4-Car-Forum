@@ -534,8 +534,20 @@ img {
 .single-blog-post .post-content .headline h5 {
     font-size: 18px;
     margin-bottom: 10px; }
-.single-blog-post .post-content p {
-    margin-bottom: 20px; }
+.text-shortened {
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*line-height: 25px;*/
+    /*-webkit-line-clamp: 2;*/
+    /*height: 75px;*/
+    /*display: -webkit-box;*/
+    /*-webkit-box-orient: vertical;*/
+}
+
 .single-blog-post .post-content .post-meta p {
     margin-bottom: 0;
     font-size: 12px; }
@@ -1308,4 +1320,11 @@ textarea:focus ~ .highlight {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+header .navbar .img-header{
+    width: 45%;
+    padding-bottom: 5px;
+}
+footer .img-footer {
+    width: 45%;
 }

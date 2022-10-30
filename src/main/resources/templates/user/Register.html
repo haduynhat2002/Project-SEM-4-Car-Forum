@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="/user/fragments/head :: head">
     <link rel="stylesheet" th:href="@{/user/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/user/css/boottrap.css}">
     <link rel="stylesheet" th:href="@{/user/css/register.css}">
 </head>
 <body>
-<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+<header th:replace="/user/fragments/header :: header"></header>
+<div class="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card border-0 shadow rounded-3 my-5">
+                    <div class="card-body p-4 p-sm-5">
+                        <h5 class="card-title text-center mb-5 fw-light fs-5">Đăng Ký</h5>
+                        <form method="post" action="/register" th:object="${registerRequest}">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="login" class="form-control" id="floatingPassword"
+                                       placeholder="Password">
+                                <label style="bottom: 0px; top: 60%;">Tài khoản</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="floatingInput"
+                                       placeholder="name@example.com">
+                                <label for="floatingInput">Email</label>
+                            </div>
 
-<body class="register">
-<div class="container">
-  <div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-      <div class="card border-0 shadow rounded-3 my-5">
-        <div class="card-body p-4 p-sm-5">
-          <h5 class="card-title text-center mb-5 fw-light fs-5">Đăng Ký</h5>
-          <form method="post" action="/register" th:object="${registerRequest}">
-            <div class="form-floating mb-3">
-              <input type="text" name="login" class="form-control" id="floatingPassword" placeholder="Password">
-              <label>Tài khoản</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Email</label>
-            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" name="password" class="form-control" id="a"
+                                       placeholder="Password">
+                                <label>Mật khẩu</label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                                <label class="form-check-label" for="rememberPasswordCheck">
+                                    Nhớ mật khẩu
+                                </label>
+                            </div>
 
-            <div class="form-floating mb-3">
-              <input type="password" name="password" class="form-control" id="a" placeholder="Password">
-              <label>Mật khẩu</label>
+                            <div class="d-grid">
+                                <button name="sign-in" class="btn btn-primary btn-login text-uppercase fw-bold"
+                                        type="submit">
+                                    Đăng Ký
+                                </button>
+                            </div>
+                            <hr class="my-4">
+                            <div class="d-grid mb-2">
+                                <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
+                                    <i class="fab fa-google me-2"></i> Đăng nhập bằng Google
+                                </button>
+                                <div class="text">
+                                    Bạn đã có tài khoản? <a th:href="@{/login}">Đăng nhập</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-              <label class="form-check-label" for="rememberPasswordCheck">
-                Nhớ mật khẩu
-              </label>
-            </div>
-
-            <div class="d-grid">
-              <button name="sign-in" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">
-                Đăng Ký</button>
-            </div>
-            <hr class="my-4">
-            <div class="d-grid mb-2">
-              <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
-                <i class="fab fa-google me-2"></i> Đăng nhập bằng Google
-              </button>
-              <div class="text">
-                Bạn đã có tài khoản? <a th:href="@{/login}">Đăng nhập</a>
-              </div>
-            </div>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
 </div>
-</body>
-
 </body>
 </html>

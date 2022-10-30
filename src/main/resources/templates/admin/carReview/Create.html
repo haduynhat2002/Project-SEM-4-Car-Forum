@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/fragments/head :: head">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+    <!--../../static/dist/img/AdminLTELogo.png-->
+    <!-- Preloader -->
+    <!--    <div class="preloader flex-column justify-content-center align-items-center">-->
+    <!--        <img class="animation__shake" th:src="@{/admin/dist/img/AdminLTELogo.png"-->
+    <!--             alt="AdminLTELogo" height="60" width="60">-->
+    <!--    </div>-->
+
+    <nav th:replace="/admin/fragments/header :: header"></nav>
+    <div th:replace="/admin/fragments/navbar :: navbar"></div>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Chủ đề</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v1</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Thêm mới chủ đề</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form action="#" th:action="@{admin/carreview/save}" method="post" th:object="${carReview}">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Tiêu đề</label>
+                                <input type="text" name="title" class="form-control" placeholder="Tên chủ đề">
+                            </div>
+                            <div class="form-group">
+                                <label>Type</label>
+                                <input type="text" name="type" class="form-control" placeholder="Tên chủ đề">
+                            </div>
+                            <div class="form-group">
+                                <label>Hình ảnh</label>
+                                <input type="text" name="image" class="form-control" placeholder="Hình ảnh">
+                            </div>
+                            <label class="form-group">Category Car </label>
+                            <select th:field="*{categoryCar}" required>
+                                <th:block th:each="cat : ${listCategoryCar}">
+                                    <option th:text="${cat.name}" th:value="${cat.id}"></option>
+                                </th:block>
+                            </select>
+
+<!--                            <div class="form-group">-->
+<!--                                <label for="exampleInputFile">File input</label>-->
+<!--                                <div class="input-group">-->
+<!--                                    <div class="custom-file">-->
+<!--                                        <input type="file" class="custom-file-input" id="exampleInputFile">-->
+<!--                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>-->
+<!--                                    </div>-->
+<!--                                    <div class="input-group-append">-->
+<!--                                        <span class="input-group-text">Upload</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer th:replace="/admin/fragments/footer :: footer"></footer>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+</div>
+<script th:replace="/admin/fragments/scripts :: scripts"></script>
+
+</body>
+</html>
