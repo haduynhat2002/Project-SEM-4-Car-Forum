@@ -1,25 +1,19 @@
-package com.example.carforum.config;
+package com.example.carforum.entity;
 
 
-import com.example.carforum.entity.Role;
-import com.example.carforum.entity.UserDtls;
+import com.example.carforum.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CustomerUserDtls implements UserDetails {
-    private UserDtls u;
+    private User u;
+    private int id;
 
-    public CustomerUserDtls(UserDtls u) {
-        super();
-        this.u = u;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -29,6 +23,13 @@ public class CustomerUserDtls implements UserDetails {
         return set;
     }
 
+    public int getId() {
+        return id;
+    }
+    public CustomerUserDtls(User u) {
+        super();
+        this.u = u;
+    }
     @Override
     public String getPassword() {
         return u.getPassword();

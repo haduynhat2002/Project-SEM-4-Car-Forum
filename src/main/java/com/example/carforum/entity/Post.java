@@ -1,5 +1,6 @@
 package com.example.carforum.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,9 +27,9 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "topic_id")
     private Topic topic;
-//    @JsonIgnore
-//    @ManyToOne
-//    @JoinColumn(name="user_id", nullable = false)
-//    private User user_id;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user_id;
 
 }
