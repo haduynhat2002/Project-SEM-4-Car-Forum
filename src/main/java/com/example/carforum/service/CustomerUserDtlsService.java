@@ -1,7 +1,8 @@
-package com.example.carforum.config;
+package com.example.carforum.service;
 
 
-import com.example.carforum.entity.UserDtls;
+import com.example.carforum.entity.CustomerUserDtls;
+import com.example.carforum.entity.User;
 import com.example.carforum.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,7 +18,7 @@ public class CustomerUserDtlsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        UserDtls user = repo.findByEmail(email);
+        User user = repo.findByEmail(email);
 
         if (user != null) {
             return new CustomerUserDtls(user);

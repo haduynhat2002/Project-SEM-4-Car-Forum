@@ -25,5 +25,5 @@ public class Role
     private String name;
 
     @ManyToMany(mappedBy="roles")
-    private List<UserDtls> users;
+    private List<User> users;
 }

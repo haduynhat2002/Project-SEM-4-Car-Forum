@@ -15,8 +15,8 @@ import java.util.List;
 @ToString
 @Builder
 @Entity
-@Table(name = "users_table")
-public class UserDtls {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -25,6 +25,9 @@ public class UserDtls {
     private String gender;
     private String dob;
     private String email;
+    private String phone;
+    private String avatar;
+    private String address;
     private String password;
     private int status;
     @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)

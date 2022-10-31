@@ -21,7 +21,7 @@
                 <div class="p-body-content">
                     <div class="p-body-header">
                         <div class="p-title ">
-                            <h1 class="p-title-value">hieuphan1303 - trang cá nhân</h1>
+                            <h1 class="p-title-value">[[${fullname}]] - trang cá nhân</h1>
                         </div>
                     </div>
                     <div class="p-body-pageContent">
@@ -35,9 +35,9 @@
                                                     <div class="jsx-3725763649 avatar">
                                                         <a href="" class="avatar avatar--l" data-user-id="323981"
                                                            data-xf-init="member-tooltip" id="js-XFUniqueId1">
-                                                            <img src="/data/avatars/l/323/323981.jpg?1664517794"
-                                                                 alt="hieuphan1303" class="avatar-u323981-l" width="192"
-                                                                 height="192" loading="lazy">
+                                                            <img  th:src="${avatar}"
+                                                                  alt="hieuphan1303" class="avatar-u323981-l" width="192"
+                                                                  height="192" loading="lazy">
                                                         </a>
                                                     </div>
                                                     <div class="jsx-3725763649 action-links">
@@ -57,7 +57,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="jsx-3725763649 info">
-                                                    <h1 class="jsx-3725763649 username NoOverlay"> hieuphan1303 <span
+                                                    <h1 class="jsx-3725763649 username NoOverlay">[[${fullname}]]<span
                                                             class="jsx-3725763649 verifyBadge"> <svg
                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <path d="M51 7C27.3 7 8 26.3 8 50s19.3 43 43 43 43-19.3 43-43S74.7 7 51 7zm-6.5 62.9L25.4 50.7l5.7-5.7 13.5 13.5L71 32.1l5.7 5.7-32.2 32.1z"></path>
@@ -66,10 +66,15 @@
                                                         <div class="jsx-326576166 mod-tag"><h5
                                                                 class="userTitle message-userTitle" dir="auto"
                                                                 itemprop="jobTitle"
-                                                                style="display:inline-block;margin:0">Tài xế O-H</h5>
+                                                                style="display:inline-block;margin:0">[[${email}]]</h5>
                                                         </div>
-                                                        <span class="jsx-3725763649"><span>0</span> Follower</span><span
-                                                            class="jsx-3725763649"><span>0</span> Following</span></div>
+                                                        <ul>
+                                                            <li> <span class="jsx-3725763649">[[${phone}]]</span></li>
+                                                            <li> <span class="jsx-3725763649">[[${address}]]</span></li>
+                                                        </ul>
+
+
+                                                    </div>
                                                     <div class="jsx-3725763649 badge-slider desktop">
                                                         <div>
                                                             <div class="slick-slider slick-initialized">
@@ -159,112 +164,112 @@
                                                     </div>
                                                     <div class="jsx-3365248066">
                                                         <div class="jsx-3365248066 threads items infinite-content">
-                                                          <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
-                                                            <div class="wrap-ut pull-left">
-                                                              <div class="userinfo pull-left">
-                                                                <div class="avatar">
-                                                                  <img src="images/avatar2.jpg" alt="">
-                                                                  <div class="status red">&nbsp;</div>
+                                                            <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
+                                                                <div class="wrap-ut pull-left">
+                                                                    <div class="userinfo pull-left">
+                                                                        <div class="avatar">
+                                                                            <img src="images/avatar2.jpg" alt="">
+                                                                            <div class="status red">&nbsp;</div>
+                                                                        </div>
+
+                                                                        <div class="icons">
+                                                                            <img src="images/icon3.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
+                                                                                src="images/icon5.jpg" alt=""><img src="images/icon6.jpg" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="posttext pull-left">
+                                                                        <h2><a href="02_topic.html">What Instagram Ads Will Look Like</a></h2>
+                                                                        <p>Instagram offered a first glimpse at what its ads will look like in a blog post
+                                                                            Thursday. The sample ad, which you can see below.</p>
+                                                                    </div>
+                                                                    <div class="clearfix"></div>
                                                                 </div>
+                                                                <div class="postinfo pull-left">
+                                                                    <div class="comments">
+                                                                        <div class="commentbg">
+                                                                            89
+                                                                            <div class="mark"></div>
+                                                                        </div>
 
-                                                                <div class="icons">
-                                                                  <img src="images/icon3.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
-                                                                        src="images/icon5.jpg" alt=""><img src="images/icon6.jpg" alt="">
+                                                                    </div>
+                                                                    <div class="views"><i class="fa fa-eye"></i> 1,568</div>
+                                                                    <div class="time"><i class="fa fa-clock-o"></i> 15 min</div>
                                                                 </div>
-                                                              </div>
-                                                              <div class="posttext pull-left">
-                                                                <h2><a href="02_topic.html">What Instagram Ads Will Look Like</a></h2>
-                                                                <p>Instagram offered a first glimpse at what its ads will look like in a blog post
-                                                                  Thursday. The sample ad, which you can see below.</p>
-                                                              </div>
-                                                              <div class="clearfix"></div>
-                                                            </div>
-                                                            <div class="postinfo pull-left">
-                                                              <div class="comments">
-                                                                <div class="commentbg">
-                                                                  89
-                                                                  <div class="mark"></div>
+                                                                <div class="clearfix"></div>
+                                                            </div><!-- POST -->
+
+
+                                                            <!-- POST -->
+                                                            <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
+                                                                <div class="wrap-ut pull-left">
+                                                                    <div class="userinfo pull-left">
+                                                                        <div class="avatar">
+                                                                            <img src="images/avatar3.jpg" alt="">
+                                                                            <div class="status red">&nbsp;</div>
+                                                                        </div>
+
+                                                                        <div class="icons">
+                                                                            <img src="images/icon2.jpg" alt=""><img src="images/icon4.jpg" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="posttext pull-left">
+                                                                        <h2><a href="02_topic.html">The Future of Magazines Is on Tablets</a></h2>
+                                                                        <p>Eric Schmidt has seen the future of magazines, and it's on the tablet. At a
+                                                                            Magazine
+                                                                            Publishers Association.</p>
+                                                                    </div>
+                                                                    <div class="clearfix"></div>
                                                                 </div>
+                                                                <div class="postinfo pull-left">
+                                                                    <div class="comments">
+                                                                        <div class="commentbg">
+                                                                            456
+                                                                            <div class="mark"></div>
+                                                                        </div>
 
-                                                              </div>
-                                                              <div class="views"><i class="fa fa-eye"></i> 1,568</div>
-                                                              <div class="time"><i class="fa fa-clock-o"></i> 15 min</div>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                          </div><!-- POST -->
-
-
-                                                          <!-- POST -->
-                                                          <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
-                                                            <div class="wrap-ut pull-left">
-                                                              <div class="userinfo pull-left">
-                                                                <div class="avatar">
-                                                                  <img src="images/avatar3.jpg" alt="">
-                                                                  <div class="status red">&nbsp;</div>
+                                                                    </div>
+                                                                    <div class="views"><i class="fa fa-eye"></i> 1,568</div>
+                                                                    <div class="time"><i class="fa fa-clock-o"></i> 2 days</div>
                                                                 </div>
+                                                                <div class="clearfix"></div>
+                                                            </div><!-- POST -->
 
-                                                                <div class="icons">
-                                                                  <img src="images/icon2.jpg" alt=""><img src="images/icon4.jpg" alt="">
+
+                                                            <!-- POST -->
+                                                            <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
+                                                                <div class="wrap-ut pull-left">
+                                                                    <div class="userinfo pull-left">
+                                                                        <div class="avatar">
+                                                                            <img src="images/avatar4.jpg" alt="">
+                                                                            <div class="status yellow">&nbsp;</div>
+                                                                        </div>
+
+                                                                        <div class="icons">
+                                                                            <img src="images/icon1.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
+                                                                                src="images/icon6.jpg" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="posttext pull-left">
+                                                                        <h2><a href="02_topic.html">Pinterest Now Worth $3.8 Billion</a></h2>
+                                                                        <p>Pinterest's valuation is closing in on $4 billion after its latest funding round
+                                                                            of
+                                                                            $225 million, according to a report.</p>
+                                                                    </div>
+                                                                    <div class="clearfix"></div>
                                                                 </div>
-                                                              </div>
-                                                              <div class="posttext pull-left">
-                                                                <h2><a href="02_topic.html">The Future of Magazines Is on Tablets</a></h2>
-                                                                <p>Eric Schmidt has seen the future of magazines, and it's on the tablet. At a
-                                                                  Magazine
-                                                                  Publishers Association.</p>
-                                                              </div>
-                                                              <div class="clearfix"></div>
-                                                            </div>
-                                                            <div class="postinfo pull-left">
-                                                              <div class="comments">
-                                                                <div class="commentbg">
-                                                                  456
-                                                                  <div class="mark"></div>
+                                                                <div class="postinfo pull-left">
+                                                                    <div class="comments">
+                                                                        <div class="commentbg">
+                                                                            78
+                                                                            <div class="mark"></div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="views"><i class="fa fa-eye"></i> 1,568</div>
+                                                                    <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>
                                                                 </div>
-
-                                                              </div>
-                                                              <div class="views"><i class="fa fa-eye"></i> 1,568</div>
-                                                              <div class="time"><i class="fa fa-clock-o"></i> 2 days</div>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                          </div><!-- POST -->
-
-
-                                                          <!-- POST -->
-                                                          <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
-                                                            <div class="wrap-ut pull-left">
-                                                              <div class="userinfo pull-left">
-                                                                <div class="avatar">
-                                                                  <img src="images/avatar4.jpg" alt="">
-                                                                  <div class="status yellow">&nbsp;</div>
-                                                                </div>
-
-                                                                <div class="icons">
-                                                                  <img src="images/icon1.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
-                                                                        src="images/icon6.jpg" alt="">
-                                                                </div>
-                                                              </div>
-                                                              <div class="posttext pull-left">
-                                                                <h2><a href="02_topic.html">Pinterest Now Worth $3.8 Billion</a></h2>
-                                                                <p>Pinterest's valuation is closing in on $4 billion after its latest funding round
-                                                                  of
-                                                                  $225 million, according to a report.</p>
-                                                              </div>
-                                                              <div class="clearfix"></div>
-                                                            </div>
-                                                            <div class="postinfo pull-left">
-                                                              <div class="comments">
-                                                                <div class="commentbg">
-                                                                  78
-                                                                  <div class="mark"></div>
-                                                                </div>
-
-                                                              </div>
-                                                              <div class="views"><i class="fa fa-eye"></i> 1,568</div>
-                                                              <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                          </div><!-- POST -->
+                                                                <div class="clearfix"></div>
+                                                            </div><!-- POST -->
 
                                                         </div>
                                                         <div class="jsx-3365248066 main">

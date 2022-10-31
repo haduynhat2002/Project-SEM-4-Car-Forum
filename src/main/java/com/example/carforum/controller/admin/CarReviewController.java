@@ -34,7 +34,6 @@ public class CarReviewController {
     @PostMapping("admin/carreview/save")
     public String showCategoryNewForm(CarReview carReview){
         carReviewService.save(carReview);
-<<<<<<< HEAD:src/main/java/com/example/carforum/controller/CarReviewController.java
         return "redirect:/index";
     }
     @GetMapping("/index")
@@ -59,10 +58,7 @@ public class CarReviewController {
         }
 
         carReviewService.save(carReview);
-        return "redirect:/index";
-=======
         return "redirect:/admin/carreview/create";
->>>>>>> master:src/main/java/com/example/carforum/controller/admin/CarReviewController.java
     }
 
     @GetMapping("/delete/{id}")

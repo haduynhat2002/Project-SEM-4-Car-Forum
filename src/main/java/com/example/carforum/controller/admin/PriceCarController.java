@@ -42,13 +42,10 @@ public class PriceCarController {
         return "admin/priceCar/Create";
     }
     @PostMapping("/pricecar/save")
-    public String showCategoryNewForm(PriceCar priceCar){
+    public String showCategoryNewForm(PriceCar priceCar) {
         priceCarService.save(priceCar);
-<<<<<<< HEAD:src/main/java/com/example/carforum/controller/PriceCarController.java
-        return "redirect:/indexpricecar";
-=======
+
         return "redirect:/admin/priceCar/list";
->>>>>>> master:src/main/java/com/example/carforum/controller/admin/PriceCarController.java
     }
     @GetMapping("/indexpricecar")
     public String ShowPriceCarList(Model model){
