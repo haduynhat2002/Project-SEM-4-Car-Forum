@@ -2,7 +2,6 @@ package com.example.carforum.repository;
 
 
 import com.example.carforum.entity.Post;
-import com.example.carforum.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
