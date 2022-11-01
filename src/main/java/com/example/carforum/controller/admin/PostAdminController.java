@@ -2,10 +2,13 @@ package com.example.carforum.controller.admin;
 
 import com.example.carforum.entity.Post;
 import com.example.carforum.entity.Topic;
+import com.example.carforum.entity.User;
 import com.example.carforum.repository.PostRepository;
 import com.example.carforum.service.PostService;
 import com.example.carforum.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +38,10 @@ public class PostAdminController {
     }
     @PostMapping("admin/post/save")
     public String showCategoryNewForm(Post post){
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        User user = (User) authentication.getPrincipal();
+//        user.getId();
+//        post.setUser_id(user);
         post.setDateTime(LocalDateTime.now());
         postService.save(post);
         return "redirect:/admin/posts";
