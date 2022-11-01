@@ -42,6 +42,7 @@ public class PostAdminController {
 //        User user = (User) authentication.getPrincipal();
 //        user.getId();
 //        post.setUser_id(user);
+
         post.setDateTime(LocalDateTime.now());
         postService.save(post);
         return "redirect:/admin/posts";
