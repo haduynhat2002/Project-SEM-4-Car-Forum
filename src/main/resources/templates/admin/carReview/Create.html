@@ -57,10 +57,10 @@
                             </div>
                             <label class="form-group">Category Car </label>
                             <select th:field="*{categoryCar}" required>
-                                <th:block th:each="cat : ${listCategoryCar}">
-                                    <option th:text="${cat.name}" th:value="${cat.id}"></option>
-                                </th:block>
-                            </select>
+                            <th:block th:each="cat : ${listCategoryCar}">
+                                <option th:text="${cat.name}" th:value="${cat.id}"></option>
+                            </th:block>
+                        </select>
 
 <!--                            <div class="form-group">-->
 <!--                                <label for="exampleInputFile">File input</label>-->

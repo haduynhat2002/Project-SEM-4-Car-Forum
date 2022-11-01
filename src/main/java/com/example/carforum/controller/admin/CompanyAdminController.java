@@ -56,7 +56,7 @@ public class CompanyAdminController {
         return "redirect:/admin/company";
     }
     @GetMapping("company/delete/{id}")
-    public String deletePost(@PathVariable("id") Integer id, Model model) {
+    public String deleteCompany(@PathVariable("id") Integer id, Model model) {
         companyService.deleteById(id);
         return "redirect:/admin/company";
     }

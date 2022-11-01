@@ -1,32 +1,32 @@
 package com.example.carforum.entity;
 
 
+import com.example.carforum.entity.myenum.ProductStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "dealers")
-public class Dealer {
+@Table(name = "products")
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String adress;
-    private String hotline;
-    private String datetime;
-    private String description;
-    private String image;
+    private String retailprice;
+    private String origin;
+    private String rangeofvehicle;
+    private int numberofseats;
+    private int gear;
+    private ProductStatus productStatus;
     @ManyToOne
-    @JoinColumn(name = "company_id")
-    private Company company;
+    @JoinColumn(name = "dealer_id")
+    private Dealer dealer;
 }
