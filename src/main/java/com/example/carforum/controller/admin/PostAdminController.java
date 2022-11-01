@@ -60,6 +60,7 @@ public class PostAdminController {
         model.addAttribute("post", post);
         return "admin/post/CreatePost";
     }
+
     @GetMapping("post/delete/{id}")
     public String deletePost(@PathVariable("id") Integer id, Model model) {
         postRepository.deleteById(id);
