@@ -22,4 +22,9 @@ public class PostService {
     public Optional<Post> finById(int id) {
         return postRepository.findById(id);
     }
+
+
+    public List<Post> findAllByUserId(int userId) {
+        return postRepository.findAllByUserId(userId);
+    }
 }
