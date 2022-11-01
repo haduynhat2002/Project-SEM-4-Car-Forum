@@ -1,9 +1,6 @@
 package com.example.carforum.controller;
 
-import com.example.carforum.entity.CategoryCar;
-import com.example.carforum.entity.Post;
-import com.example.carforum.entity.Topic;
-import com.example.carforum.entity.User;
+import com.example.carforum.entity.*;
 import com.example.carforum.service.CategoryCarService;
 import com.example.carforum.service.PostService;
 import com.example.carforum.service.TopicService;
@@ -16,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -39,17 +37,36 @@ public class PostController {
     @PostMapping("/post/save")
     public String showCategoryNewForm(Post post){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User) authentication.getPrincipal();
-        user.getId();
-        post.setUser_id(user);
-        post.setDateTime(LocalDateTime.now());
-        postService.save(post);
+        Object o = authentication.getPrincipal();
+
+        List<Post> listPost = new ArrayList<>();
+        if(o instanceof String && "anonymousUser".equals(String.valueOf(o))) {
+            //chua login
+        } else {
+            CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
+            User user = customerUserDtls.getU();
+            post.setUser_id(user);
+            post.setDateTime(LocalDateTime.now());
+            postService.save(post);
+        }
+
         return "redirect:/";
     }
 
     @GetMapping("/")
     public String listPost(Model model){
-        List<Post> listPost = postService.findAll();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Object o = authentication.getPrincipal();
+
+        List<Post> listPost = new ArrayList<>();
+        if(o instanceof String && "anonymousUser".equals(String.valueOf(o))) {
+            //chua login
+        } else {
+            CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
+            User user = customerUserDtls.getU();
+            listPost = postService.findAllByUserId(user.getId());
+        }
+
         List<CategoryCar> listCategoryCar = categoryCarService.findAll();
         model.addAttribute("listCategoryCar",listCategoryCar );
         model.addAttribute("listPost", listPost);

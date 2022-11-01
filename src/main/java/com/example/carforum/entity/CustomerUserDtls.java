@@ -59,4 +59,12 @@ public class CustomerUserDtls implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public User getU() {
+        return u;
+    }
+
+    public void setU(User u) {
+        this.u = u;
+    }
 }

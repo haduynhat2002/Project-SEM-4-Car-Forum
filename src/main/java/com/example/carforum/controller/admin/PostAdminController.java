@@ -1,5 +1,6 @@
 package com.example.carforum.controller.admin;
 
+import com.example.carforum.entity.CustomerUserDtls;
 import com.example.carforum.entity.Post;
 import com.example.carforum.entity.Topic;
 import com.example.carforum.entity.User;
@@ -39,8 +40,8 @@ public class PostAdminController {
     @PostMapping("admin/post/save")
     public String showCategoryNewForm(Post post){
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        User user = (User) authentication.getPrincipal();
-//        user.getId();
+//        CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
+//        User user = customerUserDtls.getU();
 //        post.setUser_id(user);
 
         post.setDateTime(LocalDateTime.now());
