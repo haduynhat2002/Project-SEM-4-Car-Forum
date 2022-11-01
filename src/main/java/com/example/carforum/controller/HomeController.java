@@ -47,5 +47,9 @@ public class HomeController {
     public String PriceDetail() {
         return "user/Price-Detail";
     }
+    @RequestMapping("/guide")
+    public String guide() {
+        return "/Guide";
+    }
 }
 
