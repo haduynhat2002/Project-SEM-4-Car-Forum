@@ -1585,17 +1585,17 @@
                             </div>
                         </div>
                         <!-- POST -->
-                        <div  th:each="post : ${listPost6}" class="post wow fadeInUpBig" data-wow-delay="0.2s">
+                        <div  th:each="post : ${listPost6}" class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 150px;">
                             <div class="wrap-ut pull-left">
                                 <div class="userinfo pull-left">
                                     <div class="avatar">
-                                        <img th:src="${post.user_id.avatar}" alt="">
+                                        <img style="width: 70px; height: 70px;border-radius: 50%;object-fit: cover;" th:src="${post.user_id.avatar}" alt="">
                                         <div class="status green">&nbsp;</div>
                                     </div>
                                 </div>
                                 <div class="posttext pull-left">
-                                    <h2><a href="02_topic.html">[[${post.user_id.fullname}]]</a></h2>
-                                    <p class="text-shortened">[[${post.content}]]</p>
+                                    <a href="02_topic.html">[[${post.user_id.fullname}]]</a>
+                                    <div class="text-shortened">[[${post.content}]]</div>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

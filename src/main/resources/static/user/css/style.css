@@ -541,7 +541,6 @@ img {
     /*text-overflow: ellipsis;*/
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 35px;
     -webkit-line-clamp: 2;
     height: 60px;
     display: -webkit-box;
