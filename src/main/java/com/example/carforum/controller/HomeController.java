@@ -51,5 +51,9 @@ public class HomeController {
     public String guide() {
         return "/Guide";
     }
+    @RequestMapping("/authorized")
+    public String authorized() {
+        return "/Authorized";
+    }
 }
 
