@@ -15,5 +15,4 @@ import java.util.List;
 public class CategoryCarController {
     @Autowired
     private CategoryCarService categoryCarService;
-
 }

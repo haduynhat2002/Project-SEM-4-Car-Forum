@@ -1,9 +1,12 @@
 package com.example.carforum.controller;
 
+import com.example.carforum.entity.CategoryCar;
 import com.example.carforum.entity.Post;
 import com.example.carforum.entity.User;
+import com.example.carforum.repository.CategoryCarRepository;
 import com.example.carforum.repository.PostRepository;
 import com.example.carforum.repository.UserRepository;
+import com.example.carforum.service.CategoryCarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +21,12 @@ public class HomeController {
     PostRepository postRepository;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    CategoryCarService categoryCarService;
     @GetMapping("/")
     public String listPost(Model model){
+        List<CategoryCar> listCategoryCar = categoryCarService.findAll();
+
         List<User> userList = userRepository.findAll();
         List<Post> listPost1 = postRepository.listPost(1);
         List<Post> listPost2 = postRepository.listPost(2);
@@ -28,6 +35,7 @@ public class HomeController {
         model.addAttribute("listPost2", listPost2);
         model.addAttribute("listPost6", listPost6);
         model.addAttribute("user", userList);
+        model.addAttribute("listCategoryCar",listCategoryCar );
         return "user/index";
     }
     @RequestMapping("/admin")
