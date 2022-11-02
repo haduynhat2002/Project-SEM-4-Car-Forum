@@ -34,14 +34,14 @@ public class HomeController {
     public String index() {
         return "admin/index";
     }
-        @RequestMapping("/admin/home2")
-    public String index2() {
-        return "admin/index2";
-    }
-    @RequestMapping("/admin/home3")
-    public String index3() {
-        return "admin/index3";
-    }
+//        @RequestMapping("/admin/home2")
+//    public String index2() {
+//        return "admin/index2";
+//    }
+//    @RequestMapping("/admin/home3")
+//    public String index3() {
+//        return "admin/index3";
+//    }
     @RequestMapping("/contact")
     public String contact() {
         return "user/contact";
@@ -73,6 +73,10 @@ public class HomeController {
     @RequestMapping("/guide")
     public String guide() {
         return "/Guide";
+    }
+    @RequestMapping("/authorized")
+    public String authorized() {
+        return "/Authorized";
     }
 }
 

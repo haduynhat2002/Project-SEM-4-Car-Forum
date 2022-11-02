@@ -39,7 +39,7 @@ public class UserController {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @GetMapping("/register")
     public String home() {
-        return "register";
+        return "user/Register";
     }
 
     @GetMapping("/login")

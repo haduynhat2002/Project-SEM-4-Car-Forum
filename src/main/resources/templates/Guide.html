@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/user/fragments/head :: head">
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
 </head>
 <body>
 <header th:replace="/user/fragments/header :: header"></header>
@@ -68,14 +68,14 @@
                                                                                         style="font-size: 18px">
                                                                                         <div class="bbImageWrapper  js-lbImage"
                                                                                              style="cursor: pointer;">
-                                                                                            <img src="https://oto-hui.com/attachments/reset-den-bao-thay-day-dai-toyota-hilux-va-fotuner-jpg.88454/"
+                                                                                            <img th:src="@{/user/img/reset-den-bao.jpg}"
                                                                                                  class="bbImage"
                                                                                                  alt="reset đèn báo thay dây đai Toyota HiLUX và fotuner.jpg"
                                                                                                  title="reset đèn báo thay dây đai Toyota HiLUX và fotuner.jpg"
                                                                                                  width="960"
                                                                                                  height="540">
                                                                                         </div>
-                                                                                    </span>​
+                                                                                    </span>
                                                                                 </div>
                                                                                 <span
                                                                                         style="font-size: 18px"><br>
