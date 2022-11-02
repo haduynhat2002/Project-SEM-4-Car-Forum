@@ -541,13 +541,21 @@ img {
     /*text-overflow: ellipsis;*/
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 25px;
+    line-height: 35px;
     -webkit-line-clamp: 2;
-    height: 75px;
+    height: 60px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
-
+.headline h5{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 15px;
+    -webkit-line-clamp: 2;
+    height: 34px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
 .single-blog-post .post-content .post-meta p {
     margin-bottom: 0;
     font-size: 12px; }
