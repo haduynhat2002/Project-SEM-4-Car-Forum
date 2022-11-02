@@ -3,6 +3,9 @@ package com.example.carforum.service;
 import com.example.carforum.entity.Post;
 import com.example.carforum.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +25,6 @@ public class PostService {
     public Optional<Post> finById(int id) {
         return postRepository.findById(id);
     }
-
 
     public List<Post> findAllByUserId(int userId) {
         return postRepository.findAllByUserId(userId);

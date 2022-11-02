@@ -16,30 +16,31 @@
                             <div class="p-body-content">
                                 <div class="p-body-header">
                                     <div class="p-title ">
-                                        <h1 class="p-title-value">Hướng dẫn cách reset đèn báo thay dây đai TBELT trên
-                                            Toyota
-                                            HiLux và Fotuner</h1>
+                                        <h1 class="p-title-value">Toyota Fortuner 2022 thêm trang bị, giá tăng cao nhất 42 triệu đồng tại Việt Nam
+                                        </h1>
                                     </div>
                                     <div class="p-description">
                                         <div class="jsx-1786742306 info-block--left">
                                             <a href="#" class="avatar avatar--xs jsx-1786742306">
-                                                <img src="https://hinhanhdephd.com/wp-content/uploads/2020/03/hinh-nen-may-tinh-hinh-nen-4k-25.jpg"
-                                                     alt="Nguyễn Xuân Giang" class="avatar-u226020-s" width="48"
+                                                <img th:src="${listPostDetail.user_id.avatar}" style="object-fit: cover" class="avatar-u226020-s" width="48"
                                                      height="48">
                                             </a>
                                             <div class="jsx-1786742306 info">
                                                 <div class="jsx-2508229361 author-name">
                                                     <a href="#"
                                                        class="username  u-concealed jsx-1786742306 author-name">
-                                                        <span class="username--staff">Nguyễn Xuân Giang</span></a>
+                                                        <span class="username--staff">[[${listPostDetail.user_id.fullname}]]</span></a>
                                                 </div>
                                                 <div class="jsx-1786742306 date-comment-view">
-                                                    <span class="jsx-1786742306 date"><span><time
-                                                            class="u-dt">15/11/18</time><span
-                                                            class="jsx-1786742306 comment">Bình luận:
-                                                                <span>14</span></span><span
-                                                            class="jsx-1786742306 view">Lượt xem:
-                                                                <span>9,231</span></span>
+                                                    <span class="jsx-1786742306 date"><span>
+                                                        <time class="u-dt">[[${listPostDetail.dateTime}]]</time><br>
+<!--                                                        <span-->
+<!--                                                            class="jsx-1786742306 comment">Bình luận:-->
+<!--                                                            <span>14</span></span><span-->
+<!--                                                            class="jsx-1786742306 view">Lượt xem:-->
+<!--                                                                <span>9,231</span></span>-->
+                                                        </span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -59,17 +60,9 @@
                                                                         <article class="message-body js-selectToQuote">
 
                                                                             <div class="bbWrapper"><span
-                                                                                    style="font-size: 18px"><b>Để reset
-                                                                                        đền báo
-                                                                                        thay dây đai TBELT trên 2 dòng
-                                                                                        xe Toyota
-                                                                                        HiLux và Fotuner chúng ta thực
-                                                                                        hiện lần
-                                                                                        lượt các bước sau đây:</b><br>
+                                                                                    style="font-size: 18px"><h3>[[${listPostDetail.title}]]</h3><br>
                                                                                     <br>
-                                                                                    <b>Bước 1: </b>Nhấn nút đồng hồ về
-                                                                                    ODO (
-                                                                                    tổng kilomet chính)<br>
+                                                                                <span>[[${listPostDetail.content}]]</span><br>
                                                                                 </span><br>
                                                                                 <div style="text-align: center"><span
                                                                                         style="font-size: 18px">
