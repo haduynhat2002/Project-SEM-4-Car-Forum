@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @RequestMapping("/")
     public String Home() { return "user/index"; }
-    @RequestMapping("/admin/home")
+    @RequestMapping("/admin/")
     public String index() {
         return "admin/index";
     }
-        @RequestMapping("/admin/home2")
-    public String index2() {
-        return "admin/index2";
-    }
-    @RequestMapping("/admin/home3")
-    public String index3() {
-        return "admin/index3";
-    }
+//        @RequestMapping("/admin/home2")
+//    public String index2() {
+//        return "admin/index2";
+//    }
+//    @RequestMapping("/admin/home3")
+//    public String index3() {
+//        return "admin/index3";
+//    }
     @RequestMapping("/contact")
     public String contact() {
         return "user/contact";
