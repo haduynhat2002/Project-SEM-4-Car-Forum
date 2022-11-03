@@ -16,4 +16,7 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
     @Query(value = "select p from Post p where p.user_id.id = :id")
     List<Post> findAllByUserId(int id);
 
+    @Query(value = "select * from Posts p where p.topic_id = :id order by a desc", nativeQuery = true)
+    List<Post> listPostOrderBy(int id);
+
 }

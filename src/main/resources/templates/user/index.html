@@ -1585,7 +1585,7 @@
                             </div>
                         </div>
                         <!-- POST -->
-                        <div  th:each="post : ${listPost6}" class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 150px;">
+                        <div  th:each="post : ${listPost3.content}" class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 150px;">
                             <div class="wrap-ut pull-left">
                                 <div class="userinfo pull-left">
                                     <div class="avatar">
@@ -1616,6 +1616,13 @@
                             <div class="col-12">
                                 <div class="load-more-btn mt-50 text-center">
                                     <a href="#" class="btn world-btn">Load More</a>
+
+                                    <div th:if="${listPost3.totalPages > 0}" class="pagination"
+                                         th:each="pageNumber : ${pageNumbers}">
+                                        <a th:href="@{/(size=${listPost3.size}, page=${pageNumber})}"
+                                           th:text=${pageNumber}
+                                           th:class="${pageNumber==listPost3.number + 1} ? active"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
