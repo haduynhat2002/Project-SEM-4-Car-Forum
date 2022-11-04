@@ -24,7 +24,7 @@ public class HomeController {
         List<Post> listPost1 = postRepository.listPost(1);
         List<Post> listPost2 = postRepository.listPost(2);
         List<Post> listPost6 = postRepository.listPost(6);
-        model.addAttribute("listPost1", listPost1);
+//        model.addAttribute("listPost1", listPost1);
         model.addAttribute("listPost2", listPost2);
         model.addAttribute("listPost6", listPost6);
         model.addAttribute("user", userList);

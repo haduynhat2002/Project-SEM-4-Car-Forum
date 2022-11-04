@@ -406,9 +406,9 @@ img {
     font-size: 24px;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700; }
-.hero-area .hero-post-slide .single-slide .post-title a {
+.hero-area .hero-post-slide .single-slide .post-title p {
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
     color: #8d8d8d; }
 .hero-area .hero-post-slide .center .single-slide .post-number p {
@@ -550,7 +550,7 @@ img {
 .headline h5{
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 15px;
+    line-height: 18px;
     -webkit-line-clamp: 2;
     height: 34px;
     display: -webkit-box;
@@ -1307,7 +1307,7 @@ textarea:focus ~ .highlight {
 }
 .car-review p,
 .price-detail p{
-    color: black;
+    color: rgb(198 198 198 / 50%);
 }
 .text-review{
     color: #4c4c4c;
@@ -1321,8 +1321,13 @@ textarea:focus ~ .highlight {
     top:45%
 }
 .text-review:hover{
+    /*color: white;*/
+    /*background: rgb(41 41 41 / 50%);*/
     color: white;
-    background: rgb(41 41 41 / 50%);
+    background: rgb(62 60 60 / 50%);
+    height: 100%;
+    top: 0;
+    font-size: 24px;
 }
 .price-detail img{
     display: block;
