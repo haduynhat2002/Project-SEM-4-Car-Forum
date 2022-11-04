@@ -70,11 +70,14 @@
                                 <input type="text" th:field="*{gear}" name="description" class="form-control" placeholder="Nội dung">
                                 <div class="form-group">
                                     <label class="form-group">Company </label>
-                                    <select class="form-control" th:field="*{dealer}" required>
-                                        <th:block th:each=" product : ${listDealer}">
-                                            <option th:value="${product.id}" th:text="${product.name}" ></option>
-                                        </th:block>
-                                    </select>
+                                    <option th:each="product : ${listDealer}" th:value="${product.id}"
+                                            th:text="${name}"
+                                            th:selected="${name} == ${product}"></option>
+<!--                                    <select class="form-control" th:field="*{dealer}" required>-->
+<!--                                        <th:block th:each=" product : ${listDealer}">-->
+<!--                                            <option th:value="${product.id}" th:text="${product.name}" ></option>-->
+<!--                                        </th:block>-->
+<!--                                    </select>-->
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">

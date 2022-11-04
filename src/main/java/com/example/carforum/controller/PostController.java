@@ -12,7 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +35,7 @@ public class PostController {
     private CategoryCarService categoryCarService;
 
     @GetMapping("/post/new")
-    public String showCategoryNewForm(Model model){
+    public String showCategoryNewForm(Model model) {
         List<Topic> listTopic = topicService.findAll();
         model.addAttribute("listTopic", listTopic);
         model.addAttribute("post", new Post());

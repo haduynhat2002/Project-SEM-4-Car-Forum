@@ -42,7 +42,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <div class="">
-                        <form action="#" th:action="@{/admin/post/save}" method="post" th:object="${post}">
+                        <form action="#" th:action="@{/admin/post/save}" method="post" th:object="${post}" enctype="multipart/form-data">>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Danh mục</label>
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Hình ảnh</label>
-                                    <input name="image" type="text" class="form-control"placeholder="" >
+                                    <input name="image" type="file" accept="image/*" class="form-control" placeholder="" >
                                 </div>
                                 <label>Nội dung</label>
                                 <!--                        <textarea id="summernote">-->
