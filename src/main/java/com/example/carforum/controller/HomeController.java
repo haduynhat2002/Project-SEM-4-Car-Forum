@@ -1,16 +1,26 @@
 package com.example.carforum.controller;
 
+import com.example.carforum.entity.CategoryCar;
 import com.example.carforum.entity.Post;
 import com.example.carforum.entity.User;
+import com.example.carforum.repository.CategoryCarRepository;
 import com.example.carforum.repository.PostRepository;
 import com.example.carforum.repository.UserRepository;
+import com.example.carforum.service.CategoryCarService;
+import com.example.carforum.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Controller
 public class HomeController {
@@ -18,16 +28,39 @@ public class HomeController {
     PostRepository postRepository;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    CategoryCarService categoryCarService;
+
+    @Autowired
+    PostService postService;
     @GetMapping("/")
-    public String listPost(Model model){
+    public String listPost(Model model,
+                           @RequestParam("page") Optional<Integer> page,
+                           @RequestParam("size") Optional<Integer> size){
+        List<CategoryCar> listCategoryCar = categoryCarService.findAll();
+
         List<User> userList = userRepository.findAll();
-        List<Post> listPost1 = postRepository.listPost(1);
+         List<Post> listPost1 = postRepository.listPost(1);
         List<Post> listPost2 = postRepository.listPost(2);
-        List<Post> listPost6 = postRepository.listPost(6);
-//        model.addAttribute("listPost1", listPost1);
+        //List<Post> listPost3 = postRepository.listPost(3);
+
+        int currentPage = page.orElse(1);
+        int pageSize = size.orElse(5);
+        Page<Post> listPost3 = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize),
+                3);
+        int totalPages = listPost3.getTotalPages();
+        if (totalPages > 0) {
+            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages)
+                    .boxed()
+                    .collect(Collectors.toList());
+            model.addAttribute("pageNumbers", pageNumbers);
+        }
+
+        model.addAttribute("listPost1", listPost1);
         model.addAttribute("listPost2", listPost2);
-        model.addAttribute("listPost6", listPost6);
+        model.addAttribute("listPost3", listPost3);
         model.addAttribute("user", userList);
+        model.addAttribute("listCategoryCar",listCategoryCar );
         return "user/index";
     }
     @RequestMapping("/admin")
