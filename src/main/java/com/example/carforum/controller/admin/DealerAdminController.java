@@ -3,6 +3,7 @@ package com.example.carforum.controller.admin;
 import com.example.carforum.entity.CategoryCar;
 import com.example.carforum.entity.Company;
 import com.example.carforum.entity.Dealer;
+import com.example.carforum.entity.Product;
 import com.example.carforum.service.CompanyService;
 import com.example.carforum.service.DealerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,10 +45,11 @@ public class DealerAdminController {
     }
     @GetMapping("dealer/edit/{id}")
     public String showUpdateDealerForm(@PathVariable("id") Integer id, Model model) {
-        Dealer dealer = dealerService.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid dealer Id:" + id));
-
+        Dealer dealer = dealerService.findById(id).get();
         model.addAttribute("dealer", dealer);
+        List<Company> listCompany = companyService.findAll();
+        model.addAttribute("listCompany",listCompany );
+
         return "admin/dealer/UpdateDealer";
     }
 
