@@ -542,7 +542,7 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
-    height: 60px;
+    height: 57px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }

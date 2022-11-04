@@ -88,7 +88,7 @@
                                                 <div class="post-thumbnail">
                                                     <img th:src="${post.image}" alt="" style="object-fit:cover;width: 423px; height: 250px">
                                                     <!-- Catagory -->
-                                                    <div class="post-cta"><a href="#">Chi tiết</a></div>
+                                                    <div class="post-cta"><a th:href="@{'/details/' + ${post.id}}">Chi tiết</a></div>
                                                 </div>
                                                 <!-- Post Content -->
                                                 <div class="post-content">
@@ -98,8 +98,8 @@
                                                     <p class="text-shortened">[[${post.content}]]</p>
                                                     <!-- Post Meta -->
                                                     <div class="post-meta">
-                                                        <p><a href="#" class="post-author">Katy Liu</a> on <a href="#"
-                                                            class="post-date">[[${post.user_id.fullname}]]</a></p>
+                                                        <p><a href="#" class="post-author">[[${post.user_id.fullname}]]</a> on <a href="#"
+                                                            class="post-date">[[${post.dateTime}]]</a></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -117,12 +117,12 @@
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
-                                                <a href="#" class="headline">
+                                                <a th:href="@{'/details/' + ${post.id}}" class="headline">
                                                     <h5><span th:text="${post.title}"></span></h5>
                                                 </a>
                                                 <!-- Post Meta -->
                                                 <div class="post-meta">
-                                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#"
+                                                    <p><a href="#" class="post-author">[[${post.user_id.fullname}]]</a> on <a href="#"
                                                                                                           class="post-date">[[${post.dateTime}]]</a></p>
                                                 </div>
                                             </div>
@@ -1395,7 +1395,7 @@
                     </div>
                     <!-- Widget Area -->
                     <div class="sidebar-widget-area">
-                        <h5 class="title">Đánh giá xe</h5>
+                        <h5 class="title">Bảo dưỡng ô tô</h5>
                         <div class="widget-content">
                             <!-- Single Blog Post -->
                             <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
@@ -1553,7 +1553,7 @@
                         <div>
                             <ul class=" mb-20" id="myTab4" role="tablist"
                                 style="padding: 10px 0;font-size: 18px;color: #000000;margin-bottom: 25px;margin-right: auto;border-bottom: 2px solid #f1f1f1;font-weight: 700;">
-                                <li class="title">Câu hỏi và bàn luận</li>
+                                <li class="title">Kinh nghiệm lái xe</li>
                             </ul>
                         </div>
                         <div class="container">
@@ -1573,7 +1573,26 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Some text in the modal.</p>
+                                            <form action="#" th:action="@{/home/post/save}" method="post" th:object="${post}">
+
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Tiêu đề</label>
+                                                    <input name="title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết...." >
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Hình ảnh</label>
+                                                    <input name="image" type="text" class="form-control"placeholder="" >
+                                                </div>
+                                                <label>Nội dung</label>
+
+
+                                                <div class="form-group">
+
+                                                    <input  name="content" type="text" class="form-control"placeholder="Nhập nội dung bài viết..." >
+                                                </div>
+                                                <button type="submit" class="btn btn-primary mt-3 btn-lg btn-block">Đăng bài</button>
+                                            </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close
@@ -1585,7 +1604,7 @@
                             </div>
                         </div>
                         <!-- POST -->
-                        <div  th:each="post : ${listPost3.content}" class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 150px;">
+                        <div  th:each="post : ${listPost3.content}" class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 100px;">
                             <div class="wrap-ut pull-left">
                                 <div class="userinfo pull-left">
                                     <div class="avatar">
@@ -1600,13 +1619,13 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="postinfo pull-left">
-                                <div class="comments">
-                                    <div class="commentbg">
-                                        560
-                                        <div class="mark"></div>
-                                    </div>
+<!--                                <div class="comments">-->
+<!--                                    <div class="commentbg">-->
+<!--                                        560-->
+<!--                                        <div class="mark"></div>-->
+<!--                                    </div>-->
 
-                                </div>
+<!--                                </div>-->
                                 <div class="views"><i class="fa fa-eye"></i> 1,568</div>
                                 <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>
                             </div>

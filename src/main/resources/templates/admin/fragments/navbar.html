@@ -43,7 +43,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                        <i class="nav-icon fa-solid fa-table-list"></i>
                         <p>
                             Chủ đề
                             <i class="fas fa-angle-left right"></i>
@@ -67,7 +67,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                        <i class="nav-icon fa-solid fa-book-open"></i>
                         <p>
                             Bài viết
                             <i class="fas fa-angle-left right"></i>
@@ -91,7 +91,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                        <i class=" nav-icon fa-solid fa-car-side"></i>
                         <p>
                             Danh mục xe
                             <i class="fas fa-angle-left right"></i>
@@ -115,7 +115,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                        <i class=" nav-icon fa-solid fa-car-tunnel"></i>
                         <p>
                             Đánh giá xe
                             <i class="fas fa-angle-left right"></i>
@@ -139,7 +139,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                        <i class="nav-icon fa-solid fa-hand-holding-dollar"></i>
                         <p>
                             Giá xe
                             <i class="fas fa-angle-left right"></i>
@@ -163,447 +163,92 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
+                        <i class="nav-icon fa-solid fa-users"></i>
                         <p>
-                            Forms
+                            Người dùng
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a th:href="@{/admin/pages/forms/general.html}" class="nav-link">
+                            <a th:href="@{/admin/users/list}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>General Elements</p>
+                                <p>Quản lý tài khoản</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/admin/pages/forms/advanced.html}" class="nav-link">
+                            <a th:href="@{/admin/user/create}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Advanced Elements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a th:href="@{/admin/pages/forms/editors.html}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Editors</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a th:href="@{/admin/pages/forms/validation.html}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Validation</p>
+                                <p>Thêm tài khoản</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Tables
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a th:href="@{/admin/pages/tables/simple.html}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Simple Tables</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a th:href="@{/admin/pages/tables/data.html}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>DataTables</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a th:href="@{/admin/pages/tables/jsgrid.html}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>jsGrid</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-<!--                <li class="nav-header">EXAMPLES</li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a th:href="@{/admin/pages/calendar.html}" class="nav-link">-->
-<!--                        <i class="nav-icon far fa-calendar-alt"></i>-->
-<!--                        <p>-->
-<!--                            Calendar-->
-<!--                            <span class="badge badge-info right">2</span>-->
-<!--                        </p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a th:href="@{/admin/pages/gallery.html}" class="nav-link">-->
-<!--                        <i class="nav-icon far fa-image"></i>-->
-<!--                        <p>-->
-<!--                            Gallery-->
-<!--                        </p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a th:href="@{/admin/pages/kanban.html}" class="nav-link">-->
-<!--                        <i class="nav-icon fas fa-columns"></i>-->
-<!--                        <p>-->
-<!--                            Kanban Board-->
-<!--                        </p>-->
-<!--                    </a>-->
-<!--                </li>-->
 <!--                <li class="nav-item">-->
 <!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="nav-icon far fa-envelope"></i>-->
+<!--                        <i class="nav-icon fas fa-edit"></i>-->
 <!--                        <p>-->
-<!--                            Mailbox-->
+<!--                            Forms-->
 <!--                            <i class="fas fa-angle-left right"></i>-->
 <!--                        </p>-->
 <!--                    </a>-->
 <!--                    <ul class="nav nav-treeview">-->
 <!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/mailbox/mailbox.html}" class="nav-link">-->
+<!--                            <a th:href="@{/admin/pages/forms/general.html}" class="nav-link">-->
 <!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Inbox</p>-->
+<!--                                <p>General Elements</p>-->
 <!--                            </a>-->
 <!--                        </li>-->
 <!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/mailbox/compose.html}" class="nav-link">-->
+<!--                            <a th:href="@{/admin/pages/forms/advanced.html}" class="nav-link">-->
 <!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Compose</p>-->
+<!--                                <p>Advanced Elements</p>-->
 <!--                            </a>-->
 <!--                        </li>-->
 <!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/mailbox/read-mail.html}" class="nav-link">-->
+<!--                            <a th:href="@{/admin/pages/forms/editors.html}" class="nav-link">-->
 <!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Read</p>-->
+<!--                                <p>Editors</p>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a th:href="@{/admin/pages/forms/validation.html}" class="nav-link">-->
+<!--                                <i class="far fa-circle nav-icon"></i>-->
+<!--                                <p>Validation</p>-->
 <!--                            </a>-->
 <!--                        </li>-->
 <!--                    </ul>-->
 <!--                </li>-->
+
 <!--                <li class="nav-item">-->
 <!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="nav-icon fas fa-book"></i>-->
+<!--                        <i class="nav-icon fas fa-table"></i>-->
 <!--                        <p>-->
-<!--                            Pages-->
+<!--                            Tables-->
 <!--                            <i class="fas fa-angle-left right"></i>-->
 <!--                        </p>-->
 <!--                    </a>-->
 <!--                    <ul class="nav nav-treeview">-->
 <!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/invoice.html}" class="nav-link">-->
+<!--                            <a th:href="@{/admin/pages/tables/simple.html}" class="nav-link">-->
 <!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Invoice</p>-->
+<!--                                <p>Simple Tables</p>-->
 <!--                            </a>-->
 <!--                        </li>-->
 <!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/profile.html}" class="nav-link">-->
+<!--                            <a th:href="@{/admin/pages/tables/data.html}" class="nav-link">-->
 <!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Profile</p>-->
+<!--                                <p>DataTables</p>-->
 <!--                            </a>-->
 <!--                        </li>-->
 <!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/e-commerce.html}" class="nav-link">-->
+<!--                            <a th:href="@{/admin/pages/tables/jsgrid.html}" class="nav-link">-->
 <!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>E-commerce</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/projects.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Projects</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/project-add.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Project Add</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/project-edit.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Project Edit</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/project-detail.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Project Detail</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/contacts.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Contacts</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/faq.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>FAQ</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/contact-us.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Contact us</p>-->
+<!--                                <p>jsGrid</p>-->
 <!--                            </a>-->
 <!--                        </li>-->
 <!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="nav-icon far fa-plus-square"></i>-->
-<!--                        <p>-->
-<!--                            Extras-->
-<!--                            <i class="fas fa-angle-left right"></i>-->
-<!--                        </p>-->
-<!--                    </a>-->
-<!--                    <ul class="nav nav-treeview">-->
-<!--                        <li class="nav-item">-->
-<!--                            <a href="#" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>-->
-<!--                                    Login & Register v1-->
-<!--                                    <i class="fas fa-angle-left right"></i>-->
-<!--                                </p>-->
-<!--                            </a>-->
-<!--                            <ul class="nav nav-treeview">-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a th:href="@{/admin/pages/examples/login.html}" class="nav-link">-->
-<!--                                        <i class="far fa-circle nav-icon"></i>-->
-<!--                                        <p>Login v1</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a th:href="@{/admin/pages/examples/register.html}" class="nav-link">-->
-<!--                                        <i class="far fa-circle nav-icon"></i>-->
-<!--                                        <p>Register v1</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a th:href="@{/admin/pages/examples/forgot-password.html}"-->
-<!--                                       class="nav-link">-->
-<!--                                        <i class="far fa-circle nav-icon"></i>-->
-<!--                                        <p>Forgot Password v1</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a th:href="@{/admin/pages/examples/recover-password.html}"-->
-<!--                                       class="nav-link">-->
-<!--                                        <i class="far fa-circle nav-icon"></i>-->
-<!--                                        <p>Recover Password v1</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a href="#" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>-->
-<!--                                    Login & Register v2-->
-<!--                                    <i class="fas fa-angle-left right"></i>-->
-<!--                                </p>-->
-<!--                            </a>-->
-<!--                            <ul class="nav nav-treeview">-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a th:href="@{/admin/pages/examples/login-v2.html}" class="nav-link">-->
-<!--                                        <i class="far fa-circle nav-icon"></i>-->
-<!--                                        <p>Login v2</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a th:href="@{/admin/pages/examples/register-v2.html}" class="nav-link">-->
-<!--                                        <i class="far fa-circle nav-icon"></i>-->
-<!--                                        <p>Register v2</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a th:href="@{/admin/pages/examples/forgot-password-v2.html}"-->
-<!--                                       class="nav-link">-->
-<!--                                        <i class="far fa-circle nav-icon"></i>-->
-<!--                                        <p>Forgot Password v2</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a th:href="@{/admin/pages/examples/recover-password-v2.html}"-->
-<!--                                       class="nav-link">-->
-<!--                                        <i class="far fa-circle nav-icon"></i>-->
-<!--                                        <p>Recover Password v2</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/lockscreen.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Lockscreen</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/legacy-user-menu.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Legacy User Menu</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/language-menu.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Language Menu</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/404.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Error 404</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/500.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Error 500</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/pace.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Pace</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/examples/blank.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Blank Page</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/starter.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Starter Page</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="nav-icon fas fa-search"></i>-->
-<!--                        <p>-->
-<!--                            Search-->
-<!--                            <i class="fas fa-angle-left right"></i>-->
-<!--                        </p>-->
-<!--                    </a>-->
-<!--                    <ul class="nav nav-treeview">-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/search/simple.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Simple Search</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a th:href="@{/admin/pages/search/enhanced.html}" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Enhanced</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="nav-header">MISCELLANEOUS</li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a th:href="@{/iframe.html}" class="nav-link">-->
-<!--                        <i class="nav-icon fas fa-ellipsis-h"></i>-->
-<!--                        <p>Tabbed IFrame Plugin</p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a th:href="@{/https://adminlte.io/docs/3.1/}" class="nav-link">-->
-<!--                        <i class="nav-icon fas fa-file"></i>-->
-<!--                        <p>Documentation</p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-header">MULTI LEVEL EXAMPLE</li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="fas fa-circle nav-icon"></i>-->
-<!--                        <p>Level 1</p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="nav-icon fas fa-circle"></i>-->
-<!--                        <p>-->
-<!--                            Level 1-->
-<!--                            <i class="right fas fa-angle-left"></i>-->
-<!--                        </p>-->
-<!--                    </a>-->
-<!--                    <ul class="nav nav-treeview">-->
-<!--                        <li class="nav-item">-->
-<!--                            <a href="#" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Level 2</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a href="#" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>-->
-<!--                                    Level 2-->
-<!--                                    <i class="right fas fa-angle-left"></i>-->
-<!--                                </p>-->
-<!--                            </a>-->
-<!--                            <ul class="nav nav-treeview">-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a href="#" class="nav-link">-->
-<!--                                        <i class="far fa-dot-circle nav-icon"></i>-->
-<!--                                        <p>Level 3</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a href="#" class="nav-link">-->
-<!--                                        <i class="far fa-dot-circle nav-icon"></i>-->
-<!--                                        <p>Level 3</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a href="#" class="nav-link">-->
-<!--                                        <i class="far fa-dot-circle nav-icon"></i>-->
-<!--                                        <p>Level 3</p>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a href="#" class="nav-link">-->
-<!--                                <i class="far fa-circle nav-icon"></i>-->
-<!--                                <p>Level 2</p>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="fas fa-circle nav-icon"></i>-->
-<!--                        <p>Level 1</p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-header">LABELS</li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="nav-icon far fa-circle text-danger"></i>-->
-<!--                        <p class="text">Important</p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="nav-icon far fa-circle text-warning"></i>-->
-<!--                        <p>Warning</p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="#" class="nav-link">-->
-<!--                        <i class="nav-icon far fa-circle text-info"></i>-->
-<!--                        <p>Informational</p>-->
-<!--                    </a>-->
 <!--                </li>-->
             </ul>
         </nav>
