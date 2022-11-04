@@ -46,7 +46,8 @@ public class DealerAdminController {
     public String showUpdateDealerForm(@PathVariable("id") Integer id, Model model) {
         Dealer dealer = dealerService.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid dealer Id:" + id));
-
+        List<Company> listCompany = companyService.findAll();
+        model.addAttribute("listCompany",listCompany );
         model.addAttribute("dealer", dealer);
         return "admin/dealer/UpdateDealer";
     }

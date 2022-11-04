@@ -19,14 +19,19 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(length = 125, nullable = false, unique = true)
     private String title;
+
     private String content;
     private LocalDateTime dateTime;
+
     private String image;
+
     @ManyToOne
     @JoinColumn(name = "topic_id")
     private Topic topic;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name="user_id")

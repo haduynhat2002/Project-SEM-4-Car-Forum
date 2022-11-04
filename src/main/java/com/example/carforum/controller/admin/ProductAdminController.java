@@ -49,7 +49,7 @@ public class ProductAdminController {
         Product product = productService.findById(id).get();
                 model.addAttribute("product", product);
                 List<Dealer> listDealer = dealerService.findAll();
-                model.addAttribute("listDealer",listDealer);
+                model.addAttribute("listDealer",listDealer );
         return "admin/product/UpdateProduct";
     }
 
