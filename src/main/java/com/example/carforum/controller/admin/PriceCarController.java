@@ -33,6 +33,15 @@ public class PriceCarController {
         model.addAttribute("carReviewList", carReviewList);
         return "admin/priceCar/List";
     }
+
+    @GetMapping("/pricecardetai")
+    public String showPriceCarDetail(Model model){
+        List<PriceCar> priceCarList = priceCarService.finAll();
+        List<CarReview> carReviewList = carReviewService.findAll();
+        model.addAttribute("listPriceCar", priceCarList);
+        model.addAttribute("carReviewList", carReviewList);
+        return "user/Price-Detail";
+    }
     @GetMapping("/admin/priceCar/create")
     public String showCategoryNewForm(Model model){
         List<CategoryCar> listCategoryCar = categoryCarService.findAll();
