@@ -40,9 +40,10 @@ public class HomeController {
         List<CategoryCar> listCategoryCar = categoryCarService.findAll();
 
         List<User> userList = userRepository.findAll();
-       List<Post> listPost1 = postRepository.listPost(1, 5);
+        
+       
+        List<Post> listPost1 = postRepository.listPost(1, 5);
         List<Post> listPost2 = postRepository.listPost(2, 1);
-
 
 
         int currentPage = page.orElse(1);
