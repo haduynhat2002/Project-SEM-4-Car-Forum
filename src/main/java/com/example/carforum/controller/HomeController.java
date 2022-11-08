@@ -40,14 +40,14 @@ public class HomeController {
         List<CategoryCar> listCategoryCar = categoryCarService.findAll();
 
         List<User> userList = userRepository.findAll();
-        List<Post> listPost1 = postRepository.listPost(1);
-        List<Post> listPost2 = postRepository.listPost(2);
-        //List<Post> listPost3 = postRepository.listPost(3);
+       List<Post> listPost1 = postRepository.listPost(1, 5);
+        List<Post> listPost2 = postRepository.listPost(2, 1);
+
+
 
         int currentPage = page.orElse(1);
         int pageSize = size.orElse(5);
-        Page<Post> listPost3 = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize),
-                3);
+        Page<Post> listPost3 = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize), 3);
         int totalPages = listPost3.getTotalPages();
         if (totalPages > 0) {
             List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages)
@@ -55,7 +55,6 @@ public class HomeController {
                     .collect(Collectors.toList());
             model.addAttribute("pageNumbers", pageNumbers);
         }
-
         model.addAttribute("listPost1", listPost1);
         model.addAttribute("listPost2", listPost2);
         model.addAttribute("listPost3", listPost3);
