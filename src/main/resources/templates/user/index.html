@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/user/fragments/head :: head"></head>
+<head th:replace="/user/fragments/head :: head">
+</head>
 <body>
 <header th:replace="/user/fragments/header :: header"></header>
 <div class="hero-area">
@@ -98,7 +99,7 @@
                                                     <p class="text-shortened">[[${post.content}]]</p>
                                                     <!-- Post Meta -->
                                                     <div class="post-meta">
-                                                        <p><a href="#" class="post-author">[[${post.user_id.fullname}]]</a> on <a href="#"
+                                                        <p><a href="#" class="post-author">[[${post.user_id.fullName}]]</a> on <a href="#"
                                                             class="post-date">[[${post.dateTime}]]</a></p>
                                                     </div>
                                                 </div>
@@ -122,7 +123,7 @@
                                                 </a>
                                                 <!-- Post Meta -->
                                                 <div class="post-meta">
-                                                    <p><a href="#" class="post-author">[[${post.user_id.fullname}]]</a> on <a href="#"
+                                                    <p><a href="#" class="post-author">[[${post.user_id.fullName}]]</a> on <a href="#"
                                                                                                           class="post-date">[[${post.dateTime}]]</a></p>
                                                 </div>
                                             </div>
@@ -1553,7 +1554,7 @@
                         <div>
                             <ul class=" mb-20" id="myTab4" role="tablist"
                                 style="padding: 10px 0;font-size: 18px;color: #000000;margin-bottom: 25px;margin-right: auto;border-bottom: 2px solid #f1f1f1;font-weight: 700;">
-                                <li class="title">Kinh nghiệm lái xe</li>
+                                <li class="title">Kinh nghiệm lái <xe></xe></li>
                             </ul>
                         </div>
                         <div class="container">
@@ -1604,7 +1605,8 @@
                             </div>
                         </div>
                         <!-- POST -->
-                        <div  th:each="post : ${listPost3.content}" class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 100px;">
+                        <div  th:each="post : ${listPost3}" class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 100px;">
+
                             <div class="wrap-ut pull-left">
                                 <div class="userinfo pull-left">
                                     <div class="avatar">
@@ -1613,7 +1615,7 @@
                                     </div>
                                 </div>
                                 <div class="posttext pull-left">
-                                    <a href="02_topic.html">[[${post.user_id.fullname}]]</a>
+                                    <a href="02_topic.html">[[${post.user_id.fullName}]]</a>
                                     <div class="text-shortened">[[${post.content}]]</div>
                                 </div>
                                 <div class="clearfix"></div>
