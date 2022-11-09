@@ -27,7 +27,7 @@ public class User {
 
     @Column(name = "Name")
     @NotNull(message ="Vui lòng nhập tên")
-    @Size(min = 2, max = 30, message = "Tên của bạn phải nhiều hơn 2 lí tự và không quá 30 kí tự")
+//    @Size(min = 2, max = 30, message = "Tên của bạn phải nhiều hơn 2 lí tự và không quá 30 kí tự")
     private String fullname;
 
     @NotNull(message ="Vui lòng nhập giới tính")
@@ -36,12 +36,12 @@ public class User {
     @NotNull(message = "")
     private String dob;
 
-    @NotNull(message = "Vui lòng nhập Email")
+//    @NotNull(message = "Vui lòng nhập Email")
     @Email(message ="Vui lòng nhập đúng Email")
     private String email;
 
     @NotNull(message = "Vui lòng nhập số điện thoại")
-    @Size(max = 10, min = 10, message = "Số điện thoại phải có 10 chữ số")
+//    @Size(max = 10, min = 10, message = "Số điện thoại phải có 10 chữ số")
 //    @Pattern(regexp = "[7-9][0-9]{9}", message = "Số điện thoại không hợp lệ")
     private String phone;
 

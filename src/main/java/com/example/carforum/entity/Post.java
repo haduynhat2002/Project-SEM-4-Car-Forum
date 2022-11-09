@@ -27,7 +27,7 @@ public class Post {
     @Column(length = 125, nullable = false, unique = true)
     private String title;
 
-    @Min(value = 4, message = "Nội dung không được ít hơn 4 ký tự")
+//    @Min(value = 4, message = "Nội dung không được ít hơn 4 ký tự")
     @NotNull(message ="Vui lòng nhập nội dung")
     private String content;
 
