@@ -28,7 +28,7 @@ public class Post {
     private String title;
 
 //    @Min(value = 4, message = "Nội dung không được ít hơn 4 ký tự")
-//    @NotNull(message ="Vui lòng nhập nội dung")
+    @NotNull(message ="Vui lòng nhập nội dung")
     private String content;
 
 

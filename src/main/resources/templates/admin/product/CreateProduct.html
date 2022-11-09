@@ -45,31 +45,38 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Tên sản phẩm</label>
-                                <input type="text" name="name" class="form-control" placeholder="Tên sản phẩm">
+                                <input type="text" th:field="*{name}" name="name" class="form-control" placeholder="Tên sản phẩm">
+                                <p th:if="${#fields.hasErrors('name')}" class="text-danger" th:errors="*{name}"></p>
                             </div>
                             <div class="form-group">
                                 <label> Giá bán lẻ</label>
-                                <input type="text" name="retailprice" class="form-control" placeholder="Giá bán lẻ">
+                                <input type="text" th:field="*{retailprice}" name="retailprice" class="form-control" placeholder="Giá bán lẻ">
+                                <p th:if="${#fields.hasErrors('retailprice')}" class="text-danger" th:errors="*{retailprice}"></p>
+                            </div>
                                 <div class="form-group">
                                     <label>Xuất xứ</label>
-                                    <input type="text" name="origin" class="form-control" placeholder="Xuất xứ">
+                                    <input type="text" th:field="*{origin}" name="origin" class="form-control" placeholder="Xuất xứ">
+                                    <p th:if="${#fields.hasErrors('origin')}" class="text-danger" th:errors="*{origin}"></p>
                                 </div>
                                 <div class="form-group">
                                     <label>Loại xe</label>
-                                    <input type="text" name="rangeofvehicle" class="form-control" placeholder="Loại xe">
+                                    <input type="text" th:field="*{rangeofvehicle}" name="rangeofvehicle" class="form-control" placeholder="Loại xe">
+                                    <p th:if="${#fields.hasErrors('rangeofvehicle')}" class="text-danger" th:errors="*{rangeofvehicle}"></p>
                                 </div>
                                 <div class="form-group">
                                     <label>Số chỗ</label>
-                                    <input type="text" name="numberofseats" class="form-control" placeholder="Số chỗ">
+                                    <input type="text" th:field="*{numberofseats}" name="numberofseats" class="form-control" placeholder="Số chỗ">
+                                    <p th:if="${#fields.hasErrors('numberofseats')}" class="text-danger" th:errors="*{numberofseats}"></p>
                                 </div>
                                 <div class="form-group">
                                     <label>Hộp số</label>
-                                    <input type="text" name="gear" class="form-control" placeholder="Hộp số">
+                                    <input type="text" th:field="*{gear}" name="gear" class="form-control" placeholder="Hộp số">
+                                    <p th:if="${#fields.hasErrors('gear')}" class="text-danger" th:errors="*{gear}"></p>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-group">Dealer </label>
-                                    <select class="form-control" th:field="*{dealer}" required>
+                                    <select class="form-control" th:field="*{dealer}">
                                         <th:block th:each="product : ${listDealer}">
                                             <option th:text="${product.name}" th:value="${product.id}"></option>
                                         </th:block>
@@ -88,7 +95,6 @@
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
-                        </div>
                     </form>
 
                 </div>
