@@ -26,9 +26,11 @@ public class User {
     private int id;
 
     @Column(name = "Name")
-    @NotNull(message ="Vui lòng nhập tên")
-    @Size(min = 2, max = 30, message = "Tên của bạn phải nhiều hơn 2 lí tự và không quá 30 kí tự")
-    private String fullname;
+//    @NotNull(message ="Vui lòng nhập tên")
+//    @Size(min = 2, max = 30, message = "Tên của bạn phải nhiều hơn 2 lí tự và không quá 30 kí tự")
+    private String fullName;
+
+    private String userName;
 
     @NotNull(message ="Vui lòng nhập giới tính")
     private String gender;

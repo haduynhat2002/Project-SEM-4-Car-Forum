@@ -16,9 +16,9 @@ public class CustomerUserDtlsService implements UserDetailsService {
     private UserRepository repo;
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        User user = repo.findByEmail(email);
+        User user = repo.findByUserName(username);
 
         if (user != null) {
             return new CustomerUserDtls(user);
