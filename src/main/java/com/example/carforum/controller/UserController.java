@@ -67,7 +67,7 @@ public class UserController {
         String em = p.getName();
         User user = userRepository.findByUserName(em);
         m.addAttribute("email", user.getEmail());
-        m.addAttribute("fullname", user.getFullName());
+        m.addAttribute("fullname", user.getFullname());
         m.addAttribute("dob", user.getDob());
         m.addAttribute("phone", user.getPhone());
         m.addAttribute("avatar", user.getAvatar());

@@ -46,8 +46,6 @@ public class HomeController {
 
          List<Post> listPost1 = postRepository.listPost(1, 5);
         List<Post> listPost2 = postRepository.listPost(2, 5);
-        //List<Post> listPost3 = postRepository.listPost(3);
-
 
         int currentPage = page.orElse(1);
         int pageSize = size.orElse(5);
