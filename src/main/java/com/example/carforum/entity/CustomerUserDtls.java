@@ -37,7 +37,7 @@ public class CustomerUserDtls implements UserDetails {
 
     @Override
     public String getUsername() {
-        return u.getEmail();
+        return u.getUserName();
     }
 
     @Override

@@ -65,7 +65,7 @@ public class UserController {
     @GetMapping("/profile")
     public String profile(Principal p, Model m) {
         String em = p.getName();
-        User user = userRepository.findByEmail(em);
+        User user = userRepository.findByUserName(em);
         m.addAttribute("email", user.getEmail());
         m.addAttribute("fullname", user.getFullname());
         m.addAttribute("dob", user.getDob());
