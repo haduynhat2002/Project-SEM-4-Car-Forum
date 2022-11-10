@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -38,16 +39,23 @@ public class DealerAdminController {
         return "admin/dealer/CreateDealer";
     }
     @PostMapping("/admin/dealer/save")
-    public String showDealerNewForm(Dealer dealer){
-        dealerService.save(dealer);
-        return "redirect:/admin/dealer";
+    public String showDealerNewForm(@Valid @ModelAttribute("dealer") Dealer dealer, BindingResult bindingResult , Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("dealer", dealer);
+            List<Company> listCompany = companyService.findAll();
+            model.addAttribute("listCompany",listCompany );
+            return "admin/dealer/CreateDealer";
+        } else {
+            dealerService.save(dealer);
+            return "redirect:/admin/dealer";
+        }
     }
     @GetMapping("dealer/edit/{id}")
     public String showUpdateDealerForm(@PathVariable("id") Integer id, Model model) {
-        Dealer dealer = dealerService.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid dealer Id:" + id));
-
+        Dealer dealer = dealerService.findById(id).get();
         model.addAttribute("dealer", dealer);
+        List<Company> listCompany = companyService.findAll();
+        model.addAttribute("listCompany",listCompany );
         return "admin/dealer/UpdateDealer";
     }
 
