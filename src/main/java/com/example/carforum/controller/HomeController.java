@@ -1,14 +1,9 @@
 package com.example.carforum.controller;
 
-import com.example.carforum.entity.CategoryCar;
-import com.example.carforum.entity.Dealer;
-import com.example.carforum.entity.Post;
-import com.example.carforum.entity.User;
+import com.example.carforum.entity.*;
 import com.example.carforum.repository.PostRepository;
 import com.example.carforum.repository.UserRepository;
-import com.example.carforum.service.CategoryCarService;
-import com.example.carforum.service.DealerService;
-import com.example.carforum.service.PostService;
+import com.example.carforum.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -29,7 +24,11 @@ public class HomeController {
     @Autowired
     PostRepository postRepository;
     @Autowired
+    CompanyService companyService;
+    @Autowired
     UserRepository userRepository;
+    @Autowired
+    UserService userService;
     @Autowired
     CategoryCarService categoryCarService;
     @Autowired
@@ -117,8 +116,20 @@ public class HomeController {
     public String guide() {
         return "/Guide";
     }
-    @RequestMapping("/authorized")
-    public String authorized() {
+
+    @RequestMapping("/userAccount/{id}")
+    public String userAccount(@PathVariable("id") int id,Model model) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));;
+
+        model.addAttribute("user", user);
+        return "user/ProfileUser";
+    }
+    @RequestMapping("/company")
+    public String authorized(Model model) {
+
+        List<Company> listCompany = companyService.findAll();
+        model.addAttribute("listCompany", listCompany);
         return "/Authorized";
     }
 }
