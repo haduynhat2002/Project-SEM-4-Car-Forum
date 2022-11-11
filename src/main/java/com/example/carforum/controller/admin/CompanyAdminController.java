@@ -1,12 +1,14 @@
 package com.example.carforum.controller.admin;
 
 import com.example.carforum.entity.Company;
+import com.example.carforum.entity.Dealer;
 import com.example.carforum.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -19,7 +21,7 @@ public class CompanyAdminController {
     @Autowired
    private CompanyService companyService;
 
-    @GetMapping("admin/company")
+    @GetMapping("/admin/company")
     public String listCompany(Model model){
         List<Company> listCompany = companyService.findAll();
         model.addAttribute("listCompany", listCompany);
@@ -31,9 +33,16 @@ public class CompanyAdminController {
         return "admin/company/CreateCompany";
     }
     @PostMapping("company/save")
-    public String showCompanyNewForm(Company company){
-        companyService.save(company);
-        return "redirect:/admin/company";
+    public String showCompanyNewForm(@Valid @ModelAttribute("company") Company company , BindingResult bindingResult , Model model){
+        if (bindingResult.hasErrors()){
+            model.addAttribute("company", company);
+            List<Company> listCompany = companyService.findAll();
+            model.addAttribute("listCompany",listCompany);
+            return "admin/company/CreateCompany";
+        }else {
+            companyService.save(company);
+            return "redirect:/admin/company";
+        }
     }
     @GetMapping("company/edit/{id}")
     public String showUpdateCompanyForm(@PathVariable("id") Integer id, Model model) {
