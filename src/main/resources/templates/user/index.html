@@ -96,7 +96,7 @@
                                                     <a href="#" class="headline">
                                                         <h5><span th:text="${post.title}"></span></h5>
                                                     </a>
-                                                    <p class="text-shortened">[[${post.content}]]</p>
+                                                    <p class="text-shortened"th:text="${post.content}"></p>
                                                     <!-- Post Meta -->
                                                     <div class="post-meta">
                                                         <p><a href="#" class="post-author">[[${post.user_id.fullname}]]</a> on <a href="#"
@@ -113,9 +113,9 @@
                                         <div  th:each="post : ${listPost1}" class="single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig"
                                               data-wow-delay="0.2s">
                                             <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
+                                            <a th:href="@{'/details/' + ${post.id}}" class="post-thumbnail">
                                                 <img th:src="${post.image}" alt="" style="width: 135px; height: 78px">
-                                            </div>
+                                            </a>
                                             <!-- Post Content -->
                                             <div class="post-content">
                                                 <a th:href="@{'/details/' + ${post.id}}" class="headline">
@@ -123,8 +123,8 @@
                                                 </a>
                                                 <!-- Post Meta -->
                                                 <div class="post-meta">
-                                                    <p><a href="#" class="post-author">[[${post.user_id.fullname}]]</a> on <a href="#"
-                                                                                                          class="post-date">[[${post.dateTime}]]</a></p>
+                                                    <p><a th:href="@{'/userAccount/' + ${post.user_id.id}}" class="post-author">[[${post.user_id.fullname}]]</a> on <p href="#"
+                                                                                                          class="post-date">[[${post.dateTime}]]</p></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1614,18 +1614,12 @@
                                 </div>
                                 <div class="posttext pull-left">
                                     <a href="02_topic.html">[[${post.user_id.fullname}]]</a>
-                                    <div class="text-shortened">[[${post.content}]]</div>
+
+                                    <div class="text-shortened"  th:utext="${post.content}"></div>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="postinfo pull-left">
-<!--                                <div class="comments">-->
-<!--                                    <div class="commentbg">-->
-<!--                                        560-->
-<!--                                        <div class="mark"></div>-->
-<!--                                    </div>-->
-
-<!--                                </div>-->
                                 <div class="views"><i class="fa fa-eye"></i> 1,568</div>
                                 <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>
                             </div>
