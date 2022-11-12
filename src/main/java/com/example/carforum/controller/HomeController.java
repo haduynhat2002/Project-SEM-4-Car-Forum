@@ -45,6 +45,8 @@ public class HomeController {
 
          List<Post> listPost1 = postRepository.listPost(1, 5);
         List<Post> listPost2 = postRepository.listPost(2, 5);
+        List<Post> listPost4 = postRepository.listPost(4, 5);
+        List<Post> listPost5 = postRepository.listPost(5, 5);
 
         int currentPage = page.orElse(1);
         int pageSize = size.orElse(5);
@@ -56,9 +58,13 @@ public class HomeController {
                     .collect(Collectors.toList());
             model.addAttribute("pageNumbers", pageNumbers);
         }
+        List<Company> listCompany = companyService.findAll();
+        model.addAttribute("listCompany", listCompany);
         model.addAttribute("listPost1", listPost1);
         model.addAttribute("listPost2", listPost2);
         model.addAttribute("listPost3", listPost3);
+        model.addAttribute("listPost4", listPost4);
+        model.addAttribute("listPost5", listPost5);
         model.addAttribute("user", userList);
         model.addAttribute("listCategoryCar",listCategoryCar );
         return "user/index";

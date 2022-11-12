@@ -40,10 +40,7 @@ public class PostController {
     public String showCategoryNewForm(Post post){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object o = authentication.getPrincipal();
-
-        List<Post> listPost = new ArrayList<>();
         if(o instanceof String && "anonymousUser".equals(String.valueOf(o))) {
-            //chua login
         } else {
             CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
             User user = customerUserDtls.getU();
@@ -51,7 +48,6 @@ public class PostController {
             post.setDateTime(LocalDateTime.now());
             postService.save(post);
         }
-
         return "redirect:/";
     }
 

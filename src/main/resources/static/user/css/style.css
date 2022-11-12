@@ -542,7 +542,7 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
-    height: 57px;
+    height: 56px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
@@ -1840,13 +1840,7 @@ footer .img-footer {
     -moz-osx-font-smoothing: grayscale;
     font-size: 90%;
 }
-.guide .actionBar-action.actionBar-action--reply:before {
-    content: "\f3e5";
-    width: 1.125em;
-    display: inline-block;
-    text-align: center;
-    margin-right: 3px;
-}
+
 .guide .actionBar-action.actionBar-action--reaction:not(.has-reaction) .reaction-text {
     color: inherit;
 }
