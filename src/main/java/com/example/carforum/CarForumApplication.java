@@ -24,9 +24,13 @@ public class CarForumApplication {
             Topic topic1 = new Topic(1,"Tin tức");
             Topic topic2 = new Topic(2, "Đánh giá xe");
             Topic topic3 = new Topic(3, "Bài viết || Đặt câu hỏi");
+            Topic topic4 = new Topic(4, "Kinh nghiệm lái xe");
+            Topic topic5 = new Topic(5, "Bảo dưỡng ô tô");
             topicRepository.save(topic1);
             topicRepository.save(topic2);
             topicRepository.save(topic3);
+            topicRepository.save(topic4);
+            topicRepository.save(topic5);
             topicRepository.findAll().forEach(topic -> System.out.println(topic));
         };
     }

@@ -2,14 +2,17 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/user/fragments/head :: head">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+</head>
 
 </head>
-<body>
+<body style="background-color: #e4e4e4">
 <header th:replace="/user/fragments/header :: header"></header>
 <div class="guide">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div style="background-color: white; border-radius: 10px;" class="col-md-8 mr-4">
                 <div class="p-body">
                     <div class="p-body-inner">
                         <div class="p-body-main p-body-main--withSidebar ">
@@ -93,37 +96,38 @@
                                                                                         <span class="reaction-text js-reactionText"><bdi>Thích</bdi></span></a>
                                                                                 </div>
                                                                             </div>
+                                                                            <i class="fa-solid fa-message"></i>
                                                                             <a href=""
                                                                                class="actionBar-action actionBar-action--reply"
                                                                                title="Trả lời, trích dẫn nội dung bài viết này"
                                                                                style="padding: 8px 18px;">Bình luận</a>
                                                                         </div>
-                                                                        <div class="pfoot-right">
-                                                                            <div
-                                                                                    class="jsx-2508229361 thread-share-fact no-user-select">
-                                                                                <a href="/misc/creator?u=https://oto-hui.com/threads/huong-dan-cach-reset-den-bao-thay-day-dai-tbelt-tren-toyota-hilux-va-fotuner.118287/&amp;fact=1"
-                                                                                   data-xf-click="switch-overlay">
-                                                                                    <button
-                                                                                            class="jsx-3454747502 fact-share-button">
-                                                                                        <img th:src="@{/user/img/logocarforum.png}"
-                                                                                             width="40">
-                                                                                        <span
-                                                                                                class="jsx-3454747502 button-text"><span
-                                                                                                class="jsx-3454747502 visible-xs">Tin</span><span
-                                                                                                class="jsx-3454747502 hidden-xs">Chia
-                                                                                                sẻ lên tin</span></span>
-                                                                                    </button>
-                                                                                </a>
-                                                                            </div>
-                                                                            <a class="shareButtonsfb"
-                                                                               href="https://www.facebook.com/sharer.php?u=https://oto-hui.com/threads/huong-dan-cach-reset-den-bao-thay-day-dai-tbelt-tren-toyota-hilux-va-fotuner.118287/">
-                                                                                <button
-                                                                                        class="jsx-2508229361 thread-share no-user-select">
-                                                                                    <i  class="jsx-2508229361 fa fa-share"></i><span
-                                                                                        class="jsx-2508229361">Facebook</span>
-                                                                                </button>
-                                                                            </a>
-                                                                        </div>
+<!--                                                                        <div class="pfoot-right">-->
+<!--                                                                            <div-->
+<!--                                                                                    class="jsx-2508229361 thread-share-fact no-user-select">-->
+<!--                                                                                <a href="/misc/creator?u=https://oto-hui.com/threads/huong-dan-cach-reset-den-bao-thay-day-dai-tbelt-tren-toyota-hilux-va-fotuner.118287/&amp;fact=1"-->
+<!--                                                                                   data-xf-click="switch-overlay">-->
+<!--                                                                                    <button-->
+<!--                                                                                            class="jsx-3454747502 fact-share-button">-->
+<!--                                                                                        <img th:src="@{/user/img/logocarforum.png}"-->
+<!--                                                                                             width="40">-->
+<!--                                                                                        <span-->
+<!--                                                                                                class="jsx-3454747502 button-text"><span-->
+<!--                                                                                                class="jsx-3454747502 visible-xs">Tin</span><span-->
+<!--                                                                                                class="jsx-3454747502 hidden-xs">Chia-->
+<!--                                                                                                sẻ lên tin</span></span>-->
+<!--                                                                                    </button>-->
+<!--                                                                                </a>-->
+<!--                                                                            </div>-->
+<!--                                                                            <a class="shareButtonsfb"-->
+<!--                                                                               href="https://www.facebook.com/sharer.php?u=https://oto-hui.com/threads/huong-dan-cach-reset-den-bao-thay-day-dai-tbelt-tren-toyota-hilux-va-fotuner.118287/">-->
+<!--                                                                                <button-->
+<!--                                                                                        class="jsx-2508229361 thread-share no-user-select">-->
+<!--                                                                                    <i  class="jsx-2508229361 fa fa-share"></i><span-->
+<!--                                                                                        class="jsx-2508229361">Facebook</span>-->
+<!--                                                                                </button>-->
+<!--                                                                            </a>-->
+<!--                                                                        </div>-->
                                                                     </div>
                                                                     <div class="js-historyTarget message-historyTarget toggleTarget"
                                                                          data-href="trigger-href"></div>
@@ -137,6 +141,7 @@
                                                 <div class="form-group">
                                                     <label>Bình luận</label>
                                                     <input type="text" class="form-control" id="exampleInputImage" placeholder="Nhập bình luận..." >
+
                                                 </div>
                                                 <article
                                                         class="message thpostcomments_message--expanded message--post js-post js-inlineModContainer   "
@@ -160,7 +165,7 @@
                                                                     <h4 class="message-name"><a
                                                                             href="/members/dinh_hung.249116/"
                                                                             class="username "><span
-                                                                            class="username--style2">dinh_hung</span></a>
+                                                                            class="username--style2">Ha Nhat</span></a>
                                                                     </h4>
                                                                     <h5 class="userTitle message-userTitle">Tài xế O-H
                                                                     </h5>
@@ -183,7 +188,102 @@
                                                                             <h4 class="attribution attribution--plain">
                                                                                 <a href="/members/dinh_hung.249116/"
                                                                                    class="username "><span
-                                                                                        class="username--style2">dinh_hung</span></a>
+                                                                                        class="username--style2">Ha Nhat</span></a>
+                                                                            </h4>
+                                                                        </li>
+                                                                        <li><span class="u-concealed"><time
+                                                                                class="u-dt">16/11/18</time></span>
+                                                                        </li>
+                                                                    </ul>
+                                                                </header>
+                                                                <div class="message-content js-messageContent">
+                                                                    <div
+                                                                            class="message-userContent lbContainer js-lbContainer ">
+                                                                        <article class="message-body js-selectToQuote">
+                                                                            <div class="bbWrapper">Bài viết rất hay</div>
+                                                                            <div class="js-selectToQuoteEnd">&nbsp;
+                                                                            </div>
+                                                                        </article>
+                                                                    </div>
+                                                                </div>
+                                                                <footer class="message-footer">
+<!--                                                                    <div class="footbut">-->
+<!--                                                                        <div-->
+<!--                                                                                class="reactionsBar js-reactionsList is-active">-->
+<!--                                                                            <a class="reactionsBar-link"-->
+<!--                                                                               href="/posts/658968/reactions">-->
+<!--                                                                                <ul class="reactionSummary">-->
+<!--                                                                                    <li><span-->
+<!--                                                                                            class="reaction reaction&#45;&#45;small reaction&#45;&#45;1"><img-->
+<!--                                                                                            th:src="@{/user/img/facebook-reaction-like.svg}"-->
+<!--                                                                                            class="reaction-sprite js-reaction"-->
+<!--                                                                                            alt="Thích"-->
+<!--                                                                                            title="Thích"></span>-->
+<!--                                                                                    </li>-->
+<!--                                                                                </ul>-->
+<!--                                                                            </a>-->
+<!--                                                                            6-->
+<!--                                                                        </div>-->
+<!--                                                                        <div class="jsx-2508229361 thread-like"-->
+<!--                                                                             style="float: left; width: 65px;">-->
+<!--                                                                            <div-->
+<!--                                                                                    class="jsx-3054842219 reactions no-user-select">-->
+<!--                                                                                <a href="/login/"-->
+<!--                                                                                   data-xf-click="overlay"-->
+<!--                                                                                   class="reaction&#45;&#45;small actionBar-action actionBar-action&#45;&#45;reaction reaction&#45;&#45;imageHidden">-->
+<!--                                                                                    <i aria-hidden="true"></i><span-->
+<!--                                                                                        class="reaction-text js-reactionText"><bdi>Thích</bdi></span></a>-->
+<!--                                                                            </div>-->
+<!--                                                                        </div>-->
+<!--                                                                    </div>-->
+<!--                                                                    <div class="js-historyTarget message-historyTarget toggleTarget"-->
+<!--                                                                         data-href="trigger-href"></div>-->
+                                                                </footer>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="message-inner">
+                                                        <div class="message-cell message-cell--user">
+                                                            <section class="message-user">
+                                                                <div class="message-avatar ">
+                                                                    <div class="message-avatar-wrapper">
+                                                                        <a href="/members/dinh_hung.249116/"
+                                                                           class="avatar avatar--s">
+                                                                            <img src="https://luv.vn/wp-content/uploads/2021/09/hinh-anh-nguoi-mau-lam-hinh-nen-dien-thoai-3.jpg"
+                                                                                 alt="dinh_hung"
+                                                                                 class="avatar-u249116-s"
+                                                                                 width="48" height="48">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="message-userDetails">
+                                                                    <h4 class="message-name"><a
+                                                                            href="/members/dinh_hung.249116/"
+                                                                            class="username "><span
+                                                                            class="username--style2">Ha Nhat</span></a>
+                                                                    </h4>
+                                                                    <h5 class="userTitle message-userTitle">Tài xế O-H
+                                                                    </h5>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="message-cell message-cell--main">
+                                                            <div class="message-main js-quickEditTarget">
+                                                                <header
+                                                                        class="message-attribution message-attribution--condensed">
+                                                                    <ul class="listInline listInline--bullet">
+                                                                        <li class="message-attribution-user">
+                                                                            <a href="/members/dinh_hung.249116/"
+                                                                               class="avatar avatar--xs">
+                                                                                <img src="/data/avatars/s/249/249116.jpg?1539418602"
+                                                                                     alt="dinh_hung"
+                                                                                     class="avatar-u249116-s" width="48"
+                                                                                     height="48">
+                                                                            </a>
+                                                                            <h4 class="attribution attribution--plain">
+                                                                                <a href="/members/dinh_hung.249116/"
+                                                                                   class="username "><span
+                                                                                        class="username--style2">Ha Nhat</span></a>
                                                                             </h4>
                                                                         </li>
                                                                         <li><span class="u-concealed"><time
@@ -202,41 +302,42 @@
                                                                     </div>
                                                                 </div>
                                                                 <footer class="message-footer">
-                                                                    <div class="footbut">
-                                                                        <div
-                                                                                class="reactionsBar js-reactionsList is-active">
-                                                                            <a class="reactionsBar-link"
-                                                                               href="/posts/658968/reactions">
-                                                                                <ul class="reactionSummary">
-                                                                                    <li><span
-                                                                                            class="reaction reaction--small reaction--1"><img
-                                                                                            th:src="@{/user/img/facebook-reaction-like.svg}"
-                                                                                            class="reaction-sprite js-reaction"
-                                                                                            alt="Thích"
-                                                                                            title="Thích"></span>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </a>
-                                                                            6
-                                                                        </div>
-                                                                        <div class="jsx-2508229361 thread-like"
-                                                                             style="float: left; width: 65px;">
-                                                                            <div
-                                                                                    class="jsx-3054842219 reactions no-user-select">
-                                                                                <a href="/login/"
-                                                                                   data-xf-click="overlay"
-                                                                                   class="reaction--small actionBar-action actionBar-action--reaction reaction--imageHidden">
-                                                                                    <i aria-hidden="true"></i><span
-                                                                                        class="reaction-text js-reactionText"><bdi>Thích</bdi></span></a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="js-historyTarget message-historyTarget toggleTarget"
-                                                                         data-href="trigger-href"></div>
+                                                                    <!--                                                                    <div class="footbut">-->
+                                                                    <!--                                                                        <div-->
+                                                                    <!--                                                                                class="reactionsBar js-reactionsList is-active">-->
+                                                                    <!--                                                                            <a class="reactionsBar-link"-->
+                                                                    <!--                                                                               href="/posts/658968/reactions">-->
+                                                                    <!--                                                                                <ul class="reactionSummary">-->
+                                                                    <!--                                                                                    <li><span-->
+                                                                    <!--                                                                                            class="reaction reaction&#45;&#45;small reaction&#45;&#45;1"><img-->
+                                                                    <!--                                                                                            th:src="@{/user/img/facebook-reaction-like.svg}"-->
+                                                                    <!--                                                                                            class="reaction-sprite js-reaction"-->
+                                                                    <!--                                                                                            alt="Thích"-->
+                                                                    <!--                                                                                            title="Thích"></span>-->
+                                                                    <!--                                                                                    </li>-->
+                                                                    <!--                                                                                </ul>-->
+                                                                    <!--                                                                            </a>-->
+                                                                    <!--                                                                            6-->
+                                                                    <!--                                                                        </div>-->
+                                                                    <!--                                                                        <div class="jsx-2508229361 thread-like"-->
+                                                                    <!--                                                                             style="float: left; width: 65px;">-->
+                                                                    <!--                                                                            <div-->
+                                                                    <!--                                                                                    class="jsx-3054842219 reactions no-user-select">-->
+                                                                    <!--                                                                                <a href="/login/"-->
+                                                                    <!--                                                                                   data-xf-click="overlay"-->
+                                                                    <!--                                                                                   class="reaction&#45;&#45;small actionBar-action actionBar-action&#45;&#45;reaction reaction&#45;&#45;imageHidden">-->
+                                                                    <!--                                                                                    <i aria-hidden="true"></i><span-->
+                                                                    <!--                                                                                        class="reaction-text js-reactionText"><bdi>Thích</bdi></span></a>-->
+                                                                    <!--                                                                            </div>-->
+                                                                    <!--                                                                        </div>-->
+                                                                    <!--                                                                    </div>-->
+                                                                    <!--                                                                    <div class="js-historyTarget message-historyTarget toggleTarget"-->
+                                                                    <!--                                                                         data-href="trigger-href"></div>-->
                                                                 </footer>
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                 </article>
                                             </div>
                                         </div>
@@ -247,11 +348,75 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div style="background-color: white; border-radius: 10px;" class="col-md-3">
                 <div class="sidebar-widget-area">
                     <h5 class="title">Bài viết liên quan</h5>
                     <div class="widget-content">
                         <!-- Single Blog Post -->
+                        <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img th:src="@{/user/img/blog-img/b11.jpg}" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="headline">
+                                    <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img th:src="@{/user/img/blog-img/b13.jpg}" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="headline">
+                                    <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img th:src="@{/user/img/blog-img/b14.jpg}" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="headline">
+                                    <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img th:src="@{/user/img/blog-img/b10.jpg}" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="headline">
+                                    <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img th:src="@{/user/img/blog-img/b12.jpg}" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="headline">
+                                    <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                </a>
+                            </div>
+                        </div>
                         <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                             <!-- Post Thumbnail -->
                             <div class="post-thumbnail">
@@ -326,7 +491,7 @@
 <footer th:replace="/user/fragments/footer :: footer"></footer>
 
 <!--<script th:replace="/user/fragments/scripts :: scripts"></script>-->
-<script th:src="@{/user/js/jquery/jquery-2.2.4.min.js}"></script>
+<!--<script th:src="@{/user/js/jquery/jquery-2.2.4.min.js}"></script>-->
 <script th:src="@{/user/js/popper.min.js}"></script>
 <script th:src="@{/user/js/bootstrap.min.js}"></script>
 <script th:src="@{/user/js/plugins.js}"></script>

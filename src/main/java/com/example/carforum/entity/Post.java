@@ -32,7 +32,6 @@ public class Post {
     private String content;
 
 
-    @NotNull(message ="Vui lòng nhập ngày tháng")
     private LocalDateTime dateTime;
 
     private String image;
