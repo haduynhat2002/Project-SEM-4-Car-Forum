@@ -1636,9 +1636,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="load-more-btn mt-50 text-center">
-                                    <a href="#" class="btn world-btn">Load More</a>
+<!--                                    <a href="#" class="btn world-btn">Load More</a>-->
 
-                                    <div th:if="${listPost3.totalPages > 0}" class="pagination"
+                                    <div style="float: left;" th:if="${listPost3.totalPages > 0}" class="btn world-btn"
                                          th:each="pageNumber : ${pageNumbers}">
                                         <a th:href="@{/(size=${listPost3.size}, page=${pageNumber})}"
                                            th:text=${pageNumber}
