@@ -327,14 +327,23 @@ td.chbox {
     padding-top: 7px;
 }
 
-.post h2 {
+.post h2 .text-title{
     color: #363838;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-weight: 600;
 }
+.post .text-content{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    height: 57px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 
+}
 .post .comments {
     border-bottom: solid 1px #f1f1f1;
     padding: 18px 0 25px 0;
