@@ -304,7 +304,7 @@ img {
     line-height: 32px; }
 .world-btn:hover, .world-btn:focus {
     border-color: #0000ff;
-    background-color: #0000ff;
+    background-color: #e7e7e7;
     color: #ffffff; }
 
 /* :: Header Area CSS */

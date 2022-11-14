@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="user/fragments/head :: head"></head>
+</head>
+
+<body style="background-color: #eeeeee;">
+<!-- ***** Header Area Start ***** -->
+<header th:replace="user/fragments/header :: header"></header>
+
+<!-- ***** Header Area End ***** -->
+
+<!-- ********** Hero Area Start ********** -->
+<div class="hero-area height-400 bg-img background-overlay"
+     th:style="'background-image:url(' + @{/user/img/img-category.jpg} + ');  background-size: cover;'">
+</div>
+<!-- ********** Hero Area End ********** -->
+
+<div class="main-content-wrapper section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- ============= Post Content Area Start ============= -->
+            <div class="col-12 col-lg-8">
+                <div class="post-content-area mb-3">
+                    <!-- Catagory Area -->
+                    <div class="world-catagory-area">
+                        <h5 class="title">Bài viết </h5>
+                        <div class="tab-content" id="myTabContent">
+
+                            <div class="tab-pane fade show active" id="world-tab-1" role="tabpanel" aria-labelledby="tab1">
+                                <div th:each="post : ${postForum}" class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 100px;">
+
+                                    <div class="wrap-ut pull-left">
+                                        <div class="userinfo pull-left">
+                                            <div class="avatar">
+                                                <img style="width: 70px; height: 70px;border-radius: 50%;object-fit: cover;" th:src="${post.user_id.avatar}" alt="">
+                                                <div class="status green">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                        <div class="posttext pull-left">
+                                            <a href="02_topic.html">[[${post.user_id.fullname}]]</a>
+                                            <a th:href="@{'/details/' + ${post.id}}"><div class="text-shortened"  th:utext="${post.content}"></div></a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="postinfo pull-left">
+                                        <div class="views"><i class="fa fa-eye"></i> 1,568</div>
+                                        <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+
+                    </div>
+
+                </div>
+                <div style="margin-bottom: 20px; float: left; border: 1px solid #dee2e6;" th:if="${postForum.totalPages > 0}" class="btn world-btn"
+                     th:each="pageNumber : ${pageNumbers}">
+                    <a th:href="@{/home/postForum/(size=${postForum.size}, page=${pageNumber})}"
+                       th:text="${pageNumber}"
+                       th:class="${pageNumber==postForum.number + 1} ? active"></a>
+                </div>
+            </div>
+
+
+            <!-- ========== Sidebar Area ========== -->
+            <div class="col-12 col-md-8 col-lg-4">
+                <div class="post-sidebar-area">
+                    <!-- Widget Area -->
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Liên Hệ </h5>
+                        <div class="widget-content">
+                            <p>EMAIL: <a th:href="@{mailto: codesieuban@gmail.com}">codesieuban@gmail.com</a></p>
+                            <p>PHONE: <span>0123456789</span></p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Stay Connected</h5>
+                        <div class="widget-content">
+                            <div class="social-area d-flex justify-content-between">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-vimeo"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-google"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Widget Area -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="user/fragments/footer :: footer"></footer>
+
+</body>
+
+</html>
