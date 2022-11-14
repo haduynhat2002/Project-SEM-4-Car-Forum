@@ -1,6 +1,5 @@
 package com.example.carforum.service;
 
-
 import com.example.carforum.entity.User;
 import com.example.carforum.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
