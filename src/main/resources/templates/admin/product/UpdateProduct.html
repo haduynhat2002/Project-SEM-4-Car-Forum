@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/fragments/head :: head">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+    <!--../../static/dist/img/AdminLTELogo.png-->
+    <!-- Preloader -->
+    <!--    <div class="preloader flex-column justify-content-center align-items-center">-->
+    <!--        <img class="animation__shake" th:src="@{/admin/dist/img/AdminLTELogo.png"-->
+    <!--             alt="AdminLTELogo" height="60" width="60">-->
+    <!--    </div>-->
+
+    <nav th:replace="/admin/fragments/header :: header"></nav>
+    <div th:replace="/admin/fragments/navbar :: navbar"></div>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Công ty</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v1</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Thêm mới công ty</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form action="#" th:action="@{/product/update/{id}(id=${product.id})}"
+                          th:object="${product}"
+                          method="post">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Tên đại lý</label>
+                                <input type="text" th:field="*{name}" name="name" class="form-control" placeholder="Tên đại lý">
+                            </div>
+                            <div class="form-group">
+                                <label>Địa chỉ</label>
+                                <input type="text" th:field="*{retailprice}" name="adress" class="form-control" placeholder="Địa chỉ">
+                            </div>
+                            <div class="form-group">
+                                <label>Hotline</label>
+                                <input type="text" th:field="*{origin}" name="hotline" class="form-control" placeholder="Hotline">
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày giờ làm việc</label>
+                                <input type="text" th:field="*{rangeofvehicle}" name="datetime" class="form-control" placeholder="Ngày giờ làm việc">
+                            </div>
+                            <div class="form-group">
+                                <label>Nội dung</label>
+                                <input type="text" th:field="*{numberofseats}" name="description" class="form-control" placeholder="Nội dung">
+                            </div>
+                            <div class="form-group">
+                                <label>Image</label>
+                                <input type="text" th:field="*{gear}" name="description" class="form-control" placeholder="Nội dung">
+                                <div class="form-group">
+                                    <label class="form-group">Company </label>
+                                    <select class="form-control" th:field="*{dealer}" required>
+                                        <th:block th:each=" product : ${listDealer}">
+                                            <option th:value="${product.id}" th:text="${product.name}" ></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer th:replace="/admin/fragments/footer :: footer"></footer>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+</div>
+<script th:replace="/admin/fragments/scripts :: scripts"></script>
+
+</body>
+</html>

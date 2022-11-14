@@ -15,5 +15,10 @@ import java.util.List;
 public class CategoryCarController {
     @Autowired
     private CategoryCarService categoryCarService;
-
+    @GetMapping("/priceCar")
+    public String listCategory(Model model){
+        List<CategoryCar> listCategoryCar = categoryCarService.findAll();
+        model.addAttribute("listCategoryCar",listCategoryCar );
+        return "user/Car-review";
+    }
 }

@@ -10,11 +10,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class PostController {
@@ -38,8 +40,21 @@ public class PostController {
     public String showCategoryNewForm(Post post){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object o = authentication.getPrincipal();
+        if(o instanceof String && "anonymousUser".equals(String.valueOf(o))) {
+        } else {
+            CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
+            User user = customerUserDtls.getU();
+            post.setUser_id(user);
+            post.setDateTime(LocalDateTime.now());
+            postService.save(post);
+        }
+        return "redirect:/";
+    }
 
-        List<Post> listPost = new ArrayList<>();
+    @PostMapping("home/post/save")
+    public String savePostIndex(Post post){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Object o = authentication.getPrincipal();
         if(o instanceof String && "anonymousUser".equals(String.valueOf(o))) {
             //chua login
         } else {
@@ -53,31 +68,19 @@ public class PostController {
         return "redirect:/";
     }
 
-    @GetMapping("/")
-    public String listPost(Model model){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Object o = authentication.getPrincipal();
-
-        List<Post> listPost = new ArrayList<>();
-        if(o instanceof String && "anonymousUser".equals(String.valueOf(o))) {
-            //chua login
-        } else {
-            CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
-            User user = customerUserDtls.getU();
-            listPost = postService.findAllByUserId(user.getId());
-        }
-
-        List<CategoryCar> listCategoryCar = categoryCarService.findAll();
-        model.addAttribute("listCategoryCar",listCategoryCar );
-        model.addAttribute("listPost", listPost);
-        return "user/index";
-    }
-
     @GetMapping("/category")
-    public String postDetail(Model model){
+    public String postCategory(Model model){
         List<Post> listPost = postService.findAll();
         model.addAttribute("listPostDetail", listPost);
         return "user/Category";
+    }
+
+    @GetMapping("/details/{id}")
+    public String postDetail(@PathVariable("id") int id, Model model){
+        Post listPost = postService.finById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("listPostDetail", listPost);
+        return "Guide";
     }
 
 }

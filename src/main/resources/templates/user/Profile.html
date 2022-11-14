@@ -1,295 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<!--<head th:replace="/user/fragments/head :: head"></head>-->
-<head>
-    <link rel="stylesheet" th:href="@{/user/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/user/css/boottrap.css}">
-    <link rel="stylesheet" th:href="@{/user/css/Profile.css}">
-    <link rel="stylesheet" th:href="@{/user/css/layout.css}">
-</head>
-<body data-template="vnxf_tt_profile" class="">
-<div class="p-pageWrapper" id="top">
-    <div class="banner_top_menu">
-        <div class="p-body-inner" style="padding-bottom:0;">
-        </div>
-    </div>
-    <div class="p-body">
-        <div class="p-body-inner">
-            <!--XF:EXTRA_OUTPUT-->
-            <div class="p-body-main  ">
-                <div class="p-body-content">
-                    <div class="p-body-header">
-                        <div class="p-title ">
-                            <h1 class="p-title-value">[[${fullname}]] - trang cá nhân</h1>
+<head th:replace="user/fragments/head :: head"></head>
+<body>
+<header th:replace="/user/fragments/header :: header"></header>
+<section class="content profile-page" id="top">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-12">
+                <div class="card profile-header">
+                    <div class="body text-center">
+                        <div class="profile-image"><img th:src="${avatar}" alt="" width="200px" height="200px">
+
                         </div>
-                    </div>
-                    <div class="p-body-pageContent">
-                        <div class="tt_fact">
-                            <div class="jsx-2066168293 main">
-                                <div class="root">
-                                    <div class="jsx-2066168293 section">
-                                        <div class="jsx-1841409594 top">
-                                            <div class="jsx-3725763649 container user-profile">
-                                                <div class="jsx-3725763649 user">
-                                                    <div class="jsx-3725763649 avatar">
-                                                        <a href="" class="avatar avatar--l" data-user-id="323981"
-                                                           data-xf-init="member-tooltip" id="js-XFUniqueId1">
-                                                            <img  th:src="${avatar}"
-                                                                  alt="hieuphan1303" class="avatar-u323981-l" width="192"
-                                                                  height="192" loading="lazy">
-                                                        </a>
-                                                    </div>
-                                                    <div class="jsx-3725763649 action-links">
-                                                        <div class="jsx-3725763649 user-action-buttons">
-                                                            <div class="jsx-3725763649">
-                                                                <div class="jsx-1636667683">
-                                                                    <a href=""
-                                                                       class="jsx-1636667683 button follow-btn button"
-                                                                       data-xf-click="switch" data-sk-follow="Theo dõi"
-                                                                       data-sk-unfollow="Bỏ theo dõi"><span
-                                                                            class="button-text">
-							Theo dõi
-						</span></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="jsx-3725763649 info">
-                                                    <h1 class="jsx-3725763649 username NoOverlay">[[${fullname}]]<span
-                                                            class="jsx-3725763649 verifyBadge"> <svg
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M51 7C27.3 7 8 26.3 8 50s19.3 43 43 43 43-19.3 43-43S74.7 7 51 7zm-6.5 62.9L25.4 50.7l5.7-5.7 13.5 13.5L71 32.1l5.7 5.7-32.2 32.1z"></path>
-                </svg> </span></h1>
-                                                    <div class="jsx-3725763649 intro">
-                                                        <div class="jsx-326576166 mod-tag"><h5
-                                                                class="userTitle message-userTitle" dir="auto"
-                                                                itemprop="jobTitle"
-                                                                style="display:inline-block;margin:0">[[${email}]]</h5>
-                                                        </div>
-                                                        <ul>
-                                                            <li> <span class="jsx-3725763649">[[${phone}]]</span></li>
-                                                            <li> <span class="jsx-3725763649">[[${address}]]</span></li>
-                                                        </ul>
-
-
-                                                    </div>
-                                                    <div class="jsx-3725763649 badge-slider desktop">
-                                                        <div>
-                                                            <div class="slick-slider slick-initialized">
-                                                                <div class="slick-list">
-                                                                    <div class="slick-track">
-                                                                        <div data-index="1" class="slick-slide"
-                                                                             tabindex="-1">
-                                                                            <div>
-                                                                                <div class="jsx-3898125067 badge-collection">
-                                                                                    <h4 class="jsx-3898125067 badge-name">
-                                                                                        Huy hiệu đạt được</h4>
-                                                                                    <div class="jsx-3898125067 badge-list">
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="jsx-3725763649 mobile-divider">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jsx-2066168293 section hide-tooltip">
-                                        <div class="jsx-2066168293 container sidebar-layout">
-                                            <div class="jsx-2066168293 snd hidden-mobile">
-                                                <div class="jsx-2577921371 main">
-                                                    <div class="jsx-2577921371 user-stats-wrapper">
-                                                        <div class="jsx-4749076 user-stats">
-                                                            <h3 class="jsx-4749076 heading">Bảng chiến tích của
-                                                                hieuphan1303!</h3>
-                                                            <table class="jsx-4749076">
-                                                                <tbody class="jsx-4749076">
-                                                                <tr class="jsx-4749076">
-                                                                    <td class="jsx-4749076">Hoạt động lần cuối:</td>
-                                                                    <td align="right" class="jsx-4749076"><span
-                                                                            class="jsx-4749076 stats-value"><span><time
-                                                                            class="u-dt" dir="auto"
-                                                                            datetime="2022-10-11T09:35:43+0700"
-                                                                            data-time="1665455743"
-                                                                            data-date-string="11/10/22"
-                                                                            data-time-string="09:35"
-                                                                            title="11/10/22 lúc 09:35">46 phút trước</time></span></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="jsx-4749076">
-                                                                    <td class="jsx-4749076">Tuổi Oto Hui:</td>
-                                                                    <td align="right" class="jsx-4749076"><span
-                                                                            class="jsx-4749076 stats-value"><span>1 năm</span></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="jsx-4749076">
-                                                                    <td class="jsx-4749076">Bài viết:</td>
-                                                                    <td align="right" class="jsx-4749076"><span
-                                                                            class="jsx-4749076 stats-value"><span>0</span></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="jsx-4749076">
-                                                                    <td class="jsx-4749076">Được thích:</td>
-                                                                    <td align="right" class="jsx-4749076"><span
-                                                                            class="jsx-4749076 stats-value"><span>0</span></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="jsx-4749076">
-                                                                    <td class="jsx-4749076">Xăng:</td>
-                                                                    <td align="right" class="jsx-4749076"><span
-                                                                            class="jsx-4749076 stats-value"><span>55 lít</span></span>
-                                                                    </td>
-                                                                </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="jsx-2066168293 fst">
-                                                <div class="jsx-3644298023 threads-container">
-                                                    <div class="jsx-3475826491 new-thread-background">
-                                                        <div class="jsx-3399933531 thread-editor"><a href=""
-                                                                                                     data-xf-click="switch-overlay"
-                                                                                                     class="jsx-3399933531 blue-switch">+
-                                                            VIẾT BÀI CHIA SẺ, ĐẶT CÂU HỎI</a></div>
-                                                    </div>
-                                                    <div class="jsx-3365248066">
-                                                        <div class="jsx-3365248066 threads items infinite-content">
-                                                            <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
-                                                                <div class="wrap-ut pull-left">
-                                                                    <div class="userinfo pull-left">
-                                                                        <div class="avatar">
-                                                                            <img src="images/avatar2.jpg" alt="">
-                                                                            <div class="status red">&nbsp;</div>
-                                                                        </div>
-
-                                                                        <div class="icons">
-                                                                            <img src="images/icon3.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
-                                                                                src="images/icon5.jpg" alt=""><img src="images/icon6.jpg" alt="">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="posttext pull-left">
-                                                                        <h2><a href="02_topic.html">What Instagram Ads Will Look Like</a></h2>
-                                                                        <p>Instagram offered a first glimpse at what its ads will look like in a blog post
-                                                                            Thursday. The sample ad, which you can see below.</p>
-                                                                    </div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                                <div class="postinfo pull-left">
-                                                                    <div class="comments">
-                                                                        <div class="commentbg">
-                                                                            89
-                                                                            <div class="mark"></div>
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div class="views"><i class="fa fa-eye"></i> 1,568</div>
-                                                                    <div class="time"><i class="fa fa-clock-o"></i> 15 min</div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                            </div><!-- POST -->
-
-
-                                                            <!-- POST -->
-                                                            <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
-                                                                <div class="wrap-ut pull-left">
-                                                                    <div class="userinfo pull-left">
-                                                                        <div class="avatar">
-                                                                            <img src="images/avatar3.jpg" alt="">
-                                                                            <div class="status red">&nbsp;</div>
-                                                                        </div>
-
-                                                                        <div class="icons">
-                                                                            <img src="images/icon2.jpg" alt=""><img src="images/icon4.jpg" alt="">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="posttext pull-left">
-                                                                        <h2><a href="02_topic.html">The Future of Magazines Is on Tablets</a></h2>
-                                                                        <p>Eric Schmidt has seen the future of magazines, and it's on the tablet. At a
-                                                                            Magazine
-                                                                            Publishers Association.</p>
-                                                                    </div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                                <div class="postinfo pull-left">
-                                                                    <div class="comments">
-                                                                        <div class="commentbg">
-                                                                            456
-                                                                            <div class="mark"></div>
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div class="views"><i class="fa fa-eye"></i> 1,568</div>
-                                                                    <div class="time"><i class="fa fa-clock-o"></i> 2 days</div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                            </div><!-- POST -->
-
-
-                                                            <!-- POST -->
-                                                            <div class="post wow fadeInUpBig" data-wow-delay="0.2s">
-                                                                <div class="wrap-ut pull-left">
-                                                                    <div class="userinfo pull-left">
-                                                                        <div class="avatar">
-                                                                            <img src="images/avatar4.jpg" alt="">
-                                                                            <div class="status yellow">&nbsp;</div>
-                                                                        </div>
-
-                                                                        <div class="icons">
-                                                                            <img src="images/icon1.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
-                                                                                src="images/icon6.jpg" alt="">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="posttext pull-left">
-                                                                        <h2><a href="02_topic.html">Pinterest Now Worth $3.8 Billion</a></h2>
-                                                                        <p>Pinterest's valuation is closing in on $4 billion after its latest funding round
-                                                                            of
-                                                                            $225 million, according to a report.</p>
-                                                                    </div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                                <div class="postinfo pull-left">
-                                                                    <div class="comments">
-                                                                        <div class="commentbg">
-                                                                            78
-                                                                            <div class="mark"></div>
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div class="views"><i class="fa fa-eye"></i> 1,568</div>
-                                                                    <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                            </div><!-- POST -->
-
-                                                        </div>
-                                                        <div class="jsx-3365248066 main">
-                                                            <div class="jsx-4197999402 image-overlay box hidden">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>  <h4 class=""> [[${fullname}]] - Trang cá nhân </h4>
+<!--                            <span class="job_post">Neurologist</span>-->
+<!--                            <p>795 Folsom Ave, Suite 600<br> San Francisco, CADGE 94107</p>-->
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p><strong>EMAIL:</strong> [[${email}]]</p>
+                                </li>
+                                <li>
+                                    <p><strong>PHONE:</strong> [[${phone}]]</p>
+                                </li>
+                                <li>
+                                    <p><strong>ADDRESS:</strong> [[${address}]]</p>
+                                </li>
+                            </ul>
                         </div>
+                        <div>
+                            <button class="btn btn-primary btn-round">Follow</button>
+                            <button class="btn btn-primary btn-round btn-simple">Message</button>
+                        </div>
+                        <!--                        <p class="social-icon m-t-5 m-b-0">-->
+                        <!--                            <a title="Twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a>-->
+                        <!--                            <a title="Facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a>-->
+                        <!--                            <a title="Google-plus" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a>-->
+                        <!--                            <a title="Behance" href="javascript:void(0);"><i class="zmdi zmdi-behance"></i></a>-->
+                        <!--                            <a title="Instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram "></i></a>-->
+                        <!--                        </p>-->
                     </div>
                 </div>
             </div>
+            <div class="col-lg-8 col-md-8">
+                <div>
+                    <ul class=" mb-20" id="myTab4" role="tablist"
+                        style="padding: 10px 0;font-size: 18px;color: #000000;margin-bottom: 25px;margin-right: auto;border-bottom: 2px solid #f1f1f1;font-weight: 700;">
+                        <li class="title">Bài viết</li>
+                    </ul>
+                </div>
+                <!-- POST -->
+                <div class="post wow fadeInUpBig" data-wow-delay="0.2s" style="height: 100px;">
+                    <div class="wrap-ut pull-left">
+                        <div class="userinfo pull-left">
+                            <div class="avatar">
+                                <img style="width: 70px; height: 70px;border-radius: 50%;object-fit: cover;" src="" alt="">
+                                <div class="status green">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div class="posttext pull-left">
+                            <a href="02_topic.html">[[${post.user_id.fullname}]]</a>
+                            <div class="text-shortened">[[${post.content}]]</div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="postinfo pull-left">
+                        <!--                                <div class="comments">-->
+                        <!--                                    <div class="commentbg">-->
+                        <!--                                        560-->
+                        <!--                                        <div class="mark"></div>-->
+                        <!--                                    </div>-->
+
+                        <!--                                </div>-->
+                        <div class="views"><i class="fa fa-eye"></i> 1,568</div>
+                        <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div><!-- POST -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="load-more-btn mt-50 text-center">
+                            <a href="#" class="btn world-btn">Load More</a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div> <!-- closing p-pageWrapper -->
+</section>
+<footer th:replace="user/fragments/footer :: footer"></footer>
+<script th:replace="user/fragments/scripts :: script"></script>
 </body>
 </html>

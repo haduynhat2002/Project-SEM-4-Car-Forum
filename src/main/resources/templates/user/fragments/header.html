@@ -19,7 +19,7 @@
                                 <a class="nav-link" th:href="@{/}">Trang chủ <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"th:href="@{/category}">Diễn đàn</a>
+                                <a class="nav-link" th:href="@{/home/postForum}">Diễn đàn</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" th:href="@{/post/new}">Viết bài</a>
@@ -35,15 +35,22 @@
                                     <a class="nav-link dropdown-toggle" th:href="@{/login}" id="navbarDropdown" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Đăng nhập</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" th:href="@{/register}">Đăng ký</a>
-                                        <a class="dropdown-item" th:href="@{login}">Đăng Nhập</a>
+                                        <a class="nav-link" th:href="@{/register}">Đăng ký</a>
+                                        <a class="nav-link" th:href="@{/login}">Đăng Nhập</a>
                                     </div>
                                 </li>
                             </div>
 
                             <div sec:authorize="isAuthenticated()">
-                                <li class="nav-item">
-                                    <a class="nav-link" th:href="@{/logout}">Đăng xuất</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" th:href="@{/login}" id="navbarDropdown1" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="nav-link" th:href="@{/profile}">Trang cá nhân</a>
+                                        <a class="nav-link" th:href="@{/logout}">Đăng xuất</a>
+
+                                    </div>
+                                </li>
                                 </li>
                             </div>
                         </ul>
