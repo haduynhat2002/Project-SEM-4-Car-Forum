@@ -12,14 +12,14 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div th:if="${session.message}"
+                     th:classapend="${session.message}" class="alert alert-success" role="alert">
+                    <p th:text="${session.message}"></p>
+                    <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+                </div>
                 <div class="card border-0 shadow rounded-3 my-5">
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-5 fw-light fs-5">Đăng Ký</h5>
-                        <div th:if="${session.message}"
-                             th:classapend="${session.message}" class="alert alert-success" role="alert">
-                            <p th:text="${session.message}"></p>
-                            <th:block th:text="${#session.removeAttribute('message')}"></th:block>
-                        </div>
                         <form th:action="@{/register}" th:object="${user}" method="post">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" name="fullname" id="floatingFullName" placeholder="Enter FullName">
