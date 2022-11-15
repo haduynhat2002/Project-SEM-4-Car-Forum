@@ -55,13 +55,11 @@ public class PostController {
     public String savePostIndex(Post post){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object o = authentication.getPrincipal();
-        List<Topic> listTopic = topicService.findAll();
         if(o instanceof String && "anonymousUser".equals(String.valueOf(o))) {
             //chua login
         } else {
             CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
             User user = customerUserDtls.getU();
-            post.setTopic(listTopic.get(3));
             post.setUser_id(user);
             post.setDateTime(LocalDateTime.now());
             postService.save(post);
