@@ -91,6 +91,11 @@ public class HomeController {
     public String category() {
         return "user/Category";
     }
+//    @RequestMapping("/category")
+//    public String category() {
+//        return "user/Category";
+//    }
+
 //    @RequestMapping("/register")
 //    public String register() {
 //        return "user/Register";
@@ -106,6 +111,11 @@ public class HomeController {
 
         model.addAttribute("dealer", dealer);
         return "user/Dealer";
+    }
+
+    @RequestMapping("/priceCar/priceCar")
+    public String CarReview() {
+        return "user/Car-review";
     }
     @RequestMapping("/priceDetail")
     public String PriceDetail() {

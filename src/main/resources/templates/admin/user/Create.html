@@ -19,7 +19,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Tài khoản</h1>
+                        <h1 class="m-0">Thêm người dùng</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -37,16 +37,16 @@
             <div class="container-fluid">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Thêm mới tài khoản</h3>
+                        <h3 class="card-title">Thêm mới người dùng </h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form th:action="@{/admin/user/create}" th:object="${user}" method="post">
-                        <div class="container mt-3">
-                            <div class="row">
-                                <div class="form-floating mb-3 col-6">
-                                    <label for="floatingFullName" style="bottom: 0px; top: 60%;">Full Name</label>
-                                    <input type="text" class="form-control" name="fullname" id="floatingFullName" placeholder="Enter FullName">
+                    <form action="#" th:action="@{/topic/save}" method="post" th:object="${topic}">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Tên người dùng</label>
+                                <input type="text" name="name" class="form-control" placeholder="Tên người dùng">
+                            </div>
 
                                 </div>
                                 <div class="form-floating mb-3 col-6">
