@@ -17,7 +17,7 @@ public class ApiCommentController {
     @Autowired
     private CommentService commentService;
 
-    @PostMapping(path = "/api/add-comment", produces = {
+    @PostMapping(path = "/home/comment/save", produces = {
             MediaType.APPLICATION_JSON_VALUE
     })
     public ResponseEntity<Comment> addComment(@RequestBody Map<String, String> params){
