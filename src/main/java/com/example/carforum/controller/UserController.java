@@ -1,10 +1,8 @@
 package com.example.carforum.controller;
 
 
-import com.example.carforum.entity.CustomerUserDtls;
-import com.example.carforum.entity.Post;
-import com.example.carforum.entity.Role;
-import com.example.carforum.entity.User;
+import com.example.carforum.entity.*;
+import com.example.carforum.entity.dto.AccountLoginDto;
 import com.example.carforum.repository.RoleRepository;
 import com.example.carforum.repository.UserRepository;
 import com.example.carforum.service.PostService;
@@ -15,11 +13,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,28 +38,34 @@ public class UserController {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @GetMapping("/register")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("user", new User());
         return "user/Register";
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String login( Model model) {
+        model.addAttribute("user" , new AccountLoginDto());
         return "user/Login";
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute User user, HttpSession session) {
-        System.out.println(user.toString());
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        Role role = roleRepository.findByName("ROLE_USER");
-        if(role == null){
-            role = checkRoleExist();
+    public String register(@Valid @ModelAttribute("user") User user, HttpSession session , BindingResult bindingResult , Model model) {
+        if (bindingResult.hasErrors()){
+            return "redirect:/register";
+        }else {
+            System.out.println(user.toString());
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            Role role = roleRepository.findByName("ROLE_USER");
+            if(role == null){
+                role = checkRoleExist();
+            }
+            user.setRoles(Arrays.asList(role));
+            user.setStatus(1);
+            session.setAttribute("message", "User register success....");
+            userService.save(user);
+            return "redirect:/login";
         }
-        user.setRoles(Arrays.asList(role));
-        user.setStatus(1);
-        userService.save(user);
-        session.setAttribute("message", "User register success....");
-        return "redirect:/login";
     }
 
     @GetMapping("/profile")

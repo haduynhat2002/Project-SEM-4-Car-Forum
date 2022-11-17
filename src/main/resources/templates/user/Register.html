@@ -22,11 +22,13 @@
                         </div>
                         <form th:action="@{/register}" th:object="${user}" method="post">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="fullname" id="floatingFullName" placeholder="Enter FullName">
+                                <input type="text" th:field="*{fullname}" class="form-control" name="fullname" id="floatingFullName" placeholder="Enter FullName">
+                                <p th:if="${#fields.hasErrors('fullname')}" class="text-danger" th:errors="*{fullname}"></p>
                                 <label for="floatingFullName" style="bottom: 0px; top: 60%;">Full Name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" type="text" name="userName" placeholder="Enter User Name" id="floatingUserName">
+                                <input class="form-control" th:field="*{userName}" type="text" name="userName" placeholder="Enter User Name" id="floatingUserName">
+                                <p th:if="${#fields.hasErrors('userName')}" class="text-danger" th:errors="*{userName}"></p>
                                 <label for="floatingPhone" >User Name</label>
                             </div>
                             <div class="form-floating mb-3 d-flex">
@@ -38,33 +40,40 @@
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="gender" value="female">Female
                                     </div>
+                                    <p th:if="${#fields.hasErrors('gender')}" class="text-danger" th:errors="*{gender}"></p>
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" type="text" name="phone" placeholder="Enter Phone" id="floatingPhone">
+                                <input class="form-control" th:field="*{phone}" type="text" name="phone" placeholder="Enter Phone" id="floatingPhone">
+                                <p th:if="${#fields.hasErrors('phone')}" class="text-danger" th:errors="*{phone}"></p>
                                 <label for="floatingPhone" >Phone</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" type="text" name="avatar" placeholder="Enter Avatar" id="floatingAvatar">
+                                <input class="form-control" th:field="*{avatar}" type="text" name="avatar" placeholder="Enter Avatar" id="floatingAvatar">
+                                <p th:if="${#fields.hasErrors('avatar')}" class="text-danger" th:errors="*{avatar}"></p>
                                 <label for="floatingAvatar" >Avatar</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" type="email" name="email" placeholder="Enter Email"
+                                <input class="form-control" th:field="*{email}" type="email" name="email" placeholder="Enter Email"
                                        id="exampleInputEmail1">
+                                <p th:if="${#fields.hasErrors('email')}" class="text-danger" th:errors="*{email}"></p>
                                 <label for="exampleInputEmail1" >Email</label>
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with
                                     anyone else.</small>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" name="dob" placeholder="Enter Birthday" id="floatingBirthday">
+                                <input type="date" th:field="*{dob}" class="form-control" name="dob" placeholder="Enter Birthday" id="floatingBirthday">
+                                <p th:if="${#fields.hasErrors('dob')}" class="text-danger" th:errors="*{dob}"></p>
                                 <label for="floatingBirthday" >Birthday</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <input type="password" th:field="*{password}" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <p th:if="${#fields.hasErrors('password')}" class="text-danger" th:errors="*{password}"></p>
                                 <label for="exampleInputPassword1" >Password</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="address" placeholder="Enter Address" id="floatingAddress">
+                                <input type="text" th:field="*{address}" class="form-control" name="address" placeholder="Enter Address" id="floatingAddress">
+                                <p th:if="${#fields.hasErrors('address')}" class="text-danger" th:errors="*{address}"></p>
                                 <label for="floatingAddress">Address</label>
                             </div>
                             <div class="d-grid">

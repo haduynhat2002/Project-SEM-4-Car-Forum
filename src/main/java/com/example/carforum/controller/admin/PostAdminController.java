@@ -1,9 +1,6 @@
 package com.example.carforum.controller.admin;
 
-import com.example.carforum.entity.CustomerUserDtls;
-import com.example.carforum.entity.Post;
-import com.example.carforum.entity.Topic;
-import com.example.carforum.entity.User;
+import com.example.carforum.entity.*;
 import com.example.carforum.repository.PostRepository;
 import com.example.carforum.service.PostService;
 import com.example.carforum.service.TopicService;
@@ -12,10 +9,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -38,15 +38,22 @@ public class PostAdminController {
         return "admin/post/CreatePost";
     }
     @PostMapping("admin/post/save")
-    public String showCategoryNewForm(Post post){
+    public String showCategoryNewForm(@Valid @ModelAttribute("post") Post post , BindingResult bindingResult , Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("post", post);
+            List<Topic> listTopic = topicService.findAll();
+            model.addAttribute("listTopic", listTopic);
+            return "admin/post/CreatePost";
+        } else {
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //        CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
 //        User user = customerUserDtls.getU();
 //        post.setUser_id(user);
 
-        post.setDateTime(LocalDateTime.now());
-        postService.save(post);
-        return "redirect:/admin/posts";
+            post.setDateTime(LocalDateTime.now());
+            postService.save(post);
+            return "redirect:/admin/posts";
+        }
     }
 
     @GetMapping("/admin/posts")

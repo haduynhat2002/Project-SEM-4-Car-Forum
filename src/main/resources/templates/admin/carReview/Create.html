@@ -19,7 +19,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Chủ đề</h1>
+                        <h1 class="m-0">Đánh giá xe</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -37,7 +37,7 @@
             <div class="container-fluid">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Thêm mới chủ đề</h3>
+                        <h3 class="card-title">Thêm mới đánh giá</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -45,18 +45,18 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Tiêu đề</label>
-                                <input type="text" name="title" class="form-control" placeholder="Tên chủ đề">
+                                <input type="text" name="title" class="form-control" placeholder="Tiêu đề">
                             </div>
                             <div class="form-group">
                                 <label>Type</label>
-                                <input type="text" name="type" class="form-control" placeholder="Tên chủ đề">
+                                <input type="text" name="type" class="form-control" placeholder="Type">
                             </div>
                             <div class="form-group">
                                 <label>Hình ảnh</label>
                                 <input type="text" name="image" class="form-control" placeholder="Hình ảnh">
                             </div>
                             <label class="form-group">Category Car </label>
-                            <select th:field="*{categoryCar}" required>
+                            <select class="form-control" th:field="*{categoryCar}" required>
                             <th:block th:each="cat : ${listCategoryCar}">
                                 <option th:text="${cat.name}" th:value="${cat.id}"></option>
                             </th:block>

@@ -9,6 +9,7 @@ import org.aspectj.bridge.Message;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
@@ -23,12 +24,12 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull(message ="Vui lòng tiêu đề nội dung")
+    @NotEmpty(message ="Vui lòng tiêu đề nội dung")
     @Column(length = 125, nullable = false, unique = true)
     private String title;
 
 //    @Min(value = 4, message = "Nội dung không được ít hơn 4 ký tự")
-    @NotNull(message ="Vui lòng nhập nội dung")
+    @NotEmpty(message ="Vui lòng nhập nội dung")
     private String content;
 
 

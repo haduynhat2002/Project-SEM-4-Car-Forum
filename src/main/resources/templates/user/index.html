@@ -1514,9 +1514,9 @@
                                     data-toggle="modal" data-target="#myModal">+ VIẾT BÀI
                                 CHIA SẺ, ĐẶT CÂU HỎI
                             </button>
-                            <button sec:authorize="!isAuthenticated()" type="button" style="color:white" class="content new-thread-background"
+                            <a th:href="@{/login}" sec:authorize="!isAuthenticated()" type="button" style="color:white" class="content new-thread-background"
                                     >VUI LÒNG ĐĂNG NHẬP ĐỂ ĐĂNG BÀI VIẾT
-                            </button>
+                            </a>
 
 
                             <!-- Modal -->
@@ -1530,7 +1530,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <form action="#" th:action="@{/home/post/save}" method="post" th:object="${post}" id="usrform">
-                                                <input name="topic" value="1" type="text" class="form-control d-none" placeholder="Nhập tiêu đề bài viết...." >
+                                                <input name="topic" type="text" class="form-control d-none" value="3" placeholder="Nhập tiêu đề bài viết...." >
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Tiêu đề</label>
                                                     <input name="title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết...." >

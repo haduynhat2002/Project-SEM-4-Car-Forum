@@ -19,7 +19,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Chủ đề</h1>
+                        <h1 class="m-0">Giá xe</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -37,25 +37,26 @@
             <div class="container-fluid">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Thêm mới chủ đề</h3>
+                        <h3 class="card-title">Thêm mới giá xe</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form th:action="@{/pricecar/save}" method="post" th:object="${priceCar}">
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Tiêu đề</label>
-                                <input type="text" name="name" class="form-control" placeholder="Tên chủ đề">
+                                <label>Tên</label>
+                                <input type="text" name="name" class="form-control" placeholder="Tên xe">
                             </div>
                             <div class="form-group">
                                 <label>Giá niêm yết</label>
-                                <input type="text" name="listed_price" class="form-control" placeholder="Tên chủ đề">
+                                <input type="text" name="listed_price" class="form-control" placeholder="Giá niêm yết">
                             </div>
                             <div class="form-group">
-                                <label>Giá năn bánh</label>
-                                <input type="text" name="rolling_price" class="form-control" placeholder="Hình ảnh">
+                                <label>Giá lăn bánh</label>
+                                <input type="text" name="rolling_price" class="form-control" placeholder="Giá lăn bánh">
                             </div>
-                            <select th:field="*{categoryCar}" required>
+                            <label>Danh mục xe</label>
+                            <select class="form-control" th:field="*{categoryCar}" required>
                                 <th:block th:each="cat : ${listCategoryCar}">
                                     <option th:text="${cat.name}" th:value="${cat.id}"></option>
                                 </th:block>
