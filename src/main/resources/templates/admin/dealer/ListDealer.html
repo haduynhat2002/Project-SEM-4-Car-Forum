@@ -56,7 +56,6 @@
                                         <th>Ngày giờ</th>
 <!--                                        <th>Company</th>-->
                                         <th>Ảnh</th>
-                                        <th>Mô tả</th>
                                         <th>Hoạt động</th>
                                     </tr>
                                     </thead>
@@ -69,7 +68,6 @@
                                         <td>[[${dealer.datetime}]]</td>
 <!--                                        <td>[[${dealer.company}]]</td>-->
                                         <td><img th:src="${dealer.image}" alt="" style="width: 135px; height: 78px"/>
-                                        <td>[[${dealer.description}]]</td>
                                         <td>
                                             <a th:href="@{'/dealer/edit/' + ${dealer.id}}">Edit</a>
                                             &nbsp;

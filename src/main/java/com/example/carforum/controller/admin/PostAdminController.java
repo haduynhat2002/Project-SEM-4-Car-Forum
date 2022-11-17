@@ -39,11 +39,10 @@ public class PostAdminController {
     }
     @PostMapping("admin/post/save")
     public String showCategoryNewForm(Post post){
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
-//        User user = customerUserDtls.getU();
-//        post.setUser_id(user);
-
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        CustomerUserDtls customerUserDtls = (CustomerUserDtls) authentication.getPrincipal();
+        User user = customerUserDtls.getU();
+        post.setUser_id(user);
         post.setDateTime(LocalDateTime.now());
         postService.save(post);
         return "redirect:/admin/posts";

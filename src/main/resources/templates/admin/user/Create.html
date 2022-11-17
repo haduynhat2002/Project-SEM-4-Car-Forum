@@ -33,7 +33,7 @@
         <!-- /.content-header -->
 
         <!-- Main content -->
-        <section class="content">
+        <div class="content">
             <div class="container-fluid">
                 <div class="card card-primary">
                     <div class="card-header">
@@ -41,14 +41,14 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="#" th:action="@{/topic/save}" method="post" th:object="${topic}">
-                        <div class="card-body">
-                            <div class="form-group">
+                    <form action="#" th:action="@{/admin/user/create}" method="post" th:object="${topic}">
+                        <div class="card-body row">
+                            <div class="form-floating mb-3 col-6">
                                 <label>Tên người dùng</label>
-                                <input type="text" name="name" class="form-control" placeholder="Tên người dùng">
+                                <input type="text" name="fullname" class="form-control" placeholder="Tên người dùng">
                             </div>
 
-                                </div>
+
                                 <div class="form-floating mb-3 col-6">
                                     <label for="floatingPhone" >User Name</label>
                                     <input class="form-control" type="text" name="userName" placeholder="Enter User Name" id="floatingUserName">
@@ -109,6 +109,7 @@
                         <hr class="my-4">
                     </form>
                     </div>
+
                 </div><!-- /.container-fluid -->
             </section>
         <!-- /.content -->

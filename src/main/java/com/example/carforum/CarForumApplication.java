@@ -21,9 +21,9 @@ public class CarForumApplication {
     @Bean
     public CommandLineRunner run(TopicRepository topicRepository) throws Exception {
         return (String[] args) -> {
-            Topic topic1 = new Topic(1,"Tin tức");
+            Topic topic1 = new Topic(1,"Bài viết || Đặt câu hỏi");
             Topic topic2 = new Topic(2, "Đánh giá xe");
-            Topic topic3 = new Topic(3, "Bài viết || Đặt câu hỏi");
+            Topic topic3 = new Topic(3, "Tin Tức");
             Topic topic4 = new Topic(4, "Kinh nghiệm lái xe");
             Topic topic5 = new Topic(5, "Bảo dưỡng ô tô");
             topicRepository.save(topic1);

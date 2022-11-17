@@ -22,10 +22,10 @@ public class ApiCommentController {
     @Autowired
     private CommentService commentService;
 
-    @PostMapping(path = "/home/comment/save/{id}", produces = {
+    @PostMapping(path = "/home/comment/save", produces = {
             MediaType.APPLICATION_JSON_VALUE
     })
-    public ResponseEntity<Comment> addComment(@RequestBody Map<String, String> params, @PathVariable("id") int id){
+    public ResponseEntity<Comment> addComment(@RequestBody Map<String, String> params){
         try {
             String content = params.get("content");
             int postId = Integer.parseInt(params.get("postId"));

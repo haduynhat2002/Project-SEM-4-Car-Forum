@@ -26,8 +26,8 @@ public class PagePostController {
                             @RequestParam("page") Optional<Integer> page,
                             @RequestParam("size") Optional<Integer> size){
         int currentPage = page.orElse(1);
-        int pageSize = size.orElse(5);
-        Page<Post> listPost = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize), 3);
+        int pageSize = size.orElse(7);
+        Page<Post> listPost = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize), 1);
         int totalPages = listPost.getTotalPages();
         if (totalPages > 0) {
             List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages)
@@ -44,8 +44,8 @@ public class PagePostController {
                            @RequestParam("page") Optional<Integer> page,
                            @RequestParam("size") Optional<Integer> size){
         int currentPage = page.orElse(1);
-        int pageSize = size.orElse(5);
-        Page<Post> listPost = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize), 1);
+        int pageSize = size.orElse(7);
+        Page<Post> listPost = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize), 3);
         int totalPages = listPost.getTotalPages();
         if (totalPages > 0) {
             List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages)
@@ -63,7 +63,7 @@ public class PagePostController {
                                  @RequestParam("page") Optional<Integer> page,
                                  @RequestParam("size") Optional<Integer> size){
         int currentPage = page.orElse(1);
-        int pageSize = size.orElse(5);
+        int pageSize = size.orElse(7);
         Page<Post> listPost = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize), 5);
         int totalPages = listPost.getTotalPages();
         if (totalPages > 0) {
@@ -82,7 +82,7 @@ public class PagePostController {
                                   @RequestParam("page") Optional<Integer> page,
                                   @RequestParam("size") Optional<Integer> size){
         int currentPage = page.orElse(1);
-        int pageSize = size.orElse(5);
+        int pageSize = size.orElse(7);
         Page<Post> listPost = postService.findPaginatedByTopic(PageRequest.of(currentPage - 1, pageSize), 5);
         int totalPages = listPost.getTotalPages();
         if (totalPages > 0) {
