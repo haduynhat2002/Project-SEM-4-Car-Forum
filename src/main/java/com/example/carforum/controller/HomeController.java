@@ -107,6 +107,7 @@ public class HomeController {
         List<CarReview> carReviews = carReviewRepository.listCarReview(id);
         model.addAttribute("priceCar", PriceCar);
         model.addAttribute("carReviews", carReviews);
+
         return "user/Price-Detail";
     }
     @RequestMapping("/guide")
