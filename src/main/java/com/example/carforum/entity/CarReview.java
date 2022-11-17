@@ -22,12 +22,10 @@ public class CarReview {
 
     private String title;
     private String content;
-    private int type;
     private String image;
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false)
     private CategoryCar categoryCar;
-    private int viewcount;
     @Enumerated(EnumType.ORDINAL)
     private CarReivewStatus status;}

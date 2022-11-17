@@ -1,8 +1,7 @@
 package com.example.carforum.controller;
 
 import com.example.carforum.entity.*;
-import com.example.carforum.repository.PostRepository;
-import com.example.carforum.repository.UserRepository;
+import com.example.carforum.repository.*;
 import com.example.carforum.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -28,6 +27,11 @@ public class HomeController {
     @Autowired
     UserRepository userRepository;
     @Autowired
+    CarReviewRepository carReviewRepository;
+    @Autowired
+    ProductRepository productRepository;
+
+    @Autowired
     UserService userService;
     @Autowired
     CategoryCarService categoryCarService;
@@ -35,6 +39,8 @@ public class HomeController {
     private DealerService dealerService;
     @Autowired
     PostService postService;
+    @Autowired
+    PriceCarRepository priceCarRepository;
     @GetMapping("/")
     public String listPost(Model model,
                            @RequestParam("page") Optional<Integer> page,
@@ -71,35 +77,17 @@ public class HomeController {
     public String index() {
         return "admin/index";
     }
-//        @RequestMapping("/admin/home2")
-//    public String index2() {
-//        return "admin/index2";
-//    }
-//    @RequestMapping("/admin/home3")
-//    public String index3() {
-//        return "admin/index3";
-//    }
+
     @RequestMapping("/contact")
     public String contact() {
         return "user/contact";
     }
-//    @RequestMapping("/login")
-//    public String login() {
-//        return "user/Login";
-//    }
+
     @RequestMapping("/category")
     public String category() {
         return "user/Category";
     }
-//    @RequestMapping("/category")
-//    public String category() {
-//        return "user/Category";
-//    }
 
-//    @RequestMapping("/register")
-//    public String register() {
-//        return "user/Register";
-//    }
     @RequestMapping("/profile")
     public String profile() {
         return "user/Profile";
@@ -108,17 +96,18 @@ public class HomeController {
     public String dealer(@PathVariable("id") int id,Model model) {
         Dealer dealer = dealerService.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));;
-
+        List<Product> product = productRepository.listProduct(id);
         model.addAttribute("dealer", dealer);
+        model.addAttribute("product", product);
         return "user/Dealer";
     }
+    @RequestMapping("/priceDetail/{id}")
+    public String PriceDetail(@PathVariable("id") int id,Model model) {
+        List<PriceCar> PriceCar = priceCarRepository.listPriceCar(id);
+        List<CarReview> carReviews = carReviewRepository.listCarReview(id);
+        model.addAttribute("priceCar", PriceCar);
+        model.addAttribute("carReviews", carReviews);
 
-    @RequestMapping("/priceCar/priceCar")
-    public String CarReview() {
-        return "user/Car-review";
-    }
-    @RequestMapping("/priceDetail")
-    public String PriceDetail() {
         return "user/Price-Detail";
     }
     @RequestMapping("/guide")

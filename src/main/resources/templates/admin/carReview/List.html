@@ -50,16 +50,19 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Ảnh </th>
-                                        <th>Tên</th>
-                                        <th>Hoạt động </th>
+                                        <th>Hình ảnh</th>
+                                        <th>Tiêu đề</th>
+                                        <th>Nội dung</th>
+                                        <th>Action</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="viewCar : ${listCategoryCar}">
+                                    <tr th:each="viewCar : ${carReviewList}">
                                         <td>[[${viewCar.id}]]</td>
                                         <td><img th:src="${viewCar.image}" alt="" style="width: 135px; height: 78px"></td>
-                                        <td>[[${viewCar.name}]]</td>
+                                        <td>[[${viewCar.title}]]</td>
+                                        <td>[[${viewCar.content}]]</td>
                                         <td></td>
                                     </tr>
                                     </tfoot>

@@ -28,6 +28,8 @@ public class Product {
     private String origin;
     @NotEmpty(message = "Vui lòng nhập loại xe")
     private String rangeofvehicle;
+    @NotEmpty(message = "Vui thêm hình ảnh")
+    private String image;
     @NotEmpty(message = "Vui lòng nhập số chỗ")
     private String numberofseats;
     @NotEmpty(message = "Vui lòng nhập hộp số")

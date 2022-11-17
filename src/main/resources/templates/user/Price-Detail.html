@@ -5,39 +5,75 @@
 <!--</head>-->
 <body>
 <header th:replace="/user/fragments/header :: header"></header>
-<div class="price-detail">
+<div class="" style="    margin-top: 70px;">
     <div class="container">
        <div class="row">
            <div class="col-lg-8">
-               <h3>Bảng giá xe Mitsubishi niêm yết & lăn bánh tháng 10/2022</h3>
+               <h3>Bảng giá xe</h3>
                <div>
                    <div class="card-body">
                        <table class="table table-bordered table-striped">
                            <thead>
                            <tr>
-                               <th>Id</th>
-                               <th>Image</th>
-                               <th>Name</th>
+                               <th>Dòng xe</th>
+                               <th>Giá niêm yết</th>
+                               <th>Giá lăn bánh</th>
                            </tr>
                            </thead>
                            <tbody>
-                           <tr th:each="listPrice : ${listPriceCar}">
-                               <td>[[${listPrice.name}]]</td>
+                           <tr th:each="listPrice : ${priceCar}">
+                               <td><a style="color: black" th:href="@{'#' + ${listPrice.name}}">[[${listPrice.name}]]</a></td>
+
                                <td>[[${listPrice.listed_price}]]</td>
                                <td>[[${listPrice.rolling_price}]]</td>
                            </tr>
                        </table>
                    </div>
+                   <div class="p-body-pageContent" th:each="listPrice : ${carReviews}">
+                       <div class="block" th:id="${listPrice.title}">
+                           <div class="block-container">
+                               <div class="block-body">
+                                   <article class="message thpostcomments_message--expanded baidautien">
+                                       <div class="message-inner">
+                                           <div class="message-cell message-cell--main">
+                                               <div class="message-main">
+                                                   <div class="message-content">
+                                                       <div
+                                                               class="message-user Content lbContainer js-lbContainer ">
+                                                           <article class="message-body js-selectToQuote">
+
+                                                               <div class="bbWrapper"><span
+                                                                       style="font-size: 18px">  <div class="p-title ">
+                                                                                <h5 class="p-title-value">[[${listPrice.title}]]</h5>
+                                                                            </div>
+                                                                                <br>
+                                                                                <p>[[${listPrice.content}]]</p><br>
+                                                                                </span><br>
+                                                                   <div style="text-align: center"><span
+                                                                           style="font-size: 18px">
+                                                                                        <div class="bbImageWrapper  js-lbImage"
+                                                                                             style="cursor: pointer;">
+                                                                                            <img th:src="${listPrice.image}" style=" width: 720px;height: 390px;object-fit: cover;" class="bbImage">
+                                                                                        </div>
+                                                                                    </span>
+                                                                   </div>
+
+                                                               </div>
+                                                           </article>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="cmt_appe_658728" style="padding-left: 65px;"></div>
+                                       <div class="cmt_ar_658728"></div>
+                                   </article>
+                                   <hr>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
                </div>
-              <div th:each="carReviewList : ${carReviewList}" >
-                  <h2><span class="ez-toc-section-end">[[${carReviewList.title}]]</span></h2>
-                  <hr>
-                  <p>[[${carReviewList.content}]]</p>
-
-                      <img
-                           th:src="${carReviewList.image}">
-
-              </div>
            </div>
            <div class="col-lg-4 col-md-4">
 
