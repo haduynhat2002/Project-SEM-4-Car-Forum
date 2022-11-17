@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" th:href="@{/user/css/Dealer.css}">
     <link rel="stylesheet" th:href="@{/user/css/style.css}">
+    <link rel="stylesheet" th:href="@{/user/css/font-awesome.min.css}">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,48 +22,108 @@
         <div class="col-6">
             <img class="img1"
                  th:src="${dealer.image}"
-                 width="750px" style="object-fit: cover; height: 240px">
+                 style="object-fit: cover; height: 240px; width: 830px;">
         </div>
         <div class="col-6" style="background: white">
-            <div class="top-container ">
-                <img class="avt" src="https://xeotogiadinh.com/wp-content/uploads/2017/05/logo-hyundai.png"
-                     style="width: 90px; object-fit: cover">
+            <div class="top-container mt-3">
                 <h2>[[${dealer.name}]]</h2>
             </div>
             <div class="information">
+
                 <p style="margin-top: 20px">➤ [[${dealer.adress}]]</p>
-                <hr>
+                <hr style="margin: 20px 0;">
+                <p>➤ [[${dealer.datetime}]]</p>
+                <hr style="margin: 20px 0;">
+                <h3 style="color: firebrick;">Hotline: [[${dealer.hotline}]]</h3>
                 <div class="top-container">
-                    <p  style="margin-bottom: 30px">[[${dealer.datetime}]]</p>
-                    <img class="avt2" src="https://xeotogiadinh.com/wp-content/uploads/2017/05/logo-hyundai.png"
-                         style="width: 90px; object-fit: cover;">
-                    <hr>
-                    <h3 style="color: firebrick;">Hotline: [[${dealer.hotline}]]</h3>
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container">
-
+<div class="container-fluid">
     <div class="row">
-        <div class="col-3">
+        <div class="col-2">
             <div class="left" style=" border-radius: 5px;">
                 <div id="menu-list">
-                    <a class="list-group-item" href=""> <span>Giới thiệu</span> </a>
-                    <a class="list-group-item" href=""> <span>Hình ảnh thực tế</span> </a>
-                    <a class="list-group-item" href=""> <span>Sản phẩm</span> </a>
+                    <a class="list-group-item" href="#info"> <span>Giới thiệu</span> </a>
+                    <a class="list-group-item" href="#fat"> <span>Sản phẩm</span> </a>
                 </div>
             </div>
         </div>
-        <div class="col-9" style="margin-top: 20px;">
-            <div class="mid" style="background: white; border-radius: 5px">
-                <h3 style="color: firebrick; text-align: center">Giới Thiệu</h3>
+        <div class="col-7" style="margin-top: 20px;">
+            <div id="info" class="mid" style="background: white; border-radius: 5px">
+                <h3  style="color: firebrick; text-align: center">Giới Thiệu</h3>
                 <p>[[${dealer.description}]]</p>
                 <img class="img1"
                      th:src="${dealer.image}"
-                     style="padding: 10px 30px; object-fit: cover" alt="" width="825px">
-                <p>[[${dealer.name}]]</p>
+                     style="padding: 10px 30px; margin-left: 20px; object-fit: cover" alt="" width="825px">
+                <p class="text-center">[[${dealer.name}]]</p>
+                <hr id="fat">
+                <h3  style="color: firebrick; text-align: center">Sản Phẩm</h3>
+                <div class="product" th:each="product : ${product}">
+                    <div class="row sanpham px-3">
+                           <div class="col-md-4">
+                               <img class="sp"
+                                    th:src="${product.image}"
+                                    width="250px" height="170px" style="object-fit: cover">
+                           </div>
+                           <div class="col-md-8">
+                               <h5  style="color: firebrick;">[[${product.name}]]</h5>
+                               <div class="row">
+                                   <div class="col-md-6">
+                                       <div class="uudai">
+                                           <span class="month">Tháng 11</span>
+                                       </div>
+                                       <ul class="sp-info">
+                                           <li>- Xuất xứ: [[${product.origin}]]</li>
+                                           <li>- Loại xe: [[${product.rangeofvehicle}]]</li>
+                                           <li>- Số chỗ: [[${product.numberofseats}]]</li>
+                                           <li>- Hộp số: [[${product.gear}]]</li>
+                                       </ul>
+                                   </div>
+                                   <div class="col-md-6">
+                                       <div class="giaban">
+                                           <span class="month d-block">Giá bán lẻ: </span>
+                                           <span class="">[[${product.retailprice}]]</span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-3" style="background-color: white; margin-top: 20px; height: 410px;">
+            <div class="post-sidebar-area">
+                <!-- Widget Area -->
+                <div class="sidebar-widget-area">
+                    <h5 class="title">Liên Hệ </h5>
+                    <div class="widget-content">
+                        <p>EMAIL: <a style="color: black" th:href="@{mailto: codesieuban@gmail.com}">codesieuban@gmail.com</a></p>
+                        <p>PHONE: <p>0123456789</p></p>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget-area">
+                    <h5 class="title">Stay Connected</h5>
+                    <div class="widget-content">
+                        <div class="social-area d-flex justify-content-between">
+                            <a style="color: black" href="#"><i class="fa fa-facebook"></i></a>
+                            <a style="color: black" href="#"><i class="fa fa-twitter"></i></a>
+                            <a style="color: black" href="#"><i class="fa fa-pinterest"></i></a>
+                            <a style="color: black" href="#"><i class="fa fa-vimeo"></i></a>
+                            <a style="color: black" href="#"><i class="fa fa-instagram"></i></a>
+                            <a style="color: black" href="#"><i class="fa fa-google"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Widget Area -->
+
             </div>
         </div>
     </div>

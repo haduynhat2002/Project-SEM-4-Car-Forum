@@ -3,6 +3,7 @@ package com.example.carforum.controller.admin;
 
 import com.example.carforum.entity.CarReview;
 import com.example.carforum.entity.CategoryCar;
+import com.example.carforum.entity.PriceCar;
 import com.example.carforum.service.CarReviewService;
 import com.example.carforum.service.CategoryCarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,12 @@ public class CarReviewController {
     CarReviewService carReviewService;
     @Autowired
     private CategoryCarService categoryCarService;
-
+    @GetMapping("/admin/carreview/list")
+    public String showPriceCar(Model model){
+        List<CarReview> carReviewList = carReviewService.findAll();
+        model.addAttribute("carReviewList", carReviewList);
+        return "admin/carReview/List";
+    }
     @GetMapping("admin/carreview/create")
     public String showCategoryNewForm(Model model){
         List<CategoryCar> listCategoryCar = categoryCarService.findAll();
@@ -34,7 +40,7 @@ public class CarReviewController {
     @PostMapping("admin/carreview/save")
     public String showCategoryNewForm(CarReview carReview){
         carReviewService.save(carReview);
-        return "redirect:/index";
+        return "redirect:/admin/carreview/list";
     }
     @GetMapping("/index")
     public String showCarReviewList(Model model) {

@@ -93,13 +93,13 @@
                                                 </div>
                                                 <!-- Post Content -->
                                                 <div class="post-content">
-                                                    <a href="#" class="headline">
+                                                    <a th:href="@{'/details/' + ${post.id}}" class="headline">
                                                         <h5><span th:text="${post.title}"></span></h5>
                                                     </a>
                                                     <p class="text-shortened"th:text="${post.content}"></p>
                                                     <!-- Post Meta -->
                                                     <div class="post-meta">
-                                                        <p><a href="#" class="post-author">[[${post.user_id.fullname}]]</a> on <a href="#"
+                                                        <p><a th:href="@{'/userAccount/' + ${post.user_id.id}}" class="post-author">[[${post.user_id.fullname}]]</a> on <a href="#"
                                                             class="post-date">[[${post.dateTime}]]</a></p>
                                                     </div>
                                                 </div>
@@ -1167,6 +1167,11 @@
                     </div>
                 </div>
 
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="load-more-btn mt-50 text-center">
+                    <a href="/home/postForum" class="btn">Xem thêm...</a>
+                </div>
             </div>
         </div>
 

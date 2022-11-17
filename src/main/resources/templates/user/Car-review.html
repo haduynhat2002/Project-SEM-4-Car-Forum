@@ -9,16 +9,32 @@
         <h2>Giá xe ô tô</h2>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-4" th:each="viewCar : ${listCategoryCar}" style="box-shadow: 0 9px 10px rgb(0 0 0 / 15%);">
-                <a th:href="@{/priceDetail}">
-                    <div class="form-group position-relative w-100">
-                        <img style="width: 95%; height: 172px; margin: 5px; object-fit: cover" th:src="${viewCar.image}">
-                        <p class=" text-review">
-                            <span>[[${viewCar.name}]]</span>
-                        </p>
+        <div class="row justify-content-center">
+            <!--            <div class="world-catagory-slider owl-carousel wow fadeInUpBig  owl-stage-outer"-->
+            <!--                 data-wow-delay="0.1s">-->
+            <!-- ========== Single Blog Post ========== -->
+            <div class="col-12 col-md-6 col-lg-4" th:each="viewCar : ${listCategoryCar}" >
+
+                <div class="single-blog-post post-style-3 mt-30 wow fadeInUpBig " data-wow-delay="0.2s">
+                    <!-- Post Thumbnail -->
+                    <div class="post-thumbnail">
+                        <img th:src="${viewCar.image}" alt="" style="height: 240px; object-fit: cover;">
+                        <!-- Post Content -->
+                        <div class="post-content d-flex align-items-center justify-content-between">
+                            <!-- Catagory -->
+                            <div class="post-tag"></div>
+                            <!-- Headline -->
+                            <a th:href="@{'/priceDetail/' + ${viewCar.id}}" class="headline">
+                                <h5>[[${viewCar.name}]]</h5>
+                            </a>
+                            <!-- Post Meta -->
+                            <div class="post-meta">
+                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29,
+                                    2017 at 9:48 am</a></p>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>

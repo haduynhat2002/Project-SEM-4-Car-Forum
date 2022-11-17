@@ -2025,7 +2025,7 @@ footer .img-footer {
     margin-right: auto;
 }
 .guide .p-description {
-    margin: 5px 0 0;
+    margin: 20px 0 0;
     padding: 0;
     font-size: 13px;
     color: #8c8c8c;
@@ -2373,7 +2373,6 @@ footer .img-footer {
     border-radius: 13px;
 }
 .guide .baidautien .message-main {
-    padding: inherit;
     background-color: inherit;
     border-radius: inherit;
 }
